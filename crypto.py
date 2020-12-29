@@ -8,6 +8,10 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
+'''
+Gets cryptocurrency data from CoinMarketCap API
+as JSON, converts to object and returns this
+'''
 def get_crypto_data(query):
     # https://coinmarketcap.com/api/documentation/v1/#
 
@@ -30,21 +34,15 @@ def get_crypto_data(query):
     try:
         response = session.get(url, params=parameters)
         data = json.loads(response.text)
-        with open('output.log', 'w') as out:
+        with open('output.log', 'w') as out:    # logs the entirety of each request in a file
             out.write(json.dumps(data, indent=4))
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         print(e)
         # sleep(10)
 
-    output_dict = {}
     for obj in data['data']:
         if obj['symbol'] == query:
-            # output_dict = {}
-            # output_dict['name'] = obj['name']
-            # output_dict['']
-            # output_dict['info'] = obj['quote']
             output = obj
-            # print(json.dumps(obj['quote'], indent=4))
             break
     else:
         print("Requested cryptocurrency not found")
@@ -64,6 +62,10 @@ bot = commands.Bot(command_prefix='!')
 
 client = discord.Client()
 
+'''
+Displays when the bot is connected and 
+ready on console output
+'''
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
@@ -75,24 +77,48 @@ async def on_ready():
         f'{guild.name}(id: {guild.id})'
     )
 
-# @bot.command(name="crypto")
-# async def crypto_view(ctx):
-#     await ctx.send("Fetching Cryptocurrency Data...")
-
-@bot.event
-async def on_message(message):
-    if message.content.startswith("!crypto"):
-        query_list = message.content.split(" ")
-    
-    if len(query_list) == 1:
-        await message.channel.send("Please input a cryptocurrency code")
+@bot.command(name="crypto")
+async def crypto_view(ctx, *args):
+    if len(args) == 0:
+        await ctx.send("Please input a cryptocurrency code")
     else:
-        crypto_data = get_crypto_data(query_list[1])
-        await message.channel.send("**Name:** " + crypto_data['name'])
-        await message.channel.send("------------------")
-        await message.channel.send("**Current Price**: " + str( '{:,.2f}'.format(crypto_data['quote']['AUD']['price']) ))
-        await message.channel.send("**CoinMarketCap Rank**: " + str(crypto_data['cmc_rank']))
-        # await message.channel.send(crypto_data['quote'])
+        crypto_data = get_crypto_data(args[0])
+        await ctx.send("          **Name:** " + crypto_data['name'])
+        await ctx.send("------------------------------------")
+        await ctx.send("**Current Price**: " + str( '{:,.2f}'.format(crypto_data['quote']['AUD']['price']) + "\n" 
+        + "**CoinMarketCap Rank**: " + str(crypto_data['cmc_rank'])) )
+        if len(args) > 1 and args[1] == "-extra":
+            await ctx.send("---")
+            change_1h = str('{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_1h']))
+            change_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_24h']))
+            change_7d = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_7d']))
+
+            extra_info = f"""
+**Percent Change Last 1 Hour**: {change_1h}
+**Percent Change Last 24 Hours**: {change_24h}
+**Percent Change Last 7 Days**: {change_7d}
+            """ 
+            await ctx.send(extra_info)
+    
+
+
+# '''
+# Checks if particular commands are present in each message,
+# and sends responses accordingly 
+# '''
+# @bot.event
+# async def on_message(message):
+#     if message.content.startswith("!crypto"):
+#         query_list = message.content.split(" ")
+#         if len(query_list) == 1:
+#             await message.channel.send("Please input a cryptocurrency code")
+#         else:
+#             crypto_data = get_crypto_data(query_list[1])
+#             await message.channel.send("**Name:** " + crypto_data['name'])
+#             await message.channel.send("------------------")
+#             await message.channel.send("**Current Price**: " + str( '{:,.2f}'.format(crypto_data['quote']['AUD']['price']) ))
+#             await message.channel.send("**CoinMarketCap Rank**: " + str(crypto_data['cmc_rank']))
+#             # await message.channel.send(crypto_data['quote'])
 
 
 # Error Handling
