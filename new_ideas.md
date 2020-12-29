@@ -1,0 +1,5 @@
+- Hourly/Daily Overall Crypto Data Updates
+- Watch for specific percentage changes/price changes for individuals
+- Visualiser --> Display Historical Data as a Graph (image sent to the server)
+- Trends -> Webscrape for top news articles for each cryptocurrency
+- S&P 500 -> more bot stuff for tech stocks
