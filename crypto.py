@@ -5,7 +5,7 @@ import json
 
 import os
 import discord
-from discord.ext import commands
+from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
 '''
@@ -63,6 +63,17 @@ bot = commands.Bot(command_prefix='!')
 client = discord.Client()
 
 '''
+Defines a 'watch' task which provides hourly updates 
+on chosen cryptocurrencies in a chosen channel, set by a user
+'''
+@tasks.loop(hours=1)
+async def crypto_update():
+    channel = bot.get_channel(793053168304783440)
+    query = "BTC"
+    crypto_data = get_crypto_data(query)
+    await channel.send(crypto_data)
+
+'''
 Displays when the bot is connected and 
 ready on console output
 '''
@@ -74,8 +85,10 @@ async def on_ready():
 
     print(
         f'{bot.user.name} is connected to the following guild:\n'
-        f'{guild.name}(id: {guild.id})'
+        f'{guild.name} (id: {guild.id})'
     )
+
+    # crypto_update.start()
 
 @bot.command(name="crypto")
 async def crypto_view(ctx, *args):
@@ -83,25 +96,52 @@ async def crypto_view(ctx, *args):
         await ctx.send("Please input a cryptocurrency code")
     else:
         crypto_data = get_crypto_data(args[0])
-        await ctx.send("          **Name:** " + crypto_data['name'])
-        await ctx.send("------------------------------------")
+        if crypto_data['platform'] == None:
+            platform = "None"
+        else:
+            platform = crypto_data['platform']['name']
+        
+        await ctx.send("**Name:** " + crypto_data['name'])
+        await ctx.send("―――――――――――――")
         await ctx.send("**Current Price**: " + str( '{:,.2f}'.format(crypto_data['quote']['AUD']['price']) + "\n" 
-        + "**CoinMarketCap Rank**: " + str(crypto_data['cmc_rank'])) )
-        if len(args) > 1 and args[1] == "-extra":
-            await ctx.send("---")
-            change_1h = str('{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_1h']))
-            change_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_24h']))
-            change_7d = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_7d']))
+        + "**CoinMarketCap Rank**: " + str(crypto_data['cmc_rank'])) + "\n"
+        + "**Platform**: " + platform)
 
-            extra_info = f"""
+        if len(args) > 1:
+            if args[1] == "-extra":
+                await ctx.send("―――")
+                volume_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['volume_24h']) )
+                change_1h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_1h']) )
+                change_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_24h']) )
+                change_7d = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_7d']) )
+                
+                extra_info = f"""
+**Volume Traded Last 24 Hours**: {volume_24h}
 **Percent Change Last 1 Hour**: {change_1h}
 **Percent Change Last 24 Hours**: {change_24h}
 **Percent Change Last 7 Days**: {change_7d}
-            """ 
-            await ctx.send(extra_info)
-    
+                """ 
+                await ctx.send(extra_info)
+        
+            elif args[1] == "-supply":
+                await ctx.send("―――")
+                max_supply = str( '{:,.0f}'.format(crypto_data['max_supply']) )
+                circulating_supply = str( '{:,.0f}'.format(crypto_data['circulating_supply']) )
+                total_supply = str( '{:,.0f}'.format(crypto_data['total_supply']) )
+
+                supply_info = f"""
+**Max Supply**: {max_supply}
+**Circulating Supply**: {circulating_supply}
+**Total Supply**: {total_supply}
+                """
+                await ctx.send(supply_info)
+            
+            elif args[1] == "-link":
+                await ctx.send("―――")
+                await ctx.send(f"https://coinmarketcap.com/currencies/{crypto_data['name']}")
 
 
+        
 # '''
 # Checks if particular commands are present in each message,
 # and sends responses accordingly 

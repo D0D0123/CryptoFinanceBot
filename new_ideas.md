@@ -3,3 +3,6 @@
 - Visualiser --> Display Historical Data as a Graph (image sent to the server)
 - Trends -> Webscrape for top news articles for each cryptocurrency
 - S&P 500 -> more bot stuff for tech stocks
+- Show a map of cryptocurrency 'names : symbols' for each of the top 10 currencies`
+- Split the commands up, instead of having -extra, -supply, -link be arguments for that one command
+    - pass in crypto_data to different functions if needed
