@@ -9,10 +9,10 @@ from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
 '''
-Gets cryptocurrency data from CoinMarketCap API
-as JSON, converts to object and returns this
+Gets the entirety of cryptocurrency data from CoinMarketCap API
+as JSON, converts to a python dictionary and returns this
 '''
-def get_crypto_data(query):
+def get_total_crypto_data():
     # https://coinmarketcap.com/api/documentation/v1/#
 
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
@@ -30,7 +30,6 @@ def get_crypto_data(query):
     session = Session()
     session.headers.update(headers)
 
-    # while True:
     try:
         response = session.get(url, params=parameters)
         data = json.loads(response.text)
@@ -38,9 +37,15 @@ def get_crypto_data(query):
             out.write(json.dumps(data, indent=4))
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         print(e)
-        # sleep(10)
+    
+    return data
 
-    for obj in data['data']:
+'''
+Parses the total data returned from the API request 
+for the data of an individual coin
+'''
+def get_individual_crypto_data(total_data, query):
+    for obj in total_data['data']:
         if obj['symbol'] == query:
             output = obj
             break
@@ -69,9 +74,22 @@ on chosen cryptocurrencies in a chosen channel, set by a user
 @tasks.loop(hours=1)
 async def crypto_update():
     channel = bot.get_channel(793053168304783440)
-    query = "BTC"
-    crypto_data = get_crypto_data(query)
-    await channel.send(crypto_data)
+    await channel.send("*Here's the hourly update for the following coins:*")
+    total_data = get_total_crypto_data()
+    watched = ["BTC", "ETH"]
+    for symbol in watched:
+        await channel.send("""|======================================================|""")
+        crypto_data = get_individual_crypto_data(total_data, symbol)
+        await channel.send("**Name:** " + crypto_data['name'])
+        await channel.send("―――――――――――――")
+
+        all_info = ( generate_basic_info(crypto_data) + "\n―――"
+        + generate_extra_info(crypto_data) + "―――"
+        + generate_supply_info(crypto_data) + "―――\n"
+        + generate_crypto_link(crypto_data) )
+
+        await channel.send(all_info)
+
 
 '''
 Displays when the bot is connected and 
@@ -90,58 +108,101 @@ async def on_ready():
 
     # crypto_update.start()
 
+'''
+The !crypto [symbol] [param] command,
+which calls crypto_send() to send 
+information about a particular 
+cryptocurrency to the channel
+'''
 @bot.command(name="crypto")
-async def crypto_view(ctx, *args):
+async def crypto_display(ctx, *args):
     if len(args) == 0:
         await ctx.send("Please input a cryptocurrency code")
     else:
-        crypto_data = get_crypto_data(args[0])
-        if crypto_data['platform'] == None:
-            platform = "None"
-        else:
-            platform = crypto_data['platform']['name']
-        
-        await ctx.send("**Name:** " + crypto_data['name'])
-        await ctx.send("―――――――――――――")
-        await ctx.send("**Current Price**: " + str( '{:,.2f}'.format(crypto_data['quote']['AUD']['price']) + "\n" 
-        + "**CoinMarketCap Rank**: " + str(crypto_data['cmc_rank'])) + "\n"
-        + "**Platform**: " + platform)
-
+        total_data = get_total_crypto_data()
+        coin_data = get_individual_crypto_data(total_data, args[0])
         if len(args) > 1:
-            if args[1] == "-extra":
-                await ctx.send("―――")
-                volume_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['volume_24h']) )
-                change_1h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_1h']) )
-                change_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_24h']) )
-                change_7d = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_7d']) )
-                
-                extra_info = f"""
+            await crypto_send(ctx, coin_data, args[1])
+        else:
+            await crypto_send(ctx, coin_data)
+
+'''
+Sends cryptocurrency information 
+to the server, with the depth of information 
+depending on the parameter given
+(None, -extra, -supply, -link, -all)
+'''
+async def crypto_send(ctx, crypto_data, param=None):
+    
+    await ctx.send("**Name:** " + crypto_data['name'])
+    await ctx.send("―――――――――――――")
+    await ctx.send(generate_basic_info(crypto_data))
+
+    if param != None:
+        if param == "-extra" or param == "-all":
+            await ctx.send("―――")
+            extra_info = generate_extra_info(crypto_data)
+            await ctx.send(extra_info)
+    
+        if param == "-supply" or param == "-all":
+            await ctx.send("―――")
+            supply_info = generate_supply_info(crypto_data)
+            await ctx.send(supply_info)
+        
+        if param == "-link" or param == "-all":
+            await ctx.send("―――")
+            await ctx.send(generate_crypto_link(crypto_data))
+
+'''
+The following functions generate and return formatted strings 
+for different chunks of cryptocurrency information
+'''
+def generate_basic_info(crypto_data):
+    if crypto_data['platform'] == None:
+        platform = "None"
+    else:
+        platform = crypto_data['platform']['name']
+    
+    basic_info = ( "**Current Price**: " + str( '{:,.2f}'.format(crypto_data['quote']['AUD']['price']) + "\n" 
+    + "**CoinMarketCap Rank**: " + str(crypto_data['cmc_rank'])) + "\n"
+    + "**Platform**: " + platform )
+
+    return basic_info
+
+
+def generate_extra_info(crypto_data):
+    volume_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['volume_24h']) )
+    change_1h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_1h']) )
+    change_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_24h']) )
+    change_7d = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_7d']) )
+    
+    extra_info = f"""
 **Volume Traded Last 24 Hours**: {volume_24h}
 **Percent Change Last 1 Hour**: {change_1h}
 **Percent Change Last 24 Hours**: {change_24h}
 **Percent Change Last 7 Days**: {change_7d}
-                """ 
-                await ctx.send(extra_info)
-        
-            elif args[1] == "-supply":
-                await ctx.send("―――")
-                max_supply = str( '{:,.0f}'.format(crypto_data['max_supply']) )
-                circulating_supply = str( '{:,.0f}'.format(crypto_data['circulating_supply']) )
-                total_supply = str( '{:,.0f}'.format(crypto_data['total_supply']) )
+""" 
+    return extra_info
 
-                supply_info = f"""
+def generate_supply_info(crypto_data):
+    if crypto_data['max_supply'] == None:
+        max_supply = None
+    else:
+        max_supply = str( '{:,.1f}'.format(crypto_data['max_supply']) )
+    circulating_supply = str( '{:,.1f}'.format(crypto_data['circulating_supply']) )
+    total_supply = str( '{:,.1f}'.format(crypto_data['total_supply']) )
+
+    supply_info = f"""
 **Max Supply**: {max_supply}
 **Circulating Supply**: {circulating_supply}
 **Total Supply**: {total_supply}
-                """
-                await ctx.send(supply_info)
-            
-            elif args[1] == "-link":
-                await ctx.send("―――")
-                await ctx.send(f"https://coinmarketcap.com/currencies/{crypto_data['name']}")
+"""
+    return supply_info
+
+def generate_crypto_link(crypto_data):
+    return f"https://coinmarketcap.com/currencies/{crypto_data['name']}"
 
 
-        
 # '''
 # Checks if particular commands are present in each message,
 # and sends responses accordingly 
