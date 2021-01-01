@@ -178,9 +178,9 @@ def generate_extra_info(crypto_data):
     
     extra_info = f"""
 **Volume Traded Last 24 Hours**: {volume_24h}
-**Percent Change Last 1 Hour**: {change_1h}
-**Percent Change Last 24 Hours**: {change_24h}
-**Percent Change Last 7 Days**: {change_7d}
+**Percent Change Last 1 Hour**: {change_1h}% 
+**Percent Change Last 24 Hours**: {change_24h}%
+**Percent Change Last 7 Days**: {change_7d}%
 """ 
     return extra_info
 
