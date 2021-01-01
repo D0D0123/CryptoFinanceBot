@@ -5,6 +5,7 @@ import json
 
 import os
 import discord
+from discord import Embed
 from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
@@ -64,7 +65,6 @@ GUILD = os.getenv('DISCORD_GUILD')
 
 # every command must be prefixed with a !
 bot = commands.Bot(command_prefix='!')
-
 client = discord.Client()
 
 '''
@@ -78,17 +78,21 @@ async def crypto_update():
     total_data = get_total_crypto_data()
     watched = ["BTC", "ETH"]
     for symbol in watched:
-        await channel.send("""|======================================================|""")
         crypto_data = get_individual_crypto_data(total_data, symbol)
-        await channel.send("**Name:** " + crypto_data['name'])
-        await channel.send("―――――――――――――")
+        embed_var = Embed(title=crypto_data['name'], 
+                          description=generate_basic_info(crypto_data), 
+                          color=3447003)
+        embed_var.add_field(name="Extra", 
+                            value=generate_extra_info(crypto_data), 
+                            inline=False)
+        embed_var.add_field(name="Supply", 
+                            value=generate_supply_info(crypto_data), 
+                            inline=True)
+        embed_var.add_field(name="Link", 
+                            value=generate_crypto_link(crypto_data), 
+                            inline=True)
 
-        all_info = ( generate_basic_info(crypto_data) + "\n―――"
-        + generate_extra_info(crypto_data) + "―――"
-        + generate_supply_info(crypto_data) + "―――\n"
-        + generate_crypto_link(crypto_data) )
-
-        await channel.send(all_info)
+        await channel.send(embed=embed_var)
 
 
 '''
@@ -120,11 +124,11 @@ async def crypto_display(ctx, *args):
         await ctx.send("Please input a cryptocurrency code")
     else:
         total_data = get_total_crypto_data()
-        coin_data = get_individual_crypto_data(total_data, args[0])
+        crypto_data = get_individual_crypto_data(total_data, args[0])
         if len(args) > 1:
-            await crypto_send(ctx, coin_data, args[1])
+            await crypto_send(ctx, crypto_data, args[1])
         else:
-            await crypto_send(ctx, coin_data)
+            await crypto_send(ctx, crypto_data)
 
 '''
 Sends cryptocurrency information 
@@ -134,25 +138,21 @@ depending on the parameter given
 '''
 async def crypto_send(ctx, crypto_data, param=None):
     
-    await ctx.send("**Name:** " + crypto_data['name'])
-    await ctx.send("―――――――――――――")
-    await ctx.send(generate_basic_info(crypto_data))
+    embed_var = Embed(title=crypto_data['name'], description=generate_basic_info(crypto_data), color=3447003)
+    # embed_var.set_thumbnail(url="https://cdn-images-1.medium.com/max/1024/1*o4pm4QDu0cwR1XEpLdFCSw.jpeg")
+    # embed_var.set_image(url="https://static.blockgeeks.com/wp-content/uploads/2019/03/image18.png")
 
     if param != None:
         if param == "-extra" or param == "-all":
-            await ctx.send("―――")
-            extra_info = generate_extra_info(crypto_data)
-            await ctx.send(extra_info)
-    
+            embed_var.add_field(name="Extra", value=generate_extra_info(crypto_data), inline=False)
+
         if param == "-supply" or param == "-all":
-            await ctx.send("―――")
-            supply_info = generate_supply_info(crypto_data)
-            await ctx.send(supply_info)
+            embed_var.add_field(name="Supply", value=generate_supply_info(crypto_data), inline=True)
         
         if param == "-link" or param == "-all":
-            await ctx.send("―――")
-            await ctx.send(generate_crypto_link(crypto_data))
-
+            embed_var.add_field(name="Link", value=generate_crypto_link(crypto_data), inline=True)
+    
+    await ctx.send(embed=embed_var)
 '''
 The following functions generate and return formatted strings 
 for different chunks of cryptocurrency information
@@ -188,9 +188,9 @@ def generate_supply_info(crypto_data):
     if crypto_data['max_supply'] == None:
         max_supply = None
     else:
-        max_supply = str( '{:,.1f}'.format(crypto_data['max_supply']) )
-    circulating_supply = str( '{:,.1f}'.format(crypto_data['circulating_supply']) )
-    total_supply = str( '{:,.1f}'.format(crypto_data['total_supply']) )
+        max_supply = str( '{:,.0f}'.format(crypto_data['max_supply']) )
+    circulating_supply = str( '{:,.0f}'.format(crypto_data['circulating_supply']) )
+    total_supply = str( '{:,.0f}'.format(crypto_data['total_supply']) )
 
     supply_info = f"""
 **Max Supply**: {max_supply}
@@ -201,25 +201,6 @@ def generate_supply_info(crypto_data):
 
 def generate_crypto_link(crypto_data):
     return f"https://coinmarketcap.com/currencies/{crypto_data['name']}"
-
-
-# '''
-# Checks if particular commands are present in each message,
-# and sends responses accordingly 
-# '''
-# @bot.event
-# async def on_message(message):
-#     if message.content.startswith("!crypto"):
-#         query_list = message.content.split(" ")
-#         if len(query_list) == 1:
-#             await message.channel.send("Please input a cryptocurrency code")
-#         else:
-#             crypto_data = get_crypto_data(query_list[1])
-#             await message.channel.send("**Name:** " + crypto_data['name'])
-#             await message.channel.send("------------------")
-#             await message.channel.send("**Current Price**: " + str( '{:,.2f}'.format(crypto_data['quote']['AUD']['price']) ))
-#             await message.channel.send("**CoinMarketCap Rank**: " + str(crypto_data['cmc_rank']))
-#             # await message.channel.send(crypto_data['quote'])
 
 
 # Error Handling
