@@ -9,12 +9,20 @@ from discord import Embed
 from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
+from format_response import generate_basic_info, generate_extra_info, generate_supply_info, generate_crypto_link
+# from database import bot_data
+
+# Maps every symbol to it's corresponding currency name
+crypto_map = {}
+bot_data = []
+
 '''
 Gets the entirety of cryptocurrency data from CoinMarketCap API
 as JSON, converts to a python dictionary and returns this
 '''
 def get_total_crypto_data():
     # https://coinmarketcap.com/api/documentation/v1/#
+    global crypto_map
 
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     parameters = {
@@ -33,13 +41,18 @@ def get_total_crypto_data():
 
     try:
         response = session.get(url, params=parameters)
-        data = json.loads(response.text)
+        total_data = json.loads(response.text)
         with open('output.log', 'w') as out:    # logs the entirety of each request in a file
-            out.write(json.dumps(data, indent=4))
+            out.write(json.dumps(total_data, indent=4))
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         print(e)
     
-    return data
+    # filling in crypto_map
+    for obj in total_data['data']:
+        crypto_map[obj["symbol"]] = obj["name"]
+    print(crypto_map)
+
+    return total_data
 
 '''
 Parses the total data returned from the API request 
@@ -73,26 +86,28 @@ on chosen cryptocurrencies in a chosen channel, set by a user
 '''
 @tasks.loop(hours=1)
 async def crypto_update():
-    channel = bot.get_channel(793053168304783440)
-    await channel.send("*Here's the hourly update for the following coins:*")
     total_data = get_total_crypto_data()
-    watched = ["BTC", "ETH"]
-    for symbol in watched:
-        crypto_data = get_individual_crypto_data(total_data, symbol)
-        embed_var = Embed(title=crypto_data['name'], 
-                          description=generate_basic_info(crypto_data), 
-                          color=3447003)
-        embed_var.add_field(name="Extra", 
-                            value=generate_extra_info(crypto_data), 
-                            inline=False)
-        embed_var.add_field(name="Supply", 
-                            value=generate_supply_info(crypto_data), 
-                            inline=True)
-        embed_var.add_field(name="Link", 
-                            value=generate_crypto_link(crypto_data), 
-                            inline=True)
 
-        await channel.send(embed=embed_var)
+    for obj in bot_data:
+        channel = bot.get_channel(obj['autopost_channel'])
+        watch_list = obj['watch_list']
+        await channel.send("*Here's the hourly update for the following coins:*")
+        for symbol in watch_list:
+            crypto_data = get_individual_crypto_data(total_data, symbol)
+            embed_var = Embed(title=crypto_data['name'], 
+                            description=generate_basic_info(crypto_data), 
+                            color=3447003)
+            embed_var.add_field(name="Extra", 
+                                value=generate_extra_info(crypto_data), 
+                                inline=False)
+            embed_var.add_field(name="Supply", 
+                                value=generate_supply_info(crypto_data), 
+                                inline=True)
+            embed_var.add_field(name="Link", 
+                                value=generate_crypto_link(crypto_data), 
+                                inline=True)
+
+            await channel.send(embed=embed_var)
 
 
 '''
@@ -101,16 +116,27 @@ ready on console output
 '''
 @bot.event
 async def on_ready():
+    # loads (deserialises) existing database.json file into bot_data
+    global bot_data
+    with open('database.json', 'r') as data_file:
+        bot_data = json.load(data_file)
+
+    print(f'{bot.user.name} is connected to the following guilds:')
     for guild in bot.guilds:
-        if guild.name == GUILD:
-            break
+        for obj in bot_data:
+            if guild.id == obj['guild']:
+                break
+        else:
+            bot_data.append({
+                'guild': guild.id, # one dictionary for each guild that the bot is in
+                'autopost_channel': guild.text_channels[0].id, # which channel should autoposts go in
+                'watch_list': [], # which currencies to watch
+                'price_pings': [] #pings for particular price drops
+            })
 
-    print(
-        f'{bot.user.name} is connected to the following guild:\n'
-        f'{guild.name} (id: {guild.id})'
-    )
-
-    # crypto_update.start()
+        print(f'{guild.name} (id: {guild.id})')
+    
+    crypto_update.start()
 
 '''
 The !crypto [symbol] [param] command,
@@ -137,7 +163,6 @@ depending on the parameter given
 (None, -extra, -supply, -link, -all)
 '''
 async def crypto_send(ctx, crypto_data, param=None):
-    
     embed_var = Embed(title=crypto_data['name'], description=generate_basic_info(crypto_data), color=3447003)
     # embed_var.set_thumbnail(url="https://cdn-images-1.medium.com/max/1024/1*o4pm4QDu0cwR1XEpLdFCSw.jpeg")
     # embed_var.set_image(url="https://static.blockgeeks.com/wp-content/uploads/2019/03/image18.png")
@@ -153,54 +178,49 @@ async def crypto_send(ctx, crypto_data, param=None):
             embed_var.add_field(name="Link", value=generate_crypto_link(crypto_data), inline=True)
     
     await ctx.send(embed=embed_var)
-'''
-The following functions generate and return formatted strings 
-for different chunks of cryptocurrency information
-'''
-def generate_basic_info(crypto_data):
-    if crypto_data['platform'] == None:
-        platform = "None"
-    else:
-        platform = crypto_data['platform']['name']
+
+@bot.command(name="watch")
+async def crypto_watch(ctx, *args):
+    global crypto_map
+    for symb in args:
+        if symb not in crypto_map:
+            continue
+        for obj in bot_data:
+            # add the symbol to the watch list of a specific guild (or remove it)
+            if obj['guild'] == ctx.message.guild.id:
+
+                if args[0] == "-show":
+                    await ctx.send(obj['watch_list'])
+
+                if args[0] == "-add":
+                    if symb not in obj['watch_list']:
+                        obj['watch_list'].append(symb)
+                    await ctx.send(f"{symb} is now being watched hourly")
+
+                elif args[0] == "-remove":
+                    obj['watch_list'].remove(symb)
+                    await ctx.send(f"{symb} has been removed from the watchlist")
+    # updates database.json with new bot_data information
+    # by serialising bot_data as json and rewriting it to the file
+    with open('database.json', 'w') as out:
+        out.write(json.dumps(bot_data, indent=4))
+
+
+@bot.command(name="list")
+async def send_crypto_list(ctx):
+    crypto_list = ""
+    for i, key in enumerate(crypto_map):
+        crypto_list = crypto_list + f"{i + 1}: " + f"**{key}** ({crypto_map[key]})" + "\n\n"
     
-    basic_info = ( "**Current Price**: " + str( '{:,.2f}'.format(crypto_data['quote']['AUD']['price']) + "\n" 
-    + "**CoinMarketCap Rank**: " + str(crypto_data['cmc_rank'])) + "\n"
-    + "**Platform**: " + platform )
+    embed_var = Embed(title="Top 10 Cryptocurrencies", 
+                      description=crypto_list, 
+                      color=3447003)
+    await ctx.send(embed=embed_var)
 
-    return basic_info
+@bot.command(name="debug")
+async def crypto_debug(ctx):
+    await ctx.send(bot_data)
 
-
-def generate_extra_info(crypto_data):
-    volume_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['volume_24h']) )
-    change_1h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_1h']) )
-    change_24h = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_24h']) )
-    change_7d = str( '{:,.2f}'.format(crypto_data['quote']['AUD']['percent_change_7d']) )
-    
-    extra_info = f"""
-**Volume Traded Last 24 Hours**: {volume_24h}
-**Percent Change Last 1 Hour**: {change_1h}% 
-**Percent Change Last 24 Hours**: {change_24h}%
-**Percent Change Last 7 Days**: {change_7d}%
-""" 
-    return extra_info
-
-def generate_supply_info(crypto_data):
-    if crypto_data['max_supply'] == None:
-        max_supply = None
-    else:
-        max_supply = str( '{:,.0f}'.format(crypto_data['max_supply']) )
-    circulating_supply = str( '{:,.0f}'.format(crypto_data['circulating_supply']) )
-    total_supply = str( '{:,.0f}'.format(crypto_data['total_supply']) )
-
-    supply_info = f"""
-**Max Supply**: {max_supply}
-**Circulating Supply**: {circulating_supply}
-**Total Supply**: {total_supply}
-"""
-    return supply_info
-
-def generate_crypto_link(crypto_data):
-    return f"https://coinmarketcap.com/currencies/{crypto_data['name']}"
 
 
 # Error Handling
