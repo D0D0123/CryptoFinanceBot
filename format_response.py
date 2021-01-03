@@ -1,3 +1,4 @@
+from discord import Embed
 
 '''
 The following functions generate and return formatted strings 
@@ -46,4 +47,21 @@ def generate_supply_info(crypto_data):
 
 def generate_crypto_link(crypto_data):
     return f"https://coinmarketcap.com/currencies/{crypto_data['name']}"
+
+def generate_all_embed(crypto_data):
+    embed_var = Embed(title=crypto_data['name'], 
+                      description=generate_basic_info(crypto_data), 
+                      color=3447003)
+    embed_var.add_field(name="Extra", 
+                        value=generate_extra_info(crypto_data), 
+                        inline=False)
+    embed_var.add_field(name="Supply", 
+                        value=generate_supply_info(crypto_data), 
+                        inline=True)
+    embed_var.add_field(name="Link", 
+                        value=generate_crypto_link(crypto_data), 
+                        inline=True)
+    
+    return embed_var
+
 

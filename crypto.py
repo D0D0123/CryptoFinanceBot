@@ -9,7 +9,7 @@ from discord import Embed
 from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
-from format_response import generate_basic_info, generate_extra_info, generate_supply_info, generate_crypto_link
+from format_response import generate_basic_info, generate_extra_info, generate_supply_info, generate_crypto_link, generate_all_embed
 # from database import bot_data
 
 # Maps every symbol to it's corresponding currency name
@@ -24,6 +24,7 @@ def get_total_crypto_data():
     # https://coinmarketcap.com/api/documentation/v1/#
     global crypto_map
 
+    #defining parameters for API request
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     parameters = {
     'start':'1',
@@ -39,6 +40,7 @@ def get_total_crypto_data():
     session = Session()
     session.headers.update(headers)
 
+    # receiving data
     try:
         response = session.get(url, params=parameters)
         total_data = json.loads(response.text)
@@ -88,50 +90,6 @@ bot = commands.Bot(command_prefix='!')
 client = discord.Client()
 
 '''
-Defines a 'watch' task which provides hourly updates 
-on chosen cryptocurrencies in a chosen channel, set by a user
-'''
-@tasks.loop(hours=1)
-async def crypto_update():
-    total_data = get_total_crypto_data()
-
-    for server_dict in bot_data:
-        channel = bot.get_channel(server_dict['autopost_channel'])
-        watch_list = server_dict['watch_list']
-        await channel.send("*Here's the hourly update for the following coins:*")
-        for symbol in watch_list:
-            crypto_data = get_individual_crypto_data(total_data, symbol)
-            embed_var = Embed(title=crypto_data['name'], 
-                            description=generate_basic_info(crypto_data), 
-                            color=3447003)
-            embed_var.add_field(name="Extra", 
-                                value=generate_extra_info(crypto_data), 
-                                inline=False)
-            embed_var.add_field(name="Supply", 
-                                value=generate_supply_info(crypto_data), 
-                                inline=True)
-            embed_var.add_field(name="Link", 
-                                value=generate_crypto_link(crypto_data), 
-                                inline=True)
-
-            await channel.send(embed=embed_var)
-
-        # Gets list of price_pings --> users which have chosen to be notified 
-        # when a currency goes over a particular price
-        price_pings = server_dict['price_pings']
-        for ping in price_pings:
-            crypto_data = get_individual_crypto_data(total_data, ping['currency'])
-
-            if ping['higher'] == True:
-                if crypto_data['quote']['AUD']['price'] > ping['price']:
-                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now greater than ${ping['price']}")
-
-            elif ping['higher'] == False:
-                if crypto_data['quote']['AUD']['price'] < ping['price']:
-                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now less than ${ping['price']}")
-        
-
-'''
 Displays when the bot is connected and 
 ready on console output
 '''
@@ -157,9 +115,50 @@ async def on_ready():
 
         print(f'{guild.name} (id: {guild.id})')
     
-
-    
+    update_database()
     crypto_update.start()
+
+# |-----------------------------------------------------------------------------------|
+# |-------------------------------------- TASKS --------------------------------------|
+# |-----------------------------------------------------------------------------------|
+
+'''
+Defines an 'update' task which provides hourly updates 
+on chosen cryptocurrencies in a chosen channel, set by a user
+'''
+@tasks.loop(hours=1)
+async def crypto_update():
+    total_data = get_total_crypto_data()
+
+    for server_dict in bot_data:
+        channel = bot.get_channel(server_dict['autopost_channel'])
+        watch_list = server_dict['watch_list']
+        await channel.send("*Here's the hourly update for the following coins:*")
+        # create and send an embed for each coin in the watch list
+        for symbol in watch_list:
+            crypto_data = get_individual_crypto_data(total_data, symbol)
+            embed_var = generate_all_embed(crypto_data)
+            await channel.send(embed=embed_var)
+
+        # Gets list of price_pings --> users which have chosen to be notified 
+        # when a currency goes over a particular price
+        price_pings = server_dict['price_pings']
+        for ping in price_pings:
+            crypto_data = get_individual_crypto_data(total_data, ping['currency'])
+
+            if ping['higher'] == True:
+                if crypto_data['quote']['AUD']['price'] > ping['price']:
+                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now greater than ${ping['price']}")
+
+            elif ping['higher'] == False:
+                if crypto_data['quote']['AUD']['price'] < ping['price']:
+                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now less than ${ping['price']}")
+        
+
+
+# |--------------------------------------------------------------------------------------|
+# |-------------------------------------- COMMANDS --------------------------------------|
+# |--------------------------------------------------------------------------------------|
 
 '''
 The !crypto [symbol] [param] command,
@@ -207,16 +206,20 @@ async def crypto_watch(ctx, *args):
     global crypto_map
     global bot_data
     for symb in args:
-        if symb not in crypto_map:
+        if symb not in crypto_map and args[0] != "-show":
             continue
         for obj in bot_data:
             # add the symbol to the watch list of a specific guild (or remove it)
             if obj['guild'] == ctx.message.guild.id:
 
                 if args[0] == "-show":
-                    await ctx.send(obj['watch_list'])
+                    watch_list_str = ''
+                    for symb in obj['watch_list']:
+                        watch_list_str = watch_list_str + "\n" + f"**{symb}** " + f"({crypto_map[symb]})"
+                    embed_var = Embed(title="Currency Watch List", description=watch_list_str)
+                    await ctx.send(embed=embed_var)
 
-                if args[0] == "-add":
+                elif args[0] == "-add":
                     if symb not in obj['watch_list']:
                         obj['watch_list'].append(symb)
                     await ctx.send(f"{symb} is now being watched hourly")
@@ -236,6 +239,8 @@ async def crypto_ping(ctx, *args):
     global bot_data
     
     for server_dict in bot_data:
+        # get the guild that this command was sent from, locate it's dict in bot_data 
+        # (maybe turn this into a function)
         if server_dict['guild'] == ctx.message.guild.id:
             if args[0] == "-cancel":
                 for item in server_dict['price_pings']:
@@ -278,8 +283,6 @@ async def send_crypto_list(ctx):
 @bot.command(name="debug")
 async def crypto_debug(ctx):
     await ctx.send(bot_data)
-
-
 
 # Error Handling
 @bot.event

@@ -1,9 +1,9 @@
 {
     "status": {
-        "timestamp": "2021-01-03T06:01:13.498Z",
+        "timestamp": "2021-01-03T07:00:32.206Z",
         "error_code": 0,
         "error_message": null,
-        "elapsed": 14,
+        "elapsed": 23,
         "credit_count": 1,
         "notice": null,
         "total_count": 4154
@@ -24,20 +24,20 @@
                 "state-channels"
             ],
             "max_supply": 21000000,
-            "circulating_supply": 18588968,
-            "total_supply": 18588968,
+            "circulating_supply": 18589075,
+            "total_supply": 18589075,
             "platform": null,
             "cmc_rank": 1,
-            "last_updated": "2021-01-03T06:00:02.000Z",
+            "last_updated": "2021-01-03T06:59:02.000Z",
             "quote": {
                 "AUD": {
-                    "price": 43836.70349814947,
-                    "volume_24h": 99143154774.88454,
-                    "percent_change_1h": 3.40064559,
-                    "percent_change_24h": 13.95823597,
-                    "percent_change_7d": 22.1491451,
-                    "market_cap": 814879078552.5886,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 44002.20490472129,
+                    "volume_24h": 100947779541.70125,
+                    "percent_change_1h": 2.40012288,
+                    "percent_change_24h": 13.57924027,
+                    "percent_change_7d": 21.80776488,
+                    "market_cap": 817960287139.232,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         },
@@ -54,20 +54,20 @@
                 "smart-contracts"
             ],
             "max_supply": null,
-            "circulating_supply": 114094496.874,
-            "total_supply": 114094496.874,
+            "circulating_supply": 114095515.749,
+            "total_supply": 114095515.749,
             "platform": null,
             "cmc_rank": 2,
-            "last_updated": "2021-01-03T06:00:02.000Z",
+            "last_updated": "2021-01-03T06:59:02.000Z",
             "quote": {
                 "AUD": {
-                    "price": 1021.0756791609174,
-                    "volume_24h": 30428513478.606216,
-                    "percent_change_1h": 1.34562967,
-                    "percent_change_24h": 6.85616026,
-                    "percent_change_7d": 18.22294126,
-                    "market_cap": 116499115884.14272,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 1038.246820988753,
+                    "volume_24h": 31739308988.76924,
+                    "percent_change_1h": 2.52294505,
+                    "percent_change_24h": 8.32623629,
+                    "percent_change_7d": 19.65878053,
+                    "market_cap": 118459306515.47145,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         },
@@ -95,16 +95,16 @@
                 "token_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
             },
             "cmc_rank": 3,
-            "last_updated": "2021-01-03T06:00:08.000Z",
+            "last_updated": "2021-01-03T06:59:07.000Z",
             "quote": {
                 "AUD": {
-                    "price": 1.300447204520904,
-                    "volume_24h": 124289206983.18317,
-                    "percent_change_1h": -0.19237748,
-                    "percent_change_24h": -0.75467463,
-                    "percent_change_7d": -3.08802174,
-                    "market_cap": 27737415611.363876,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 1.3003138185114473,
+                    "volume_24h": 127255106158.29085,
+                    "percent_change_1h": -0.19383934,
+                    "percent_change_24h": -0.78043896,
+                    "percent_change_7d": -3.11706586,
+                    "market_cap": 27734570602.994312,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         },
@@ -125,16 +125,16 @@
             "total_supply": 99990831162,
             "platform": null,
             "cmc_rank": 4,
-            "last_updated": "2021-01-03T06:01:02.000Z",
+            "last_updated": "2021-01-03T07:00:03.000Z",
             "quote": {
                 "AUD": {
-                    "price": 0.2875398317008472,
-                    "volume_24h": 6283994294.230044,
-                    "percent_change_1h": -0.62564705,
-                    "percent_change_24h": -6.57775845,
-                    "percent_change_7d": -27.26219998,
-                    "market_cap": 13055466753.686045,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 0.286726917583698,
+                    "volume_24h": 6324462825.819321,
+                    "percent_change_1h": -1.56995343,
+                    "percent_change_24h": -7.28475193,
+                    "percent_change_7d": -28.0259176,
+                    "market_cap": 13018557177.829145,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         },
@@ -153,20 +153,20 @@
                 "binance-chain"
             ],
             "max_supply": 84000000,
-            "circulating_supply": 66228580.41134237,
-            "total_supply": 66228580.41134237,
+            "circulating_supply": 66229142.91134237,
+            "total_supply": 66229142.91134237,
             "platform": null,
             "cmc_rank": 5,
-            "last_updated": "2021-01-03T06:01:02.000Z",
+            "last_updated": "2021-01-03T07:00:02.000Z",
             "quote": {
                 "AUD": {
-                    "price": 178.5634798741647,
-                    "volume_24h": 14364779177.779266,
-                    "percent_change_1h": 0.78050448,
-                    "percent_change_24h": 9.06476465,
-                    "percent_change_7d": -0.62640229,
-                    "market_cap": 11826005785.375233,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 182.93806420279054,
+                    "volume_24h": 15012770605.87306,
+                    "percent_change_1h": 2.62411856,
+                    "percent_change_24h": 10.91705891,
+                    "percent_change_7d": 0.92879239,
+                    "market_cap": 12115831198.01094,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         },
@@ -183,20 +183,20 @@
                 "binance-chain"
             ],
             "max_supply": null,
-            "circulating_supply": 896338385.5134426,
-            "total_supply": 1030389948.5814998,
+            "circulating_supply": 896344765.9438927,
+            "total_supply": 1030396329.0119499,
             "platform": null,
             "cmc_rank": 6,
-            "last_updated": "2021-01-03T06:01:06.000Z",
+            "last_updated": "2021-01-03T06:59:06.000Z",
             "quote": {
                 "AUD": {
-                    "price": 11.785268855578702,
-                    "volume_24h": 3661312157.446356,
-                    "percent_change_1h": 0.3109725,
-                    "percent_change_24h": 5.82793561,
-                    "percent_change_7d": 65.42717632,
-                    "market_cap": 10563588858.85127,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 12.176027276783477,
+                    "volume_24h": 3700570688.2959595,
+                    "percent_change_1h": 3.19090991,
+                    "percent_change_24h": 9.73503834,
+                    "percent_change_7d": 71.17283442,
+                    "market_cap": 10913918319.53494,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         },
@@ -218,16 +218,16 @@
             "total_supply": 18600862.5,
             "platform": null,
             "cmc_rank": 7,
-            "last_updated": "2021-01-03T06:00:07.000Z",
+            "last_updated": "2021-01-03T06:59:07.000Z",
             "quote": {
                 "AUD": {
-                    "price": 468.7373069709465,
-                    "volume_24h": 6667120275.007783,
-                    "percent_change_1h": 0.8851072,
-                    "percent_change_24h": 5.31995677,
-                    "percent_change_7d": 3.93346781,
-                    "market_cap": 8718918195.586868,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 472.7723267977975,
+                    "volume_24h": 6909963192.640219,
+                    "percent_change_1h": 0.77870725,
+                    "percent_change_24h": 5.46280581,
+                    "percent_change_7d": 4.38893509,
+                    "market_cap": 8793973044.570898,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         },
@@ -247,16 +247,16 @@
             "total_supply": 176406560.9,
             "platform": null,
             "cmc_rank": 8,
-            "last_updated": "2021-01-03T06:00:07.000Z",
+            "last_updated": "2021-01-03T06:59:06.000Z",
             "quote": {
                 "AUD": {
-                    "price": 49.17305065217101,
-                    "volume_24h": 675045501.9646713,
-                    "percent_change_1h": -0.58452902,
-                    "percent_change_24h": 0.26837454,
-                    "percent_change_7d": 7.83624496,
-                    "market_cap": 7100911133.641518,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 49.652765479659784,
+                    "volume_24h": 686238738.0025214,
+                    "percent_change_1h": 0.60444658,
+                    "percent_change_24h": 0.54356424,
+                    "percent_change_7d": 9.23988683,
+                    "market_cap": 7170185102.091909,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         },
@@ -279,16 +279,16 @@
             "total_supply": 45000000000,
             "platform": null,
             "cmc_rank": 9,
-            "last_updated": "2021-01-03T06:00:10.000Z",
+            "last_updated": "2021-01-03T06:59:08.000Z",
             "quote": {
                 "AUD": {
-                    "price": 0.22712434758896277,
-                    "volume_24h": 1812433048.7995846,
-                    "percent_change_1h": -0.14821622,
-                    "percent_change_24h": -0.54409059,
-                    "percent_change_7d": 5.86878872,
-                    "market_cap": 7066402777.094372,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 0.22952235149222594,
+                    "volume_24h": 1844237853.7318215,
+                    "percent_change_1h": 0.22006263,
+                    "percent_change_24h": -0.01164591,
+                    "percent_change_7d": 6.39438978,
+                    "market_cap": 7141010636.715695,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         },
@@ -318,16 +318,16 @@
                 "token_address": "0x514910771af9ca656af840dff83e8264ecf986ca"
             },
             "cmc_rank": 10,
-            "last_updated": "2021-01-03T06:00:09.000Z",
+            "last_updated": "2021-01-03T06:59:07.000Z",
             "quote": {
                 "AUD": {
-                    "price": 15.65906703686343,
-                    "volume_24h": 2081502204.9156525,
-                    "percent_change_1h": 0.56374735,
-                    "percent_change_24h": 1.75625433,
-                    "percent_change_7d": 5.30345063,
-                    "market_cap": 6255946926.074539,
-                    "last_updated": "2021-01-03T06:01:01.000Z"
+                    "price": 15.740817509762127,
+                    "volume_24h": 2118189511.981487,
+                    "percent_change_1h": 0.81888505,
+                    "percent_change_24h": 2.53051795,
+                    "percent_change_7d": 5.232883,
+                    "market_cap": 6288607021.240604,
+                    "last_updated": "2021-01-03T07:00:01.000Z"
                 }
             }
         }
