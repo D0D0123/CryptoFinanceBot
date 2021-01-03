@@ -69,6 +69,13 @@ def get_individual_crypto_data(total_data, query):
     print(output)
     return output
 
+'''
+updates database.json with new bot_data information
+by serialising bot_data as json and rewriting it to the file
+'''
+def update_database():
+    with open('database.json', 'w') as out:
+        out.write(json.dumps(bot_data, indent=4))
 
 # Connecting to discord
 # bot token is stored in environment variable for security reasons
@@ -88,9 +95,9 @@ on chosen cryptocurrencies in a chosen channel, set by a user
 async def crypto_update():
     total_data = get_total_crypto_data()
 
-    for obj in bot_data:
-        channel = bot.get_channel(obj['autopost_channel'])
-        watch_list = obj['watch_list']
+    for server_dict in bot_data:
+        channel = bot.get_channel(server_dict['autopost_channel'])
+        watch_list = server_dict['watch_list']
         await channel.send("*Here's the hourly update for the following coins:*")
         for symbol in watch_list:
             crypto_data = get_individual_crypto_data(total_data, symbol)
@@ -109,6 +116,20 @@ async def crypto_update():
 
             await channel.send(embed=embed_var)
 
+        # Gets list of price_pings --> users which have chosen to be notified 
+        # when a currency goes over a particular price
+        price_pings = server_dict['price_pings']
+        for ping in price_pings:
+            crypto_data = get_individual_crypto_data(total_data, ping['currency'])
+
+            if ping['higher'] == True:
+                if crypto_data['quote']['AUD']['price'] > ping['price']:
+                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now greater than ${ping['price']}")
+
+            elif ping['higher'] == False:
+                if crypto_data['quote']['AUD']['price'] < ping['price']:
+                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now less than ${ping['price']}")
+        
 
 '''
 Displays when the bot is connected and 
@@ -135,6 +156,8 @@ async def on_ready():
             })
 
         print(f'{guild.name} (id: {guild.id})')
+    
+
     
     crypto_update.start()
 
@@ -182,6 +205,7 @@ async def crypto_send(ctx, crypto_data, param=None):
 @bot.command(name="watch")
 async def crypto_watch(ctx, *args):
     global crypto_map
+    global bot_data
     for symb in args:
         if symb not in crypto_map:
             continue
@@ -200,10 +224,44 @@ async def crypto_watch(ctx, *args):
                 elif args[0] == "-remove":
                     obj['watch_list'].remove(symb)
                     await ctx.send(f"{symb} has been removed from the watchlist")
-    # updates database.json with new bot_data information
-    # by serialising bot_data as json and rewriting it to the file
-    with open('database.json', 'w') as out:
-        out.write(json.dumps(bot_data, indent=4))
+    
+    update_database()
+
+
+'''
+!ping [currency] [>] [price]
+'''
+@bot.command(name="ping")
+async def crypto_ping(ctx, *args):
+    global bot_data
+    
+    for server_dict in bot_data:
+        if server_dict['guild'] == ctx.message.guild.id:
+            if args[0] == "-cancel":
+                for item in server_dict['price_pings']:
+                    if item['user'] == ctx.message.author.id:
+                        server_dict['price_pings'].remove(item)
+                continue
+
+            symb = args[0]
+            higher = args[1]
+            price = args[2]
+            if symb not in crypto_map:
+                return
+            
+            if higher == '>':
+                higher = True
+            elif higher == '<':
+                higher = False
+            ping = {
+                'user': ctx.message.author.id,
+                'currency': symb,
+                'price': float(price),
+                'higher': higher,
+            }
+            server_dict['price_pings'].append(ping)
+
+    update_database()
 
 
 @bot.command(name="list")

@@ -1,4 +1,3 @@
-- Hourly/Daily Overall Crypto Data Updates
 - Watch for specific percentage changes/price changes for individuals
 - Visualiser --> Display Historical Data as a Graph (image sent to the server)
 - Trends -> Webscrape for top news articles for each cryptocurrency
@@ -6,3 +5,5 @@
 - Have error checking for incorrect cryptocurrency codes
 - Include last updated datetime in embed response
 - Be able to update autopost channel
+- Be able to send raw data file
+- Store API Key in .env

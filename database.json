@@ -4,8 +4,15 @@
         "autopost_channel": 793053168304783440,
         "watch_list": [
             "BTC",
-            "XRP"
+            "ETH"
         ],
-        "price_pings": []
+        "price_pings": [
+            {
+                "user": 270100069682905090,
+                "currency": "BTC",
+                "price": 10000.0,
+                "higher": true
+            }
+        ]
     }
 ]
