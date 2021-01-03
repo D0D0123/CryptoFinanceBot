@@ -102,8 +102,8 @@ async def on_ready():
 
     print(f'{bot.user.name} is connected to the following guilds:')
     for guild in bot.guilds:
-        for obj in bot_data:
-            if guild.id == obj['guild']:
+        for server_dict in bot_data:
+            if guild.id == server_dict['guild']:
                 break
         else:
             bot_data.append({
@@ -208,24 +208,24 @@ async def crypto_watch(ctx, *args):
     for symb in args:
         if symb not in crypto_map and args[0] != "-show":
             continue
-        for obj in bot_data:
+        for server_dict in bot_data:
             # add the symbol to the watch list of a specific guild (or remove it)
-            if obj['guild'] == ctx.message.guild.id:
+            if server_dict['guild'] == ctx.message.guild.id:
 
                 if args[0] == "-show":
                     watch_list_str = ''
-                    for symb in obj['watch_list']:
+                    for symb in server_dict['watch_list']:
                         watch_list_str = watch_list_str + "\n" + f"**{symb}** " + f"({crypto_map[symb]})"
                     embed_var = Embed(title="Currency Watch List", description=watch_list_str)
                     await ctx.send(embed=embed_var)
 
                 elif args[0] == "-add":
-                    if symb not in obj['watch_list']:
-                        obj['watch_list'].append(symb)
+                    if symb not in server_dict['watch_list']:
+                        server_dict['watch_list'].append(symb)
                     await ctx.send(f"{symb} is now being watched hourly")
 
                 elif args[0] == "-remove":
-                    obj['watch_list'].remove(symb)
+                    server_dict['watch_list'].remove(symb)
                     await ctx.send(f"{symb} has been removed from the watchlist")
     
     update_database()
@@ -249,20 +249,21 @@ async def crypto_ping(ctx, *args):
                 continue
 
             symb = args[0]
-            higher = args[1]
+            compare_bool = args[1]
             price = args[2]
             if symb not in crypto_map:
                 return
             
-            if higher == '>':
-                higher = True
-            elif higher == '<':
-                higher = False
+            if compare_bool == '>':
+                compare_bool = True 
+            elif compare_bool == '<':
+                compare_bool = False 
+            # generate a dict, append this to 'price_pings'
             ping = {
-                'user': ctx.message.author.id,
-                'currency': symb,
-                'price': float(price),
-                'higher': higher,
+                'user': ctx.message.author.id, # the user who wants to be notified
+                'currency': symb, # the cryptocurrency symbol
+                'price': float(price), # the value of the price
+                'higher': compare_bool, # notify if the currency price is higher/lower than the chosen price
             }
             server_dict['price_pings'].append(ping)
 
