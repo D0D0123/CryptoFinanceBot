@@ -3,7 +3,7 @@
 - Trends -> Webscrape for top news articles for each cryptocurrency
 - S&P 500 -> more bot stuff for tech stocks
 - Have error checking for incorrect cryptocurrency codes
-- Include last updated datetime in embed response
+- Include last updated datetime in embed response (make this into a function)
 - Be able to update autopost channel
-- Be able to send raw data file
 - Store API Key in .env
+- Format all price strings to have commas 

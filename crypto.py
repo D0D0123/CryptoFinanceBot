@@ -2,6 +2,7 @@ from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 from time import sleep
 import json
+from datetime import datetime
 
 import os
 import discord
@@ -68,7 +69,7 @@ def get_individual_crypto_data(total_data, query):
     else:
         print("Requested cryptocurrency not found")
     
-    print(output)
+    # print(output)
     return output
 
 '''
@@ -185,7 +186,11 @@ depending on the parameter given
 (None, -extra, -supply, -link, -all)
 '''
 async def crypto_send(ctx, crypto_data, param=None):
+    given_date_split = crypto_data['last_updated'].split(".")
+    dt_object = datetime.strptime(given_date_split[0], "%Y-%m-%dT%H:%M:%S")
+    dt_string = dt_object.strftime("%d/%m/%Y | %H:%M:%S")
     embed_var = Embed(title=crypto_data['name'], description=generate_basic_info(crypto_data), color=3447003)
+    embed_var.set_footer(text=dt_string)
     # embed_var.set_thumbnail(url="https://cdn-images-1.medium.com/max/1024/1*o4pm4QDu0cwR1XEpLdFCSw.jpeg")
     # embed_var.set_image(url="https://static.blockgeeks.com/wp-content/uploads/2019/03/image18.png")
 
@@ -280,6 +285,28 @@ async def send_crypto_list(ctx):
                       description=crypto_list, 
                       color=3447003)
     await ctx.send(embed=embed_var)
+
+@bot.command(name="post")
+async def change_autopost_channel(ctx, arg):
+    global bot_data
+    # navigate to the guild the message was sent from,
+    # change it's autopost channel
+    for server_dict in bot_data:
+        if server_dict['guild'] == ctx.message.guild.id:
+            for channel in ctx.message.guild.text_channels:
+                if arg == str(channel.id):
+                    await ctx.send(f"Automatic Posts will now go in **{bot.get_channel(channel.id).name}**")
+                    server_dict['autopost_channel'] = channel.id
+                    break
+            else:
+                await ctx.send(ctx.message.guild.text_channels)
+                await ctx.send("Not a valid channel ID")
+    
+    update_database()
+
+@bot.command(name="raw")
+async def send_raw_data(ctx):
+    await ctx.send(file=discord.File('output.log'))
 
 @bot.command(name="debug")
 async def crypto_debug(ctx):
