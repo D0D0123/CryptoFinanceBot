@@ -3,7 +3,8 @@
 - Trends -> Webscrape for top news articles for each cryptocurrency
 - S&P 500 -> more bot stuff for tech stocks
 - Have error checking for incorrect cryptocurrency codes
-- Include last updated datetime in embed response (make this into a function)
-- Be able to update autopost channel
 - Store API Key in .env
-- Format all price strings to have commas 
+- Check CoinMarketCap Docs and see if there is a better way of getting individual data
+    - Also have a Metadata endpoint
+    - Have a seperate file for API calls
+

@@ -10,12 +10,24 @@ from discord import Embed
 from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
-from format_response import generate_basic_info, generate_extra_info, generate_supply_info, generate_crypto_link, generate_all_embed
+from format_response import (generate_basic_info, generate_extra_info, generate_supply_info, generate_description, generate_crypto_links, 
+generate_embed, format_float, format_date, get_individual_crypto_metadata)
 # from database import bot_data
 
 # Maps every symbol to it's corresponding currency name
 crypto_map = {}
 bot_data = []
+
+# bot token is stored in environment variable for security reasons
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
+CMC_API_KEY = os.getenv('CMC_API_KEY')
+
+# every command must be prefixed with a !
+bot = commands.Bot(command_prefix='!')
+# Connecting to discord
+client = discord.Client()
+# GUILD = os.getenv('DISCORD_GUILD')
 
 '''
 Gets the entirety of cryptocurrency data from CoinMarketCap API
@@ -25,17 +37,17 @@ def get_total_crypto_data():
     # https://coinmarketcap.com/api/documentation/v1/#
     global crypto_map
 
-    #defining parameters for API request
+    #defining parameters for first API request - listings/latest
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     parameters = {
     'start':'1',
-    'limit':'10',
+    'limit':'20',
     'convert':'AUD'
     }
     headers = {
     'Accepts': 'application/json',
     'Accept-Encoding': 'deflate, gzip',
-    'X-CMC_PRO_API_KEY': '971768f9-fc4a-4166-9a71-249e89d36138',
+    'X-CMC_PRO_API_KEY': CMC_API_KEY,
     }
 
     session = Session()
@@ -54,7 +66,7 @@ def get_total_crypto_data():
     for obj in total_data['data']:
         crypto_map[obj["symbol"]] = obj["name"]
     print(crypto_map)
-
+    # get_total_crypto_metadata()
     return total_data
 
 '''
@@ -72,6 +84,38 @@ def get_individual_crypto_data(total_data, query):
     # print(output)
     return output
 
+def get_total_crypto_metadata():
+    #defining parameters for metadata request
+    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info'
+
+    param_symbols = []
+    for symb in crypto_map:
+        param_symbols.append(symb)
+    symbols_string = ','.join(param_symbols)
+
+    parameters = {
+    'symbol': symbols_string,
+    }
+    headers = {
+    'Accepts': 'application/json',
+    'Accept-Encoding': 'deflate, gzip',
+    'X-CMC_PRO_API_KEY': CMC_API_KEY,
+    }
+
+    session = Session()
+    session.headers.update(headers)
+
+    # receiving data
+    try:
+        response = session.get(url, params=parameters)
+        total_metadata = json.loads(response.text)
+        with open('metadata.log', 'w') as out:    # logs the entirety of each request in a file
+            out.write(json.dumps(total_metadata, indent=4))
+    except (ConnectionError, Timeout, TooManyRedirects) as e:
+        print(e)
+    
+    return total_metadata
+
 '''
 updates database.json with new bot_data information
 by serialising bot_data as json and rewriting it to the file
@@ -79,16 +123,6 @@ by serialising bot_data as json and rewriting it to the file
 def update_database():
     with open('database.json', 'w') as out:
         out.write(json.dumps(bot_data, indent=4))
-
-# Connecting to discord
-# bot token is stored in environment variable for security reasons
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD')
-
-# every command must be prefixed with a !
-bot = commands.Bot(command_prefix='!')
-client = discord.Client()
 
 '''
 Displays when the bot is connected and 
@@ -130,6 +164,7 @@ on chosen cryptocurrencies in a chosen channel, set by a user
 @tasks.loop(hours=1)
 async def crypto_update():
     total_data = get_total_crypto_data()
+    total_metadata = get_total_crypto_metadata()
 
     for server_dict in bot_data:
         channel = bot.get_channel(server_dict['autopost_channel'])
@@ -138,7 +173,8 @@ async def crypto_update():
         # create and send an embed for each coin in the watch list
         for symbol in watch_list:
             crypto_data = get_individual_crypto_data(total_data, symbol)
-            embed_var = generate_all_embed(crypto_data)
+            crypto_metadata = get_individual_crypto_metadata(total_metadata, symbol)
+            embed_var = generate_embed(crypto_data, crypto_metadata, "-supply")
             await channel.send(embed=embed_var)
 
         # Gets list of price_pings --> users which have chosen to be notified 
@@ -149,11 +185,11 @@ async def crypto_update():
 
             if ping['higher'] == True:
                 if crypto_data['quote']['AUD']['price'] > ping['price']:
-                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now greater than ${ping['price']}")
+                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now greater than ${format_float(ping['price'])}")
 
             elif ping['higher'] == False:
                 if crypto_data['quote']['AUD']['price'] < ping['price']:
-                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now less than ${ping['price']}")
+                    await channel.send(f"<@{ping['user']}>, {ping['currency']} is now less than ${format_float(ping['price'])}")
         
 
 
@@ -163,9 +199,10 @@ async def crypto_update():
 
 '''
 The !crypto [symbol] [param] command,
-which calls crypto_send() to send 
-information about a particular 
-cryptocurrency to the channel
+which sends cryptocurrency information 
+to the server, with the depth of information 
+depending on the parameter given
+(None, -extra, -supply, -link, -all)
 '''
 @bot.command(name="crypto")
 async def crypto_display(ctx, *args):
@@ -173,38 +210,17 @@ async def crypto_display(ctx, *args):
         await ctx.send("Please input a cryptocurrency code")
     else:
         total_data = get_total_crypto_data()
+        total_metadata = get_total_crypto_metadata()
         crypto_data = get_individual_crypto_data(total_data, args[0])
+        crypto_metadata = get_individual_crypto_metadata(total_metadata, args[0])
         if len(args) > 1:
-            await crypto_send(ctx, crypto_data, args[1])
+            # await crypto_send(ctx, crypto_data, args[1])
+            embed_var = generate_embed(crypto_data, crypto_metadata, args[1])
+            await ctx.send(embed=embed_var)
         else:
-            await crypto_send(ctx, crypto_data)
-
-'''
-Sends cryptocurrency information 
-to the server, with the depth of information 
-depending on the parameter given
-(None, -extra, -supply, -link, -all)
-'''
-async def crypto_send(ctx, crypto_data, param=None):
-    given_date_split = crypto_data['last_updated'].split(".")
-    dt_object = datetime.strptime(given_date_split[0], "%Y-%m-%dT%H:%M:%S")
-    dt_string = dt_object.strftime("%d/%m/%Y | %H:%M:%S")
-    embed_var = Embed(title=crypto_data['name'], description=generate_basic_info(crypto_data), color=3447003)
-    embed_var.set_footer(text=dt_string)
-    # embed_var.set_thumbnail(url="https://cdn-images-1.medium.com/max/1024/1*o4pm4QDu0cwR1XEpLdFCSw.jpeg")
-    # embed_var.set_image(url="https://static.blockgeeks.com/wp-content/uploads/2019/03/image18.png")
-
-    if param != None:
-        if param == "-extra" or param == "-all":
-            embed_var.add_field(name="Extra", value=generate_extra_info(crypto_data), inline=False)
-
-        if param == "-supply" or param == "-all":
-            embed_var.add_field(name="Supply", value=generate_supply_info(crypto_data), inline=True)
-        
-        if param == "-link" or param == "-all":
-            embed_var.add_field(name="Link", value=generate_crypto_link(crypto_data), inline=True)
-    
-    await ctx.send(embed=embed_var)
+            # await crypto_send(ctx, crypto_data)
+            embed_var = generate_embed(crypto_data, crypto_metadata)
+            await ctx.send(embed=embed_var)
 
 @bot.command(name="watch")
 async def crypto_watch(ctx, *args):
@@ -221,7 +237,7 @@ async def crypto_watch(ctx, *args):
                     watch_list_str = ''
                     for symb in server_dict['watch_list']:
                         watch_list_str = watch_list_str + "\n" + f"**{symb}** " + f"({crypto_map[symb]})"
-                    embed_var = Embed(title="Currency Watch List", description=watch_list_str)
+                    embed_var = Embed(title="Currency Watch List", description=watch_list_str, color=46797)
                     await ctx.send(embed=embed_var)
 
                 elif args[0] == "-add":
@@ -251,7 +267,22 @@ async def crypto_ping(ctx, *args):
                 for item in server_dict['price_pings']:
                     if item['user'] == ctx.message.author.id:
                         server_dict['price_pings'].remove(item)
-                continue
+                update_database()
+                break
+            
+            if args[0] == "-show":
+                ping_list = ''
+                for ping in server_dict['price_pings']:
+                    if ping['user'] == ctx.message.author.id:
+                        if ping['higher'] == True:
+                            equality = '>'
+                        elif ping['higher'] == False:
+                            equality = '<'
+                        ping_list = ping_list + "\n" + f"**{crypto_map[ping['currency']]}** {equality} ${format_float(ping['price'])}"
+                
+                embed_var = Embed(title="Your watched currencies", description=ping_list, color=46797)
+                await ctx.send(embed=embed_var)
+                break
 
             symb = args[0]
             compare_bool = args[1]
@@ -281,9 +312,9 @@ async def send_crypto_list(ctx):
     for i, key in enumerate(crypto_map):
         crypto_list = crypto_list + f"{i + 1}: " + f"**{key}** ({crypto_map[key]})" + "\n\n"
     
-    embed_var = Embed(title="Top 10 Cryptocurrencies", 
+    embed_var = Embed(title="Top 20 Cryptocurrencies", 
                       description=crypto_list, 
-                      color=3447003)
+                      color=46797)
     await ctx.send(embed=embed_var)
 
 @bot.command(name="post")
@@ -295,9 +326,10 @@ async def change_autopost_channel(ctx, arg):
         if server_dict['guild'] == ctx.message.guild.id:
             for channel in ctx.message.guild.text_channels:
                 if arg == str(channel.id):
-                    await ctx.send(f"Automatic Posts will now go in **{bot.get_channel(channel.id).name}**")
+                    await ctx.send(f"Automated posts will now go in **{bot.get_channel(channel.id).name}**")
                     server_dict['autopost_channel'] = channel.id
                     break
+            # if given channel id does not match any existing channel id
             else:
                 await ctx.send(ctx.message.guild.text_channels)
                 await ctx.send("Not a valid channel ID")

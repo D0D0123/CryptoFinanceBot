@@ -5,13 +5,6 @@
         "watch_list": [
             "ETH"
         ],
-        "price_pings": [
-            {
-                "user": 270100069682905090,
-                "currency": "BTC",
-                "price": 10000.0,
-                "higher": true
-            }
-        ]
+        "price_pings": []
     }
 ]
