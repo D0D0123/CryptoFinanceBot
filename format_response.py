@@ -62,8 +62,29 @@ def generate_supply_info(crypto_data):
 def generate_description(crypto_metadata):
     return crypto_metadata['description']
 
-def generate_crypto_links(crypto_data):
-    return f"https://coinmarketcap.com/currencies/{crypto_data['name']}"
+def generate_crypto_links(crypto_metadata):
+    links_data = crypto_metadata['urls']
+    website, twitter, reddit, tech_doc, src_code = None, None, None, None, None
+    if links_data['website']:
+        website = links_data['website'][0]
+    if links_data['twitter']:
+        twitter = links_data['twitter'][0]
+    if links_data['reddit']:
+        reddit = links_data['reddit'][0]
+    if links_data['technical_doc']:
+        tech_doc = links_data['technical_doc'][0]
+    if links_data['source_code']:
+        src_code = links_data['source_code'][0]
+    
+    links_string = f"""
+ » **Website:** {website}
+ » **Twitter:** {twitter}
+ » **Reddit:** {reddit}
+ » **Technical Document:** {tech_doc}
+ » **Source Code:** {src_code}
+ » **CMC:** https://coinmarketcap.com/currencies/{crypto_metadata['name']}
+"""
+    return links_string
 
 def generate_embed(crypto_data, crypto_metadata, param=None):
     embed_var = Embed(title=f"{crypto_data['name']} ({crypto_data['symbol']})", description=generate_basic_info(crypto_data), color=46797)
@@ -81,8 +102,8 @@ def generate_embed(crypto_data, crypto_metadata, param=None):
         if param == "-about" or param == "-all":
             embed_var.add_field(name="Description", value=generate_description(crypto_metadata), inline=False)
         
-        if param == "-link" or param == "-all":
-            embed_var.add_field(name="Link", value=generate_crypto_links(crypto_data), inline=True)
+        if param == "-links" or param == "-all":
+            embed_var.add_field(name="Links", value=generate_crypto_links(crypto_metadata), inline=True)
 
     return embed_var
 
