@@ -174,7 +174,7 @@ async def crypto_update():
         for symbol in watch_list:
             crypto_data = get_individual_crypto_data(total_data, symbol)
             crypto_metadata = get_individual_crypto_metadata(total_metadata, symbol)
-            embed_var = generate_embed(crypto_data, crypto_metadata, "-supply")
+            embed_var = generate_embed(crypto_data, crypto_metadata, "-extra")
             await channel.send(embed=embed_var)
 
         # Gets list of price_pings --> users which have chosen to be notified 

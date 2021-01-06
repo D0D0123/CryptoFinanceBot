@@ -6,8 +6,11 @@ The following functions generate and return formatted strings
 for different chunks of cryptocurrency information
 '''
 
-def format_float(number):
-    return str('{:,.2f}'.format(number))
+def format_float(number, dp=2):
+    if dp == 2:
+        return str('{:,.2f}'.format(number))
+    elif dp == 0:
+        return str('{:,.0f}'.format(number))
 
 def format_date(given_date):
     given_date_split = given_date.split(".")
@@ -37,7 +40,7 @@ def generate_extra_info(crypto_data):
     change_7d = format_float(crypto_data['quote']['AUD']['percent_change_7d'])
     
     extra_info = f"""
-**Volume Traded Last 24 Hours**: {volume_24h}
+**Volume Traded Last 24 Hours**: ${volume_24h}
 **Percent Change Last 1 Hour**: {change_1h}% 
 **Percent Change Last 24 Hours**: {change_24h}%
 **Percent Change Last 7 Days**: {change_7d}%
@@ -48,9 +51,9 @@ def generate_supply_info(crypto_data):
     if crypto_data['max_supply'] == None:
         max_supply = None
     else:
-        max_supply = str( '{:,.0f}'.format(crypto_data['max_supply']) )
-    circulating_supply = str( '{:,.0f}'.format(crypto_data['circulating_supply']) )
-    total_supply = str( '{:,.0f}'.format(crypto_data['total_supply']) )
+        max_supply = format_float(crypto_data['max_supply'], 0)
+    circulating_supply = format_float(crypto_data['circulating_supply'], 0)
+    total_supply = format_float(crypto_data['total_supply'], 0)
 
     supply_info = f"""
 **Max Supply**: {max_supply}
@@ -82,7 +85,7 @@ def generate_crypto_links(crypto_metadata):
  » **Reddit:** {reddit}
  » **Technical Document:** {tech_doc}
  » **Source Code:** {src_code}
- » **CMC:** https://coinmarketcap.com/currencies/{crypto_metadata['name']}
+ » **CMC:** https://coinmarketcap.com/currencies/{crypto_metadata['name'].replace(" ", "-")}
 """
     return links_string
 
@@ -100,7 +103,7 @@ def generate_embed(crypto_data, crypto_metadata, param=None):
             embed_var.add_field(name="Supply", value=generate_supply_info(crypto_data), inline=True)
         
         if param == "-about" or param == "-all":
-            embed_var.add_field(name="Description", value=generate_description(crypto_metadata), inline=False)
+            embed_var.add_field(name="About", value=generate_description(crypto_metadata), inline=False)
         
         if param == "-links" or param == "-all":
             embed_var.add_field(name="Links", value=generate_crypto_links(crypto_metadata), inline=True)
