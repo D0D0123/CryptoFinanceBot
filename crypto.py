@@ -11,7 +11,7 @@ from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
 from format_response import (generate_basic_info, generate_extra_info, generate_supply_info, generate_description, generate_crypto_links, 
-generate_embed, format_float, format_date, get_individual_crypto_metadata)
+generate_embed, format_float, format_date, get_individual_crypto_metadata, generate_about_info)
 # from database import bot_data
 
 # Maps every symbol to it's corresponding currency name
@@ -305,6 +305,19 @@ async def crypto_ping(ctx, *args):
 
     update_database()
 
+@bot.command(name="about")
+async def send_about(ctx, arg):
+    if arg:
+        if arg in crypto_map:
+            about_infos = generate_about_info(crypto_map[arg])
+            await ctx.send(about_infos[0])
+            await ctx.send(about_infos[1])
+            await ctx.send(about_infos[2])
+        else:
+            await ctx.send("Please input a valid cryptocurrency code")
+    else:
+        await ctx.send("Please input a valid cryptocurrency code")
+    
 
 @bot.command(name="list")
 async def send_crypto_list(ctx):

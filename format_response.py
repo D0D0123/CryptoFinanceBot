@@ -1,5 +1,6 @@
 from discord import Embed
 from datetime import datetime
+from webscraper import get_about_info
 
 '''
 The following functions generate and return formatted strings 
@@ -102,13 +103,35 @@ def generate_embed(crypto_data, crypto_metadata, param=None):
         if param == "-supply" or param == "-all":
             embed_var.add_field(name="Supply", value=generate_supply_info(crypto_data), inline=True)
         
-        if param == "-about" or param == "-all":
-            embed_var.add_field(name="About", value=generate_description(crypto_metadata), inline=False)
+        # if param == "-about" or param == "-all":
+        #     embed_var.add_field(name="About", value=generate_about_info(embed_var, crypto_data['name']), inline=False)
         
         if param == "-links" or param == "-all":
             embed_var.add_field(name="Links", value=generate_crypto_links(crypto_metadata), inline=True)
 
     return embed_var
 
+def generate_about_info(crypto_name):
+    headings_content = get_about_info(crypto_name)
+    about_info_1 = f"""
+**{headings_content[0]}**
 
+{headings_content[1]}
+
+"""
+
+    about_info_2 = f"""
+**{headings_content[2]}**
+
+{headings_content[3]}
+
+"""
+
+    about_info_3 = f"""
+**{headings_content[4]}**
+
+{headings_content[5]}
+
+"""
+    return (about_info_1, about_info_2, about_info_3)
 
