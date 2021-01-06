@@ -90,7 +90,7 @@ def generate_crypto_links(crypto_metadata):
     return links_string
 
 def generate_embed(crypto_data, crypto_metadata, param=None):
-    embed_var = Embed(title=f"{crypto_data['name']} ({crypto_data['symbol']})", description=generate_basic_info(crypto_data), color=46797)
+    embed_var = Embed(title=f"{crypto_data['name']} ({crypto_data['symbol']})", description=generate_basic_info(crypto_data), color=16736330)
     embed_var.set_footer(text=f"{format_date(crypto_data['last_updated'])} GMT")
     embed_var.set_thumbnail(url=crypto_metadata['logo'])
     # embed_var.set_image(url="https://static.blockgeeks.com/wp-content/uploads/2019/03/image18.png")

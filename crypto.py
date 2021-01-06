@@ -237,7 +237,7 @@ async def crypto_watch(ctx, *args):
                     watch_list_str = ''
                     for symb in server_dict['watch_list']:
                         watch_list_str = watch_list_str + "\n" + f"**{symb}** " + f"({crypto_map[symb]})"
-                    embed_var = Embed(title="Currency Watch List", description=watch_list_str, color=46797)
+                    embed_var = Embed(title="Currency Watch List", description=watch_list_str, color=16736330)
                     await ctx.send(embed=embed_var)
 
                 elif args[0] == "-add":
@@ -280,7 +280,7 @@ async def crypto_ping(ctx, *args):
                             equality = '<'
                         ping_list = ping_list + "\n" + f"**{crypto_map[ping['currency']]}** {equality} ${format_float(ping['price'])}"
                 
-                embed_var = Embed(title="Your watched currencies", description=ping_list, color=46797)
+                embed_var = Embed(title="Your watched currencies", description=ping_list, color=16736330)
                 await ctx.send(embed=embed_var)
                 break
 
@@ -314,7 +314,7 @@ async def send_crypto_list(ctx):
     
     embed_var = Embed(title="Top 20 Cryptocurrencies", 
                       description=crypto_list, 
-                      color=46797)
+                      color=16736330)
     await ctx.send(embed=embed_var)
 
 @bot.command(name="post")
