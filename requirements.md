@@ -1,0 +1,4 @@
+ - Beautiful Soup
+ - lxml
+ - discord.py
+ - requests

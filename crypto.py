@@ -11,7 +11,7 @@ from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
 from format_response import (generate_basic_info, generate_extra_info, generate_supply_info, generate_description, generate_crypto_links, 
-generate_embed, format_float, format_date, get_individual_crypto_metadata, generate_about_embed)
+generate_embed, format_float, format_date, get_individual_crypto_metadata, generate_about_embed, generate_news_embed)
 # from database import bot_data
 
 # Maps every symbol to it's corresponding currency name
@@ -308,6 +308,18 @@ async def crypto_ping(ctx, *args):
 @bot.command(name="about")
 async def send_about_info(ctx, arg):
     await ctx.send(embed=generate_about_embed(crypto_map[arg]))
+
+@bot.command(name="news")
+async def send_news_info(ctx, *args):
+    if len(args) == 1:
+        await ctx.send(embed=generate_news_embed(crypto_map[args[0]]))
+    elif len(args) == 0:
+        await ctx.send("Please input a query")
+    
+    if args[-1] == "-general":
+        query_string = " ".join(args[:-1])
+        await ctx.send(embed=generate_news_embed(query_string))
+
 
 @bot.command(name="list")
 async def send_crypto_list(ctx):

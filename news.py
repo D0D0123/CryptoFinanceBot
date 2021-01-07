@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
+import json
 
 
 def get_about_info(crypto_name):
@@ -20,9 +21,32 @@ def get_about_info(crypto_name):
     # print(what_is_content[0])
     return what_is_content[0].replace(".", ". ")
 
+def get_news(query_string):
+    # https://contextualweb.io/news-api/
+    url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI"
 
+    querystring = {"q":query_string,"pageNumber":"1","pageSize":"10","autoCorrect":"true","fromPublishedDate":"null","toPublishedDate":"null"}
 
+    headers = {
+        'x-rapidapi-key': "88e966ea0cmsha786e4c465f62f1p14c61bjsn7b83615c8d96",
+        'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
+        }
 
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    news_data = json.loads(response.text)
+    with open('news.log', 'w') as news_file:
+        news_file.write(json.dumps(news_data, indent=4))
+    
+    return news_data['value']
+
+# def get_news(crypto_name):
+#     news_html = requests.get(f"https://www.google.com/search?q={crypto_name}&tbm=nws").text
+#     soup = BeautifulSoup(news_html, 'lxml')
+#     # print(soup.prettify())
+#     headings = soup.find_all('div', 'dbsr')
+#     print(headings)
+
+# get_news('bitcoin')
 
 # def get_about_info(crypto_name):
 #     crypto_html = requests.get(f"https://coinmarketcap.com/currencies/{crypto_name}").text

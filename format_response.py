@@ -1,12 +1,11 @@
 from discord import Embed
 from datetime import datetime
-from webscraper import get_about_info
+from news import get_about_info, get_news
 
 '''
 The following functions generate and return formatted strings 
 for different chunks of cryptocurrency information
 '''
-
 def format_float(number, dp=2):
     if dp == 2:
         return str('{:,.2f}'.format(number))
@@ -111,4 +110,16 @@ def generate_embed(crypto_data, crypto_metadata, param=None):
 def generate_about_embed(crypto_name):
     about_info = get_about_info(crypto_name)
     embed_var = Embed(title=f"About {crypto_name}", description=about_info, color=16736330)
+    return embed_var
+
+def generate_news_embed(query_string):
+    total_news_data = get_news(query_string)
+    embed_var = Embed(title=f"{query_string} News", color=16736330)
+    for i, news in enumerate(total_news_data):
+        description = news['description'].split(".")[0]
+        provider_date = f"*{news['provider']['name']} | {format_date(news['datePublished'])}*"
+        embed_var.add_field(name=f"{i + 1}. **{news['title']}**",  
+                            value=f"[{description}]({news['url']})" + '\n' + '\n' + provider_date + '\n' + '\n',
+                            inline=True)
+
     return embed_var
