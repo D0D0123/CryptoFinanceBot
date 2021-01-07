@@ -9,4 +9,5 @@
     - Have a seperate file for API calls
 
 - Maybe use the wikipedia API for about info?? 
+- Include market cap in !list
 

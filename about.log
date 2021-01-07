@@ -1,0 +1,29 @@
+{
+    "@context": {
+        "@vocab": "http://schema.org/",
+        "resultScore": "goog:resultScore",
+        "EntitySearchResult": "goog:EntitySearchResult",
+        "detailedDescription": "goog:detailedDescription",
+        "goog": "http://schema.googleapis.com/",
+        "kg": "http://g.co/kg"
+    },
+    "@type": "ItemList",
+    "itemListElement": [
+        {
+            "@type": "EntitySearchResult",
+            "result": {
+                "name": "Tether",
+                "@type": [
+                    "Thing"
+                ],
+                "@id": "kg:/g/11f31p2h9x",
+                "detailedDescription": {
+                    "url": "https://en.wikipedia.org/wiki/Tether_(cryptocurrency)",
+                    "license": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License",
+                    "articleBody": "Tether is a controversial cryptocurrency with tokens issued by Tether Limited. It formerly claimed that each token was backed by one United States dollar, but on 14 March 2019 changed the backing to include loans to affiliate companies. "
+                }
+            },
+            "resultScore": 4055.41845703125
+        }
+    ]
+}

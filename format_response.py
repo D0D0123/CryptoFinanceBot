@@ -109,7 +109,8 @@ def generate_embed(crypto_data, crypto_metadata, param=None):
 
 def generate_about_embed(crypto_name):
     about_info = get_about_info(crypto_name)
-    embed_var = Embed(title=f"About {crypto_name}", description=about_info, color=16736330)
+    embed_var = Embed(title=f"About {crypto_name}", description=about_info['articleBody'], color=16736330)
+    embed_var.add_field(name='Link', value=about_info['url'])
     return embed_var
 
 def generate_news_embed(query_string):

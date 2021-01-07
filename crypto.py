@@ -152,6 +152,7 @@ async def on_ready():
     
     update_database()
     crypto_update.start()
+    # crypto_news_update.start()
 
 # |-----------------------------------------------------------------------------------|
 # |-------------------------------------- TASKS --------------------------------------|
@@ -192,6 +193,11 @@ async def crypto_update():
                     await channel.send(f"<@{ping['user']}>, {ping['currency']} is now less than ${format_float(ping['price'])}")
         
 
+@tasks.loop(hours=8)
+async def crypto_news_update():
+    for server_dict in bot_data:
+        channel = bot.get_channel(server_dict['autopost_channel'])
+        await channel.send(embed=generate_news_embed("Cryptocurrency"))
 
 # |--------------------------------------------------------------------------------------|
 # |-------------------------------------- COMMANDS --------------------------------------|
