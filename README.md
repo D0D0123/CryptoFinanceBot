@@ -1,6 +1,8 @@
 # CryptoBot
 
-[logo](media/proper-logo-3-filled.png)
+<p align="center">
+  <img src="media/proper-logo-3-filled.png" />
+</p>
 
 ## Introduction
 
