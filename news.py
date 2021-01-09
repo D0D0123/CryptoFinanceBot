@@ -19,7 +19,7 @@ def get_about_info(crypto_name):
     print(crypto_name)
     google_data = json.loads(response.text)
 
-    with open('about.log', 'w') as about_file:
+    with open('logs/about.log', 'w') as about_file:
         about_file.write(json.dumps(google_data, indent=4))
     
     # print(google_data['itemListElement'][0]['result']['detailedDescription'])
@@ -60,22 +60,13 @@ def get_news(query_string):
 
     response = requests.request("GET", url, headers=headers, params=querystring)
     news_data = json.loads(response.text)
-    with open('news.log', 'w') as news_file:
+    with open('logs/news.log', 'w') as news_file:
         news_file.write(json.dumps(news_data, indent=4))
     
     return news_data['value']
 
 
 # ----------------------------------------------------------------------------------------------
-
-# def get_news(crypto_name):
-#     news_html = requests.get(f"https://www.google.com/search?q={crypto_name}&tbm=nws").text
-#     soup = BeautifulSoup(news_html, 'lxml')
-#     # print(soup.prettify())
-#     headings = soup.find_all('div', 'dbsr')
-#     print(headings)
-
-# get_news('bitcoin')
 
 # def get_about_info(crypto_name):
 #     crypto_html = requests.get(f"https://coinmarketcap.com/currencies/{crypto_name}").text

@@ -18,9 +18,6 @@ def format_date(given_date):
     dt_string = dt_object.strftime("%d/%m/%Y | %H:%M:%S")
     return dt_string
 
-def get_individual_crypto_metadata(total_crypto_metadata, symb):
-    return total_crypto_metadata['data'][symb]
-
 def generate_basic_info(crypto_data):
     if crypto_data['platform'] == None:
         platform = "None"
@@ -54,8 +51,10 @@ def generate_supply_info(crypto_data):
         max_supply = format_float(crypto_data['max_supply'], 0)
     circulating_supply = format_float(crypto_data['circulating_supply'], 0)
     total_supply = format_float(crypto_data['total_supply'], 0)
+    market_cap = format_float(crypto_data['quote']['AUD']['market_cap'], 0)
 
     supply_info = f"""
+**Market Cap**: ${market_cap}
 **Max Supply**: {max_supply}
 **Circulating Supply**: {circulating_supply}
 **Total Supply**: {total_supply}
@@ -107,16 +106,18 @@ def generate_embed(crypto_data, crypto_metadata, param=None):
 
     return embed_var
 
-def generate_about_embed(crypto_name):
+def generate_about_embed(crypto_name, crypto_metadata):
     about_info = get_about_info(crypto_name)
     embed_var = Embed(title=f"About {crypto_name}", description=about_info['articleBody'], color=16736330)
-    embed_var.add_field(name='Link', value=about_info['url'])
+    embed_var.add_field(name='Read More:', value=about_info['url'], inline=False)
+    embed_var.add_field(name='Links', value=generate_crypto_links(crypto_metadata), inline=False)
+
     return embed_var
 
 def generate_news_embed(query_string):
     total_news_data = get_news(query_string)
     embed_var = Embed(title=f"{query_string} News", color=16736330)
-    for i, news in enumerate(total_news_data):
+    for i, news in enumerate(total_news_data[:-1]):
         description = news['description'].split(".")[0]
         provider_date = f"*{news['provider']['name']} | {format_date(news['datePublished'])}*"
         embed_var.add_field(name=f"{i + 1}. **{news['title']}**",  
