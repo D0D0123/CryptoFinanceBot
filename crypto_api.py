@@ -1,3 +1,8 @@
+'''
+The following functions call the CoinMarketCap API
+for market data and metadata on cryptocurrencies.
+'''
+
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
@@ -47,7 +52,7 @@ def get_total_crypto_data():
     # filling in crypto_map
     for obj in total_data['data']:
         crypto_map[obj["symbol"]] = obj["name"]
-    print(crypto_map)
+    # print(crypto_map)
     # get_total_crypto_metadata()
     return total_data
 
@@ -74,6 +79,7 @@ def get_total_crypto_metadata():
     #defining parameters for metadata request
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info'
 
+    # makes a list of symbols from the ones in crypto_map
     param_symbols = []
     for symb in crypto_map:
         param_symbols.append(symb)

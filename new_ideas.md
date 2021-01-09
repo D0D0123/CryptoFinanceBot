@@ -6,5 +6,5 @@
     - Have a seperate file for API calls
 
 - Include market cap in !list
-- Add a 'Links' section to the About embed (with more than just the wiki link)
-
+- Add the ability to change what news is tracked every 8 hours
+- Make the error messages more helpful

@@ -1,29 +1,30 @@
 {
     "@context": {
-        "kg": "http://g.co/kg",
         "resultScore": "goog:resultScore",
-        "@vocab": "http://schema.org/",
-        "EntitySearchResult": "goog:EntitySearchResult",
         "detailedDescription": "goog:detailedDescription",
+        "kg": "http://g.co/kg",
+        "EntitySearchResult": "goog:EntitySearchResult",
+        "@vocab": "http://schema.org/",
         "goog": "http://schema.googleapis.com/"
     },
     "@type": "ItemList",
     "itemListElement": [
         {
             "result": {
-                "@type": [
-                    "Thing"
-                ],
-                "@id": "kg:/m/05p0rrx",
-                "description": "Currency",
-                "name": "Bitcoin",
+                "description": "Coin",
                 "detailedDescription": {
-                    "url": "https://en.wikipedia.org/wiki/Bitcoin",
                     "license": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License",
-                    "articleBody": "Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto and started in 2009 when its implementation was released as open-source software.\n"
-                }
+                    "url": "https://en.wikipedia.org/wiki/Monero",
+                    "articleBody": "Monero is a privacy-focused cryptocurrency released in 2014. It is an open-source protocol based on CryptoNote. It uses an obfuscated public ledger, meaning anyone can send or broadcast transactions, but no outside observer can tell the source, amount, or destination. "
+                },
+                "@type": [
+                    "Thing",
+                    "SoftwareApplication"
+                ],
+                "@id": "kg:/m/0130q41b",
+                "name": "Monero"
             },
-            "resultScore": 26698.26171875,
+            "resultScore": 2642.067138671875,
             "@type": "EntitySearchResult"
         }
     ]

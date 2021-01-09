@@ -2,7 +2,24 @@
     {
         "guild": 793053167842754580,
         "autopost_channel": 793053168304783440,
-        "watch_list": [],
-        "price_pings": []
+        "watch_list": [
+            "ETH",
+            "BTC",
+            "USDT"
+        ],
+        "price_pings": [
+            {
+                "user": 270100069682905090,
+                "currency": "BTC",
+                "price": 40000.0,
+                "higher": false
+            },
+            {
+                "user": 270100069682905090,
+                "currency": "BTC",
+                "price": 50000.0,
+                "higher": true
+            }
+        ]
     }
 ]

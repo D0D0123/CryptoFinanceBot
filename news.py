@@ -1,9 +1,17 @@
+'''
+The following functions call either the Google Knowledge Graph API
+or the ContextualWeb News API for information and news about cryptocurrencies.
+'''
+
 from bs4 import BeautifulSoup
 import requests
 import re
 import json
 
-
+'''
+Requests and receives knowledge graph data for a particular cryptocurrency 
+using the google API. Deserialises the recieved JSON, and returns a section of this. 
+'''
 def get_about_info(crypto_name):
     # https://developers.google.com/knowledge-graph/?hl=en_US
     url = f"https://kgsearch.googleapis.com/v1/entities:search"
@@ -16,7 +24,6 @@ def get_about_info(crypto_name):
     }
 
     response = requests.request("GET", url, params=parameters)
-    print(crypto_name)
     google_data = json.loads(response.text)
 
     with open('logs/about.log', 'w') as about_file:
@@ -25,21 +32,12 @@ def get_about_info(crypto_name):
     # print(google_data['itemListElement'][0]['result']['detailedDescription'])
     return google_data['itemListElement'][0]['result']['detailedDescription']
 
-# get_about_info('Bitcoin')
 
-# def get_about_info(crypto_name):
-#     url = f"https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles={crypto_name}"
-#     response = requests.request("GET", url)
-#     wiki_data = json.loads(response.text)
-
-#     with open('about.log', 'w') as about_file:
-#         about_file.write(json.dumps(wiki_data, indent=4))
-    
-#     page_id = next(iter(wiki_data['query']['pages']))
-#     wiki_intro = wiki_data['query']['pages'][page_id]['extract']
-#     # print(wiki_data['query']['pages'][page_id]['extract'])
-#     return wiki_intro
-
+'''
+Requests and recieves the news data for a particular query
+from the ContextualWeb News API. Deserialises the recieved JSON
+and returns a section of this.
+'''
 def get_news(query_string):
     # https://contextualweb.io/news-api/
     url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI"
@@ -66,7 +64,32 @@ def get_news(query_string):
     return news_data['value']
 
 
+
+
+
+
+
+
+
+
+
+
 # ----------------------------------------------------------------------------------------------
+
+# get_about_info('Bitcoin')
+
+# def get_about_info(crypto_name):
+#     url = f"https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles={crypto_name}"
+#     response = requests.request("GET", url)
+#     wiki_data = json.loads(response.text)
+
+#     with open('about.log', 'w') as about_file:
+#         about_file.write(json.dumps(wiki_data, indent=4))
+    
+#     page_id = next(iter(wiki_data['query']['pages']))
+#     wiki_intro = wiki_data['query']['pages'][page_id]['extract']
+#     # print(wiki_data['query']['pages'][page_id]['extract'])
+#     return wiki_intro
 
 # def get_about_info(crypto_name):
 #     crypto_html = requests.get(f"https://coinmarketcap.com/currencies/{crypto_name}").text

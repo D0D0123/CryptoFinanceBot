@@ -1,10 +1,16 @@
+'''
+The following functions generate and return formatted strings 
+for different chunks of cryptocurrency information.
+'''
+
 from discord import Embed
 from datetime import datetime
 from news import get_about_info, get_news
 
+
 '''
-The following functions generate and return formatted strings 
-for different chunks of cryptocurrency information
+Formats floating point numbers to have commas, 
+to either 2 decimal places or none
 '''
 def format_float(number, dp=2):
     if dp == 2:
@@ -12,6 +18,10 @@ def format_float(number, dp=2):
     elif dp == 0:
         return str('{:,.0f}'.format(number))
 
+'''
+Formats the date recieved from an API request
+(given in the form yyyy-mm-ddThh:mm:ss.???Z)
+'''
 def format_date(given_date):
     given_date_split = given_date.split(".")
     dt_object = datetime.strptime(given_date_split[0], "%Y-%m-%dT%H:%M:%S")
@@ -67,6 +77,7 @@ def generate_description(crypto_metadata):
 def generate_crypto_links(crypto_metadata):
     links_data = crypto_metadata['urls']
     website, twitter, reddit, tech_doc, src_code = None, None, None, None, None
+    # if any of these strings don't exist, default them to None
     if links_data['website']:
         website = links_data['website'][0]
     if links_data['twitter']:
@@ -88,6 +99,10 @@ def generate_crypto_links(crypto_metadata):
 """
     return links_string
 
+'''
+Generates and returns the embed containing the overall economic information for a particular cryptocurrency.
+It takes in one of a few parameters (None, -extra, -supply, -links, -all) and adds certain fields accordingly.
+'''
 def generate_embed(crypto_data, crypto_metadata, param=None):
     embed_var = Embed(title=f"{crypto_data['name']} ({crypto_data['symbol']})", description=generate_basic_info(crypto_data), color=16736330)
     embed_var.set_footer(text=f"{format_date(crypto_data['last_updated'])} GMT")
@@ -106,6 +121,10 @@ def generate_embed(crypto_data, crypto_metadata, param=None):
 
     return embed_var
 
+'''
+Generates and returns the embed containing descriptive information about 
+a particular cryptocurrency, as well as links
+'''
 def generate_about_embed(crypto_name, crypto_metadata):
     about_info = get_about_info(crypto_name)
     embed_var = Embed(title=f"About {crypto_name}", description=about_info['articleBody'], color=16736330)
@@ -114,10 +133,14 @@ def generate_about_embed(crypto_name, crypto_metadata):
 
     return embed_var
 
+'''
+Generates and returns the embed containing news for a particular topic
+'''
 def generate_news_embed(query_string):
     total_news_data = get_news(query_string)
     embed_var = Embed(title=f"{query_string} News", color=16736330)
     for i, news in enumerate(total_news_data[:-1]):
+        # only include the first sentence of the article for brevity
         description = news['description'].split(".")[0]
         provider_date = f"*{news['provider']['name']} | {format_date(news['datePublished'])}*"
         embed_var.add_field(name=f"{i + 1}. **{news['title']}**",  

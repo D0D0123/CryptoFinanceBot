@@ -1,3 +1,8 @@
+'''
+This is the main file for the Cryptocurrency Bot application. 
+Run python crypto.py to start up the bot.
+'''
+
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 from time import sleep
@@ -187,7 +192,7 @@ async def crypto_watch(ctx, *args):
                     watch_list_str = ''
                     for symbol in server_dict['watch_list']:
                         watch_list_str = watch_list_str + "\n" + f"**{symbol}** " + f"({crypto_map[symbol]})"
-                    embed_var = Embed(title="Currency Watch List", description=watch_list_str, color=16736330)
+                    embed_var = Embed(title="Cryptocurrency Watch List", description=watch_list_str, color=16736330)
                     await ctx.send(embed=embed_var)
 
                 elif args[0] == "-add":
@@ -239,7 +244,7 @@ async def crypto_ping(ctx, *args):
                             equality = '<'
                         ping_list = ping_list + "\n" + f"**{crypto_map[ping['currency']]}** {equality} ${format_float(ping['price'])}"
                 
-                embed_var = Embed(title="Your watched currencies", description=ping_list, color=16736330)
+                embed_var = Embed(title="Your watched cryptocurrencies", description=ping_list, color=16736330)
                 await ctx.send(embed=embed_var)
                 break
 
@@ -261,6 +266,7 @@ async def crypto_ping(ctx, *args):
                 'higher': compare_bool, # notify if the currency price is higher/lower than the chosen price
             }
             server_dict['price_pings'].append(ping)
+            await ctx.send("Notification list updated successfully")
 
     update_database()
 
