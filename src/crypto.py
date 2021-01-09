@@ -357,8 +357,8 @@ Sends the raw market data and metadata for the last !crypto call
 '''
 @bot.command(name="raw")
 async def send_raw_data(ctx):
-    await ctx.send(file=discord.File('logs/market.log'))
-    await ctx.send(file=discord.File('logs/metadata.log'))
+    await ctx.send(file=discord.File('../logs/market.log'))
+    await ctx.send(file=discord.File('../logs/metadata.log'))
 
 @bot.command(name="debug")
 async def crypto_debug(ctx):
@@ -368,7 +368,7 @@ async def crypto_debug(ctx):
 @bot.event
 async def on_error(event, *args, **kwargs):
     # output error to err.log file
-    with open('err.log', 'a') as f:
+    with open('../logs/err.log', 'a') as f:
         if event == 'on_message':
             f.write(f'Unhandled message: {args[0]}\n')
         else:

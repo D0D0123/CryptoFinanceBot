@@ -21,5 +21,20 @@
                 "higher": true
             }
         ]
+    },
+    {
+        "guild": 797369984783220777,
+        "autopost_channel": 797369984783220780,
+        "watch_list": [
+            "BTC"
+        ],
+        "price_pings": [
+            {
+                "user": 270100069682905090,
+                "currency": "ETH",
+                "price": 2000.0,
+                "higher": true
+            }
+        ]
     }
 ]

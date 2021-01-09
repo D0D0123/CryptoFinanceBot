@@ -1,30 +1,29 @@
 {
     "@context": {
-        "resultScore": "goog:resultScore",
         "detailedDescription": "goog:detailedDescription",
+        "goog": "http://schema.googleapis.com/",
         "kg": "http://g.co/kg",
-        "EntitySearchResult": "goog:EntitySearchResult",
+        "resultScore": "goog:resultScore",
         "@vocab": "http://schema.org/",
-        "goog": "http://schema.googleapis.com/"
+        "EntitySearchResult": "goog:EntitySearchResult"
     },
     "@type": "ItemList",
     "itemListElement": [
         {
             "result": {
-                "description": "Coin",
+                "name": "Ethereum",
+                "@id": "kg:/m/0108bn2x",
                 "detailedDescription": {
+                    "url": "https://en.wikipedia.org/wiki/Ethereum",
                     "license": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License",
-                    "url": "https://en.wikipedia.org/wiki/Monero",
-                    "articleBody": "Monero is a privacy-focused cryptocurrency released in 2014. It is an open-source protocol based on CryptoNote. It uses an obfuscated public ledger, meaning anyone can send or broadcast transactions, but no outside observer can tell the source, amount, or destination. "
+                    "articleBody": "Ethereum is a decentralized, open-source blockchain featuring smart contract functionality. Ether is the native cryptocurrency of the platform. It is the second-largest cryptocurrency by market capitalization, after Bitcoin. Ethereum is the most actively used blockchain.\nEthereum was proposed in 2013 by programmer Vitalik Buterin. Development was crowdfunded in 2014, and the network went live on 30 July 2015, with 72 million coins premined. The Ethereum Virtual Machine can execute Turing-complete scripts and run decentralized applications. Ethereum is used for decentralized finance, and has been utilized for many initial coin offerings.\nIn 2016, a hacker exploited a flaw in a third-party project called The DAO and stole $50 million of Ether. "
                 },
                 "@type": [
                     "Thing",
                     "SoftwareApplication"
-                ],
-                "@id": "kg:/m/0130q41b",
-                "name": "Monero"
+                ]
             },
-            "resultScore": 2642.067138671875,
+            "resultScore": 9420.0205078125,
             "@type": "EntitySearchResult"
         }
     ]

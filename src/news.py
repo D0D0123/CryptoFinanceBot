@@ -26,7 +26,7 @@ def get_about_info(crypto_name):
     response = requests.request("GET", url, params=parameters)
     google_data = json.loads(response.text)
 
-    with open('logs/about.log', 'w') as about_file:
+    with open('../logs/about.log', 'w') as about_file:
         about_file.write(json.dumps(google_data, indent=4))
     
     # print(google_data['itemListElement'][0]['result']['detailedDescription'])
@@ -58,7 +58,7 @@ def get_news(query_string):
 
     response = requests.request("GET", url, headers=headers, params=querystring)
     news_data = json.loads(response.text)
-    with open('logs/news.log', 'w') as news_file:
+    with open('../logs/news.log', 'w') as news_file:
         news_file.write(json.dumps(news_data, indent=4))
     
     return news_data['value']

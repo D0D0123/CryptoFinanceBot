@@ -44,7 +44,7 @@ def get_total_crypto_data():
     try:
         response = session.get(url, params=parameters)
         total_data = json.loads(response.text)
-        with open('logs/market.log', 'w') as out:    # logs the entirety of each request in a file
+        with open('../logs/market.log', 'w') as out:    # logs the entirety of each request in a file
             out.write(json.dumps(total_data, indent=4))
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         print(e)
@@ -101,7 +101,7 @@ def get_total_crypto_metadata():
     try:
         response = session.get(url, params=parameters)
         total_metadata = json.loads(response.text)
-        with open('logs/metadata.log', 'w') as out:    # logs the entirety of each request in a file
+        with open('../logs/metadata.log', 'w') as out:    # logs the entirety of each request in a file
             out.write(json.dumps(total_metadata, indent=4))
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         print(e)
