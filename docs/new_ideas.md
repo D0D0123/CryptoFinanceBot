@@ -12,3 +12,4 @@
 - REMEMBER TO DESERIALISE THE JSON EVERY HOUR TO SEE UPDATED WATCH LIST AND PING LIST DATA
 - MAKE SURE YOU REMOVE SERVERS FROM THE DATABASE WHEN THE BOT GETS KICKED
 - Update the help command, and the intro tutorial message
+- Make the newsfeed use less API calls (since it calls once for EVERY server)

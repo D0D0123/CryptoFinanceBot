@@ -1,19 +1,20 @@
+
+</br>
+</br>
+<p align="center" >
+  <img src="media/CryptoLogov2Banner.svg" />
+</p>
+</br>
+
 # CryptoBot
 
-<p align="center">
-  <!-- <img src="media/proper-logo-3-filled.png" /> -->
-  <img src="media/CryptoLogov2Filled.svg" />
-</p>
-
-## Introduction
-
-CryptoBot is an open source cryptocurrency bot for Discord. It automates much of the process of researching financial and background
-information about cryptocurrencies and the economy surrounding them, as well as tracking their individual market performance. 
+CryptoBot is an open source cryptocurrency bot for Discord, which automates the process of obtaining economic
+information about cryptocurrencies, as well as tracking their individual market performance. 
 It was initially created as a side project to make cryptocurrency investment and learning more convenient, whilst furthering my knowledge of
 API integration, database management, and system design. See the *Setting up your own Cryptocurrency Bot* section below to host your own
 discord bot using this code.
 
-### Features
+## Features
 CryptoBot is able to:
 * Retrieve and display real-time financial information for individual cryptocurrencies, including:
     - Price
@@ -63,7 +64,7 @@ with the depth of information depending on the parameter given
 
 ### Example:
 
-<div align=center style="font-weight:bold;"> !crypto BTC -all </div>
+**!crypto BTC -all**
 
 ## !list
 
@@ -71,7 +72,7 @@ Provides a list of the top 20 cryptocurrencies (ranked by market cap)
 
 ### Example:
 
-<div align=center style="font-weight:bold;"> !list </div>
+**!list**
 
 ## !watch [param] [symbols...]
 
@@ -83,9 +84,9 @@ The bot will provide hourly updates on the currencies in this watch list.
 
 ### Example:
  
-<div align=center style="font-weight:bold;"> !watch -add BTC ETH </div>
+**!watch -add BTC ETH**
 
-<div align=center style="font-weight:bold;"> !watch -show </div>
+**!watch -show**
 
 ## !ping [symbol] [> OR <] [price]
 
@@ -98,7 +99,7 @@ exceeds/falls below your chosen price.
   
 ### Example:
 
-<div align=center style="font-weight:bold;"> !ping BTC < 10000 </div>
+**!ping BTC < 10000**
 
 ## !news [symbol/phrase] [-general]
 
@@ -108,9 +109,9 @@ either a specified cryptocurrency, or a general phrase.
 
 ### Example:
 
-<div align=center style="font-weight:bold;"> !news BTC </div>
+**!news BTC**
 
-<div align=center style="font-weight:bold;"> !news Australia -general </div>
+**!news Australia -general**
 
 ## !newsfeed [symbol/phrase] [-general]
 
@@ -119,7 +120,7 @@ or custom phrase (the default is 'Cryptocurrency').
 
 ### Example:
 
-<div align=center style="font-weight:bold;"> !newsfeed BTC </div>
+**!newsfeed BTC**
 
 ## !about [symbol]
 
@@ -127,12 +128,12 @@ Displays information about a specified cryptocurrency, as well as a link to read
 
 ### Example:
 
-<div align=center style="font-weight:bold;"> !about ETH </div>
+**!about ETH**
 
 </br>
-</br>
-<p align="center" >
-  <img style="border-radius:30px 30px 30px 30px" src="media/CryptoLogov2Banner.svg" />
+<p align="center">
+  <!-- <img src="media/proper-logo-3-filled.png" /> -->
+  <img height="200" src="media/CryptoLogov2Triad.svg" />
 </p>
 </br>
 
@@ -143,6 +144,16 @@ Displays information about a specified cryptocurrency, as well as a link to read
 * [ContextualWeb News API](https://contextualweb.io/news-api/) 
 
 ## Setting up your own Cryptocurrency Bot
+
+*Discord Developer Portal Steps Here*
+
+*API Setup Steps Here*
+
+*Fill in .env file*
+
+*Install required packages*
+
+*Navigate into /src and run python crypto.py*
 
 ### Requirements
 
