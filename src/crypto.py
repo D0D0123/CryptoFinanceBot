@@ -64,13 +64,21 @@ async def on_ready():
             bot_data.append({
                 'guild': guild.id, # id number of the guild
                 'autopost_channel': guild.text_channels[0].id, # which channel should autoposts go in
+                'newsfeed': 'Cryptocurrency',
                 'watch_list': [], # which currencies to watch
                 'price_pings': [] #pings for particular price drops
             })
+
         # print each connected guild on console output
         print(f'{guild.name} (id: {guild.id})')
     
+    # remove any guilds that the bot isn't connected to anymore
+    for server_dict in bot_data.copy():
+        if bot.get_guild(server_dict['guild']) == None:
+            bot_data.remove(server_dict)
+    
     update_database()
+    # Start the automatic internal tasks
     crypto_update.start()
     # crypto_news_update.start()
 
@@ -122,7 +130,7 @@ trending cryptocurrency news every 8 hours.
 async def crypto_news_update():
     for server_dict in bot_data:
         channel = bot.get_channel(server_dict['autopost_channel'])
-        await channel.send(embed=generate_news_embed("Cryptocurrency"))
+        await channel.send(embed=generate_news_embed(server_dict['newsfeed']))
 
 # |--------------------------------------------------------------------------------------|
 # |-------------------------------------- COMMANDS --------------------------------------|
@@ -311,6 +319,28 @@ async def send_news_info(ctx, *args):
         query_string = " ".join(args[:-1])
         await ctx.send(embed=generate_news_embed(query_string))
 
+
+'''
+!newsfeed [symbol/phrase] [-general]
+» e.g. !newsfeed Australia -general
+
+Sets the tridaily news feed to something other than the default 
+'Cryptocurrency'
+'''
+@bot.command(name="newsfeed")
+async def set_newsfeed(ctx, *args):
+    if len(args) == 1:
+        query_string = crypto_map[args[0]]
+    else:
+        query_string = " ".join(args[:-1])
+
+    for server_dict in bot_data:
+        if server_dict['guild'] == ctx.message.guild.id:
+            server_dict['newsfeed'] = query_string
+
+    await ctx.send(f"Newsfeed updated to provide automatic news about **{query_string}**")
+    update_database()
+
 '''
 !list
 
@@ -326,10 +356,11 @@ async def send_crypto_list(ctx):
     embed_var = Embed(title="Top 20 Cryptocurrencies", 
                       description=crypto_list, 
                       color=16736330)
+    embed_var.set_footer(text="From CoinMarketCap")
     await ctx.send(embed=embed_var)
 
 '''
-!post [channel ID]
+!post [channel name]
 
 Change which channel the bot will send it's automatic posts to
 '''
@@ -339,15 +370,15 @@ async def change_autopost_channel(ctx, arg):
     # navigate to the guild the message was sent from,
     for server_dict in bot_data:
         if server_dict['guild'] == ctx.message.guild.id:
-            # verify that given channel id matches an existing channel id
+            # verify that given channel id matches an existing channel id in that guild
             for channel in ctx.message.guild.text_channels:
-                if arg == str(channel.id):
-                    await ctx.send(f"Automated posts will now go in **#{bot.get_channel(channel.id).name}**")
+                if arg == channel.name:
+                    await ctx.send(f"Automated posts will now go in **#{channel.name}**")
                     server_dict['autopost_channel'] = channel.id
                     break
             else:
                 # await ctx.send(ctx.message.guild.text_channels)
-                await ctx.send("Not a valid channel ID")
+                await ctx.send("Not a valid channel name")
     
     update_database()
 

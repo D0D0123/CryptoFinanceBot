@@ -1,7 +1,8 @@
 [
     {
         "guild": 793053167842754580,
-        "autopost_channel": 793053168304783440,
+        "autopost_channel": 793442420959346698,
+        "newsfeed": "Bitcoin",
         "watch_list": [
             "ETH",
             "BTC",
@@ -23,17 +24,20 @@
         ]
     },
     {
-        "guild": 797369984783220777,
-        "autopost_channel": 797369984783220780,
+        "guild": 797406310580355082,
+        "autopost_channel": 797406310580355085,
+        "newsfeed": "Cryptocurrency",
         "watch_list": [
-            "BTC"
+            "BTC",
+            "ETH",
+            "ADA"
         ],
         "price_pings": [
             {
-                "user": 270100069682905090,
-                "currency": "ETH",
-                "price": 2000.0,
-                "higher": true
+                "user": 797404797526867978,
+                "currency": "BTC",
+                "price": 45000.0,
+                "higher": false
             }
         ]
     }

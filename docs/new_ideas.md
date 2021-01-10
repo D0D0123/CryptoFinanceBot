@@ -6,5 +6,9 @@
     - Have a seperate file for API calls
 
 - Include market cap in !list
-- Add the ability to change what news is tracked every 8 hours
+- Add the ability to change what news is tracked every 8 hours (make it so it can accept symbols too)
 - Make the error messages more helpful
+- Set footers for all the embeds with which API they are from
+- REMEMBER TO DESERIALISE THE JSON EVERY HOUR TO SEE UPDATED WATCH LIST AND PING LIST DATA
+- MAKE SURE YOU REMOVE SERVERS FROM THE DATABASE WHEN THE BOT GETS KICKED
+- Update the help command, and the intro tutorial message

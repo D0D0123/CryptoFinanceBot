@@ -105,7 +105,7 @@ It takes in one of a few parameters (None, -extra, -supply, -links, -all) and ad
 '''
 def generate_embed(crypto_data, crypto_metadata, param=None):
     embed_var = Embed(title=f"{crypto_data['name']} ({crypto_data['symbol']})", description=generate_basic_info(crypto_data), color=16736330)
-    embed_var.set_footer(text=f"{format_date(crypto_data['last_updated'])} GMT")
+    embed_var.set_footer(text=f"{format_date(crypto_data['last_updated'])} GMT • From CoinMarketCap")
     embed_var.set_thumbnail(url=crypto_metadata['logo'])
     # embed_var.set_image(url="https://static.blockgeeks.com/wp-content/uploads/2019/03/image18.png")
 
@@ -130,6 +130,7 @@ def generate_about_embed(crypto_name, crypto_metadata):
     embed_var = Embed(title=f"About {crypto_name}", description=about_info['articleBody'], color=16736330)
     embed_var.add_field(name='Read More:', value=about_info['url'], inline=False)
     embed_var.add_field(name='Links', value=generate_crypto_links(crypto_metadata), inline=False)
+    embed_var.set_footer(text="From Google Knowledge Graph")
 
     return embed_var
 
@@ -146,5 +147,6 @@ def generate_news_embed(query_string):
         embed_var.add_field(name=f"{i + 1}. **{news['title']}**",  
                             value=f"[{description}]({news['url']})" + '\n' + '\n' + provider_date + '\n' + '\n',
                             inline=True)
+    embed_var.set_footer(text="From ContextualWeb News")
 
     return embed_var
