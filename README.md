@@ -191,6 +191,7 @@ Displays information about a specified cryptocurrency, as well as a link to read
 </p>
 </br>
 
+
 ## APIs 
 
 * [CoinMarketCap API](https://coinmarketcap.com/api/documentation/v1/)
@@ -199,18 +200,29 @@ Displays information about a specified cryptocurrency, as well as a link to read
 
 ## Setting up your own Cryptocurrency Bot
 
-*Discord Developer Portal Steps Here*
-
-*API Setup Steps Here*
-
-*Fill in .env file*
-
-*Install required packages*
-
-*Navigate into /src and run python crypto.py*
+1. Head to the [Discord Developer Portal](https://discord.com/developers/applications), and [create a new bot application.](https://discordpy.readthedocs.io/en/latest/discord.html)
+2. Create an [invite URL](https://discordpy.readthedocs.io/en/latest/discord.html#inviting-your-bot) for the bot, and copy/paste this into a browser to add the bot to a server.
+3. Clone this repository.
+4. Sign up for each of the API's above (using any pricing plan, however consider the data request quotas), and obtain API keys.
+5. Navigate to /src, and fill in the .env template with the Bot Token and API Keys (the curply braces should also be removed).
+```
+DISCORD_TOKEN={Insert Bot Token}
+CMC_API_KEY={Insert CoinMarketCap API Key}
+GOOGLE_API_KEY={Insert Google Knowledge Graph API Key}
+NEWS_API_KEY={Insert ContextualWeb News API Key}
+```
+6. Install the following packages:
+```
+pip install -U discord.py
+pip install -U python-dotenv
+python -m pip install requests
+```
+7. Navigate to /src, and run
+```
+python crypto.py
+```
 
 ### Requirements
-
 
 ## How it works
 

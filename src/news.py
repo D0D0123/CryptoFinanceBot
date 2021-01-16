@@ -3,9 +3,9 @@ The following functions call either the Google Knowledge Graph API
 or the ContextualWeb News API for information and news about cryptocurrencies.
 '''
 
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 import requests
-import re
+# import re
 import json
 
 '''
