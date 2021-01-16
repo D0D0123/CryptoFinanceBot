@@ -1,12 +1,12 @@
 {
     "status": {
-        "timestamp": "2021-01-10T07:12:30.111Z",
+        "timestamp": "2021-01-16T09:54:33.489Z",
         "error_code": 0,
         "error_message": null,
-        "elapsed": 16,
+        "elapsed": 17,
         "credit_count": 1,
         "notice": null,
-        "total_count": 4041
+        "total_count": 4086
     },
     "data": [
         {
@@ -14,7 +14,7 @@
             "name": "Bitcoin",
             "symbol": "BTC",
             "slug": "bitcoin",
-            "num_market_pairs": 9747,
+            "num_market_pairs": 9829,
             "date_added": "2013-04-28T00:00:00.000Z",
             "tags": [
                 "mineable",
@@ -24,20 +24,20 @@
                 "state-channels"
             ],
             "max_supply": 21000000,
-            "circulating_supply": 18596062,
-            "total_supply": 18596062,
+            "circulating_supply": 18601875,
+            "total_supply": 18601875,
             "platform": null,
             "cmc_rank": 1,
-            "last_updated": "2021-01-10T07:11:02.000Z",
+            "last_updated": "2021-01-16T09:53:02.000Z",
             "quote": {
                 "AUD": {
-                    "price": 52804.89780329556,
-                    "volume_24h": 83226903697.55139,
-                    "percent_change_1h": 0.66606247,
-                    "percent_change_24h": 2.92560809,
-                    "percent_change_7d": 17.05089885,
-                    "market_cap": 981963153453.7479,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 48557.07868169923,
+                    "volume_24h": 93748888271.36942,
+                    "percent_change_1h": 1.85867391,
+                    "percent_change_24h": -3.44685441,
+                    "percent_change_7d": -10.1804641,
+                    "market_cap": 903252708002.1339,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -46,7 +46,7 @@
             "name": "Ethereum",
             "symbol": "ETH",
             "slug": "ethereum",
-            "num_market_pairs": 5947,
+            "num_market_pairs": 6058,
             "date_added": "2015-08-07T00:00:00.000Z",
             "tags": [
                 "mineable",
@@ -54,20 +54,20 @@
                 "smart-contracts"
             ],
             "max_supply": null,
-            "circulating_supply": 114190234.124,
-            "total_supply": 114190234.124,
+            "circulating_supply": 114272786.249,
+            "total_supply": 114272786.249,
             "platform": null,
             "cmc_rank": 2,
-            "last_updated": "2021-01-10T07:11:02.000Z",
+            "last_updated": "2021-01-16T09:53:02.000Z",
             "quote": {
                 "AUD": {
-                    "price": 1717.067265774382,
-                    "volume_24h": 46543398579.27381,
-                    "percent_change_1h": 0.22428572,
-                    "percent_change_24h": 10.77020402,
-                    "percent_change_7d": 62.98811809,
-                    "market_cap": 196072313085.43323,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 1572.4635482785313,
+                    "volume_24h": 45633084214.44424,
+                    "percent_change_1h": 2.26392988,
+                    "percent_change_24h": -1.90785721,
+                    "percent_change_7d": -3.43632267,
+                    "market_cap": 179689790936.7767,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -76,7 +76,7 @@
             "name": "Tether",
             "symbol": "USDT",
             "slug": "tether",
-            "num_market_pairs": 9888,
+            "num_market_pairs": 10051,
             "date_added": "2015-02-25T00:00:00.000Z",
             "tags": [
                 "store-of-value",
@@ -85,8 +85,8 @@
                 "stablecoin-asset-backed"
             ],
             "max_supply": null,
-            "circulating_supply": 23659828193.16833,
-            "total_supply": 24381627122.352524,
+            "circulating_supply": 24290132870.86423,
+            "total_supply": 25131104623.125328,
             "platform": {
                 "id": 1027,
                 "name": "Ethereum",
@@ -95,16 +95,46 @@
                 "token_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
             },
             "cmc_rank": 3,
-            "last_updated": "2021-01-10T07:11:07.000Z",
+            "last_updated": "2021-01-16T09:53:09.000Z",
             "quote": {
                 "AUD": {
-                    "price": 1.2909959431207354,
-                    "volume_24h": 141436160902.89444,
-                    "percent_change_1h": -0.16698662,
-                    "percent_change_24h": -0.47770339,
-                    "percent_change_7d": -3.10702558,
-                    "market_cap": 30544742212.313915,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 1.2986002106478411,
+                    "volume_24h": 147874218017.20776,
+                    "percent_change_1h": -0.11979191,
+                    "percent_change_24h": -0.45595221,
+                    "percent_change_7d": -3.26935062,
+                    "market_cap": 31543171662.768345,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
+                }
+            }
+        },
+        {
+            "id": 6636,
+            "name": "Polkadot",
+            "symbol": "DOT",
+            "slug": "polkadot-new",
+            "num_market_pairs": 114,
+            "date_added": "2020-08-19T00:00:00.000Z",
+            "tags": [
+                "substrate",
+                "polkadot",
+                "binance-chain"
+            ],
+            "max_supply": null,
+            "circulating_supply": 900579062.0278733,
+            "total_supply": 1034638279.7188432,
+            "platform": null,
+            "cmc_rank": 4,
+            "last_updated": "2021-01-16T09:54:05.000Z",
+            "quote": {
+                "AUD": {
+                    "price": 20.351002865739176,
+                    "volume_24h": 8003237550.068382,
+                    "percent_change_1h": 3.819075,
+                    "percent_change_24h": 10.60950292,
+                    "percent_change_7d": 64.01473883,
+                    "market_cap": 18327687072.153946,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -113,7 +143,7 @@
             "name": "XRP",
             "symbol": "XRP",
             "slug": "xrp",
-            "num_market_pairs": 684,
+            "num_market_pairs": 680,
             "date_added": "2013-08-04T00:00:00.000Z",
             "tags": [
                 "medium-of-exchange",
@@ -124,80 +154,17 @@
             "circulating_supply": 45404028640,
             "total_supply": 99990831162,
             "platform": null,
-            "cmc_rank": 4,
-            "last_updated": "2021-01-10T07:12:02.000Z",
-            "quote": {
-                "AUD": {
-                    "price": 0.4546540184809715,
-                    "volume_24h": 9845462845.628466,
-                    "percent_change_1h": 4.96193705,
-                    "percent_change_24h": 11.58373099,
-                    "percent_change_7d": 53.40909899,
-                    "market_cap": 20643124076.40112,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
-                }
-            }
-        },
-        {
-            "id": 2,
-            "name": "Litecoin",
-            "symbol": "LTC",
-            "slug": "litecoin",
-            "num_market_pairs": 749,
-            "date_added": "2013-04-28T00:00:00.000Z",
-            "tags": [
-                "mineable",
-                "pow",
-                "scrypt",
-                "medium-of-exchange",
-                "binance-chain"
-            ],
-            "max_supply": 84000000,
-            "circulating_supply": 66245617.91134237,
-            "total_supply": 66245617.91134237,
-            "platform": null,
             "cmc_rank": 5,
-            "last_updated": "2021-01-10T07:12:02.000Z",
+            "last_updated": "2021-01-16T09:54:03.000Z",
             "quote": {
                 "AUD": {
-                    "price": 235.0816322408297,
-                    "volume_24h": 15145495105.385698,
-                    "percent_change_1h": 0.12716103,
-                    "percent_change_24h": 8.79800877,
-                    "percent_change_7d": 26.51986883,
-                    "market_cap": 15573127987.400707,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
-                }
-            }
-        },
-        {
-            "id": 1831,
-            "name": "Bitcoin Cash",
-            "symbol": "BCH",
-            "slug": "bitcoin-cash",
-            "num_market_pairs": 597,
-            "date_added": "2017-07-23T00:00:00.000Z",
-            "tags": [
-                "mineable",
-                "marketplace",
-                "enterprise-solutions",
-                "binance-chain"
-            ],
-            "max_supply": 21000000,
-            "circulating_supply": 18600862.5,
-            "total_supply": 18600862.5,
-            "platform": null,
-            "cmc_rank": 6,
-            "last_updated": "2021-01-10T07:11:08.000Z",
-            "quote": {
-                "AUD": {
-                    "price": 803.6578455117909,
-                    "volume_24h": 20714837803.943626,
-                    "percent_change_1h": -1.00490568,
-                    "percent_change_24h": 45.6007756,
-                    "percent_change_7d": 66.54157287,
-                    "market_cap": 14948729081.411064,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 0.369545189031094,
+                    "volume_24h": 6048021124.647903,
+                    "percent_change_1h": 1.01695646,
+                    "percent_change_24h": -2.93860035,
+                    "percent_change_7d": -14.24171911,
+                    "market_cap": 16778840346.542006,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -206,7 +173,7 @@
             "name": "Cardano",
             "symbol": "ADA",
             "slug": "cardano",
-            "num_market_pairs": 224,
+            "num_market_pairs": 221,
             "date_added": "2017-10-01T00:00:00.000Z",
             "tags": [
                 "mineable",
@@ -222,47 +189,80 @@
             "circulating_supply": 31112484646,
             "total_supply": 45000000000,
             "platform": null,
-            "cmc_rank": 7,
-            "last_updated": "2021-01-10T07:11:10.000Z",
+            "cmc_rank": 6,
+            "last_updated": "2021-01-16T09:53:08.000Z",
             "quote": {
                 "AUD": {
-                    "price": 0.4356986517259354,
-                    "volume_24h": 4331652259.872783,
-                    "percent_change_1h": 2.21139932,
-                    "percent_change_24h": 12.15308355,
-                    "percent_change_7d": 86.27897114,
-                    "market_cap": 13555667612.106068,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 0.42570681567341867,
+                    "volume_24h": 3856440132.0504613,
+                    "percent_change_1h": 3.3525431,
+                    "percent_change_24h": 2.08111113,
+                    "percent_change_7d": 4.50503907,
+                    "market_cap": 13244796766.33679,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
         {
-            "id": 6636,
-            "name": "Polkadot",
-            "symbol": "DOT",
-            "slug": "polkadot-new",
-            "num_market_pairs": 113,
-            "date_added": "2020-08-19T00:00:00.000Z",
+            "id": 2,
+            "name": "Litecoin",
+            "symbol": "LTC",
+            "slug": "litecoin",
+            "num_market_pairs": 745,
+            "date_added": "2013-04-28T00:00:00.000Z",
             "tags": [
-                "substrate",
-                "polkadot",
+                "mineable",
+                "pow",
+                "scrypt",
+                "medium-of-exchange",
                 "binance-chain"
             ],
-            "max_supply": null,
-            "circulating_supply": 898385178.7414428,
-            "total_supply": 1032444396.4324127,
+            "max_supply": 84000000,
+            "circulating_supply": 66289591.05005994,
+            "total_supply": 66289591.05005994,
             "platform": null,
-            "cmc_rank": 8,
-            "last_updated": "2021-01-10T07:12:05.000Z",
+            "cmc_rank": 7,
+            "last_updated": "2021-01-16T09:54:02.000Z",
             "quote": {
                 "AUD": {
-                    "price": 12.66704122142984,
-                    "volume_24h": 1812335346.0078065,
-                    "percent_change_1h": 0.95734409,
-                    "percent_change_24h": 6.60489903,
-                    "percent_change_7d": 3.93426745,
-                    "market_cap": 11379882091.83947,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 189.53680006275002,
+                    "volume_24h": 10706854253.294682,
+                    "percent_change_1h": 1.7685783,
+                    "percent_change_24h": -3.47364117,
+                    "percent_change_7d": -16.80363286,
+                    "market_cap": 12564316965.096672,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
+                }
+            }
+        },
+        {
+            "id": 1831,
+            "name": "Bitcoin Cash",
+            "symbol": "BCH",
+            "slug": "bitcoin-cash",
+            "num_market_pairs": 593,
+            "date_added": "2017-07-23T00:00:00.000Z",
+            "tags": [
+                "mineable",
+                "marketplace",
+                "enterprise-solutions",
+                "binance-chain"
+            ],
+            "max_supply": 21000000,
+            "circulating_supply": 18628543.75,
+            "total_supply": 18628543.75,
+            "platform": null,
+            "cmc_rank": 8,
+            "last_updated": "2021-01-16T09:53:07.000Z",
+            "quote": {
+                "AUD": {
+                    "price": 642.823383236176,
+                    "volume_24h": 9051564200.582289,
+                    "percent_change_1h": 1.49648796,
+                    "percent_change_24h": -3.54877308,
+                    "percent_change_7d": 11.39300958,
+                    "market_cap": 11974863518.138123,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -271,7 +271,7 @@
             "name": "Chainlink",
             "symbol": "LINK",
             "slug": "chainlink",
-            "num_market_pairs": 434,
+            "num_market_pairs": 433,
             "date_added": "2017-09-20T00:00:00.000Z",
             "tags": [
                 "platform",
@@ -282,7 +282,7 @@
                 "polkadot"
             ],
             "max_supply": 1000000000,
-            "circulating_supply": 400509556.4344444,
+            "circulating_supply": 401509556.4344444,
             "total_supply": 1000000000,
             "platform": {
                 "id": 1027,
@@ -292,16 +292,16 @@
                 "token_address": "0x514910771af9ca656af840dff83e8264ecf986ca"
             },
             "cmc_rank": 9,
-            "last_updated": "2021-01-10T07:11:09.000Z",
+            "last_updated": "2021-01-16T09:53:08.000Z",
             "quote": {
                 "AUD": {
-                    "price": 23.101855619582093,
-                    "volume_24h": 3756877371.946153,
-                    "percent_change_1h": 0.18658995,
-                    "percent_change_24h": 16.75418904,
-                    "percent_change_7d": 43.61754685,
-                    "market_cap": 9252513947.011402,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 28.525195705771296,
+                    "volume_24h": 10291528719.819511,
+                    "percent_change_1h": -1.9061378,
+                    "percent_change_24h": 17.76627522,
+                    "percent_change_7d": 35.75737742,
+                    "market_cap": 11453138675.029953,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -310,7 +310,7 @@
             "name": "Stellar",
             "symbol": "XLM",
             "slug": "stellar",
-            "num_market_pairs": 337,
+            "num_market_pairs": 335,
             "date_added": "2014-08-05T00:00:00.000Z",
             "tags": [
                 "medium-of-exchange",
@@ -319,20 +319,20 @@
                 "smart-contracts"
             ],
             "max_supply": 50001806812,
-            "circulating_supply": 22034678315.51224,
-            "total_supply": 50001803561.87172,
+            "circulating_supply": 22095601010.959892,
+            "total_supply": 50001803555.87172,
             "platform": null,
             "cmc_rank": 10,
-            "last_updated": "2021-01-10T07:12:05.000Z",
+            "last_updated": "2021-01-16T09:54:05.000Z",
             "quote": {
                 "AUD": {
-                    "price": 0.41373383961427224,
-                    "volume_24h": 2882548791.4677463,
-                    "percent_change_1h": 2.18798951,
-                    "percent_change_24h": 10.49666074,
-                    "percent_change_7d": 145.5339594,
-                    "market_cap": 9116492064.142223,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 0.3782454743462431,
+                    "volume_24h": 1830968216.4328902,
+                    "percent_change_1h": 1.92207064,
+                    "percent_change_24h": -2.17522272,
+                    "percent_change_7d": -5.2345474,
+                    "market_cap": 8357561085.355853,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -341,93 +341,27 @@
             "name": "Binance Coin",
             "symbol": "BNB",
             "slug": "binance-coin",
-            "num_market_pairs": 467,
+            "num_market_pairs": 455,
             "date_added": "2017-07-25T00:00:00.000Z",
             "tags": [
                 "marketplace",
                 "payments"
             ],
-            "max_supply": 176406561,
-            "circulating_supply": 144406560.9,
-            "total_supply": 176406560.9,
+            "max_supply": 174152673,
+            "circulating_supply": 142406561,
+            "total_supply": 174152673,
             "platform": null,
             "cmc_rank": 11,
-            "last_updated": "2021-01-10T07:11:07.000Z",
+            "last_updated": "2021-01-16T09:53:08.000Z",
             "quote": {
                 "AUD": {
-                    "price": 57.206411336348836,
-                    "volume_24h": 784149830.2286971,
-                    "percent_change_1h": -0.19051548,
-                    "percent_change_24h": 4.59513252,
-                    "percent_change_7d": 13.17871581,
-                    "market_cap": 8260981122.51291,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
-                }
-            }
-        },
-        {
-            "id": 3602,
-            "name": "Bitcoin SV",
-            "symbol": "BSV",
-            "slug": "bitcoin-sv",
-            "num_market_pairs": 219,
-            "date_added": "2018-11-09T00:00:00.000Z",
-            "tags": [
-                "mineable",
-                "medium-of-exchange"
-            ],
-            "max_supply": 21000000,
-            "circulating_supply": 18621007.89423905,
-            "total_supply": 18621007.89423905,
-            "platform": null,
-            "cmc_rank": 12,
-            "last_updated": "2021-01-10T07:12:05.000Z",
-            "quote": {
-                "AUD": {
-                    "price": 376.1722911665687,
-                    "volume_24h": 7088548004.014907,
-                    "percent_change_1h": -1.49515395,
-                    "percent_change_24h": 58.37245519,
-                    "percent_change_7d": 72.71655067,
-                    "market_cap": 7004707203.406666,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
-                }
-            }
-        },
-        {
-            "id": 3717,
-            "name": "Wrapped Bitcoin",
-            "symbol": "WBTC",
-            "slug": "wrapped-bitcoin",
-            "num_market_pairs": 94,
-            "date_added": "2019-01-30T00:00:00.000Z",
-            "tags": [
-                "medium-of-exchange",
-                "defi",
-                "stablecoin",
-                "stablecoin-asset-backed"
-            ],
-            "max_supply": 21000000,
-            "circulating_supply": 115710.93990667,
-            "total_supply": 115710.93990667,
-            "platform": {
-                "id": 1027,
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum",
-                "token_address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
-            },
-            "cmc_rank": 13,
-            "last_updated": "2021-01-10T07:12:06.000Z",
-            "quote": {
-                "AUD": {
-                    "price": 52769.87677993171,
-                    "volume_24h": 252517224.5654903,
-                    "percent_change_1h": 0.70455088,
-                    "percent_change_24h": 3.2180374,
-                    "percent_change_7d": 16.94289923,
-                    "market_cap": 6106052040.965058,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 55.73379104049044,
+                    "volume_24h": 736558705.5273335,
+                    "percent_change_1h": 3.01798431,
+                    "percent_change_24h": 2.33452469,
+                    "percent_change_7d": -1.19784339,
+                    "market_cap": 7936857513.568854,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -436,7 +370,7 @@
             "name": "USD Coin",
             "symbol": "USDC",
             "slug": "usd-coin",
-            "num_market_pairs": 656,
+            "num_market_pairs": 686,
             "date_added": "2018-10-08T00:00:00.000Z",
             "tags": [
                 "medium-of-exchange",
@@ -444,8 +378,8 @@
                 "stablecoin-asset-backed"
             ],
             "max_supply": null,
-            "circulating_supply": 4685219110.135057,
-            "total_supply": 4797746239.121508,
+            "circulating_supply": 4910949721.882449,
+            "total_supply": 4995084222.076185,
             "platform": {
                 "id": 1027,
                 "name": "Ethereum",
@@ -453,48 +387,87 @@
                 "slug": "ethereum",
                 "token_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
             },
-            "cmc_rank": 14,
-            "last_updated": "2021-01-10T07:12:04.000Z",
+            "cmc_rank": 12,
+            "last_updated": "2021-01-16T09:54:04.000Z",
             "quote": {
                 "AUD": {
-                    "price": 1.2891506983324421,
-                    "volume_24h": 2019994984.9790947,
-                    "percent_change_1h": -0.11445635,
-                    "percent_change_24h": -0.56779617,
-                    "percent_change_7d": -3.18501137,
-                    "market_cap": 6039953487.671112,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 1.2983698547726026,
+                    "volume_24h": 2557841578.9933915,
+                    "percent_change_1h": -0.14558138,
+                    "percent_change_24h": -0.59114597,
+                    "percent_change_7d": -3.22147314,
+                    "market_cap": 6376229077.196069,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
         {
-            "id": 1765,
-            "name": "EOS",
-            "symbol": "EOS",
-            "slug": "eos",
-            "num_market_pairs": 474,
-            "date_added": "2017-07-01T00:00:00.000Z",
+            "id": 3717,
+            "name": "Wrapped Bitcoin",
+            "symbol": "WBTC",
+            "slug": "wrapped-bitcoin",
+            "num_market_pairs": 100,
+            "date_added": "2019-01-30T00:00:00.000Z",
             "tags": [
                 "medium-of-exchange",
-                "enterprise-solutions",
-                "smart-contracts",
-                "binance-chain"
+                "defi",
+                "stablecoin",
+                "stablecoin-asset-backed"
             ],
-            "max_supply": null,
-            "circulating_supply": 939346476.9467,
-            "total_supply": 1026046488.3162,
-            "platform": null,
-            "cmc_rank": 15,
-            "last_updated": "2021-01-10T07:11:07.000Z",
+            "max_supply": 110771,
+            "circulating_supply": 110872.66526911,
+            "total_supply": 110872.66526911,
+            "platform": {
+                "id": 1027,
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum",
+                "token_address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+            },
+            "cmc_rank": 13,
+            "last_updated": "2021-01-16T09:54:06.000Z",
             "quote": {
                 "AUD": {
-                    "price": 4.912156647253816,
-                    "volume_24h": 10131141876.7857,
-                    "percent_change_1h": 0.83633583,
-                    "percent_change_24h": 24.25622564,
-                    "percent_change_7d": 40.92424632,
-                    "market_cap": 4614217040.808186,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 48468.53613074446,
+                    "volume_24h": 171185020.0062217,
+                    "percent_change_1h": 1.69272899,
+                    "percent_change_24h": -3.37111218,
+                    "percent_change_7d": -9.88225813,
+                    "market_cap": 5373835782.507794,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
+                }
+            }
+        },
+        {
+            "id": 3602,
+            "name": "Bitcoin SV",
+            "symbol": "BSV",
+            "slug": "bitcoin-sv",
+            "num_market_pairs": 217,
+            "date_added": "2018-11-09T00:00:00.000Z",
+            "tags": [
+                "mineable",
+                "pow",
+                "sha-256",
+                "medium-of-exchange",
+                "store-of-value",
+                "state-channels"
+            ],
+            "max_supply": 21000000,
+            "circulating_supply": 18626514.14423905,
+            "total_supply": 18626514.14423905,
+            "platform": null,
+            "cmc_rank": 14,
+            "last_updated": "2021-01-16T09:54:06.000Z",
+            "quote": {
+                "AUD": {
+                    "price": 271.5433950439183,
+                    "volume_24h": 1742216308.6027884,
+                    "percent_change_1h": 0.87394413,
+                    "percent_change_24h": -1.72930799,
+                    "percent_change_7d": 10.44598172,
+                    "market_cap": 5057906888.560236,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -503,7 +476,7 @@
             "name": "Monero",
             "symbol": "XMR",
             "slug": "monero",
-            "num_market_pairs": 186,
+            "num_market_pairs": 187,
             "date_added": "2014-05-21T00:00:00.000Z",
             "tags": [
                 "mineable",
@@ -512,20 +485,116 @@
                 "ringct"
             ],
             "max_supply": null,
-            "circulating_supply": 17808835.43906378,
-            "total_supply": 17808835.43906378,
+            "circulating_supply": 17814474.27227995,
+            "total_supply": 17814474.27227995,
             "platform": null,
-            "cmc_rank": 16,
-            "last_updated": "2021-01-10T07:12:04.000Z",
+            "cmc_rank": 15,
+            "last_updated": "2021-01-16T09:54:04.000Z",
             "quote": {
                 "AUD": {
-                    "price": 204.09201509625632,
-                    "volume_24h": 2292154331.6854906,
-                    "percent_change_1h": 1.808969,
-                    "percent_change_24h": 11.88990901,
-                    "percent_change_7d": 8.28048502,
-                    "market_cap": 3634641111.2761497,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 207.46202346173618,
+                    "volume_24h": 2138686563.1478086,
+                    "percent_change_1h": 0.46436836,
+                    "percent_change_24h": -4.0296223,
+                    "percent_change_7d": 6.92255035,
+                    "market_cap": 3695826879.434239,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
+                }
+            }
+        },
+        {
+            "id": 1765,
+            "name": "EOS",
+            "symbol": "EOS",
+            "slug": "eos",
+            "num_market_pairs": 476,
+            "date_added": "2017-07-01T00:00:00.000Z",
+            "tags": [
+                "medium-of-exchange",
+                "enterprise-solutions",
+                "smart-contracts",
+                "binance-chain"
+            ],
+            "max_supply": null,
+            "circulating_supply": 939516940.7429,
+            "total_supply": 1026216952.1198,
+            "platform": null,
+            "cmc_rank": 16,
+            "last_updated": "2021-01-16T09:53:08.000Z",
+            "quote": {
+                "AUD": {
+                    "price": 3.6604754135648356,
+                    "volume_24h": 4431432363.953858,
+                    "percent_change_1h": 1.85626883,
+                    "percent_change_24h": 1.28329237,
+                    "percent_change_7d": -12.27238324,
+                    "market_cap": 3439078662.2170362,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
+                }
+            }
+        },
+        {
+            "id": 7278,
+            "name": "Aave",
+            "symbol": "AAVE",
+            "slug": "aave",
+            "num_market_pairs": 144,
+            "date_added": "2020-10-02T00:00:00.000Z",
+            "tags": [
+                "defi"
+            ],
+            "max_supply": 16000000,
+            "circulating_supply": 12233882.04610221,
+            "total_supply": 16000000,
+            "platform": {
+                "id": 1027,
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum",
+                "token_address": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9"
+            },
+            "cmc_rank": 17,
+            "last_updated": "2021-01-16T09:54:03.000Z",
+            "quote": {
+                "AUD": {
+                    "price": 253.626456567237,
+                    "volume_24h": 978494308.1650354,
+                    "percent_change_1h": 4.39005167,
+                    "percent_change_24h": 23.66278485,
+                    "percent_change_7d": 67.45644596,
+                    "market_cap": 3102836153.414443,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
+                }
+            }
+        },
+        {
+            "id": 2011,
+            "name": "Tezos",
+            "symbol": "XTZ",
+            "slug": "tezos",
+            "num_market_pairs": 160,
+            "date_added": "2017-10-06T00:00:00.000Z",
+            "tags": [
+                "platform",
+                "enterprise-solutions",
+                "smart-contracts",
+                "binance-chain"
+            ],
+            "max_supply": null,
+            "circulating_supply": 756924858.106945,
+            "total_supply": 756924858.106945,
+            "platform": null,
+            "cmc_rank": 18,
+            "last_updated": "2021-01-16T09:53:08.000Z",
+            "quote": {
+                "AUD": {
+                    "price": 3.934627991611608,
+                    "volume_24h": 926271084.5579578,
+                    "percent_change_1h": 5.78882895,
+                    "percent_change_24h": 13.16859116,
+                    "percent_change_7d": 17.40872589,
+                    "market_cap": 2978217734.2542305,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
@@ -534,7 +603,7 @@
             "name": "TRON",
             "symbol": "TRX",
             "slug": "tron",
-            "num_market_pairs": 483,
+            "num_market_pairs": 492,
             "date_added": "2017-09-13T00:00:00.000Z",
             "tags": [
                 "media",
@@ -544,110 +613,52 @@
             "circulating_supply": 71659657369.49,
             "total_supply": 100850743811.66246,
             "platform": null,
-            "cmc_rank": 17,
-            "last_updated": "2021-01-10T07:11:08.000Z",
-            "quote": {
-                "AUD": {
-                    "price": 0.04627802126082242,
-                    "volume_24h": 2918042023.2397676,
-                    "percent_change_1h": 0.65062522,
-                    "percent_change_24h": 16.26036564,
-                    "percent_change_7d": 28.73476368,
-                    "market_cap": 3316267147.2885084,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
-                }
-            }
-        },
-        {
-            "id": 873,
-            "name": "NEM",
-            "symbol": "XEM",
-            "slug": "nem",
-            "num_market_pairs": 101,
-            "date_added": "2015-04-01T00:00:00.000Z",
-            "tags": [
-                "poi",
-                "medium-of-exchange",
-                "payments",
-                "smart-contracts"
-            ],
-            "max_supply": 8999999999,
-            "circulating_supply": 8999999999,
-            "total_supply": 8999999999,
-            "platform": null,
-            "cmc_rank": 18,
-            "last_updated": "2021-01-10T07:11:08.000Z",
-            "quote": {
-                "AUD": {
-                    "price": 0.326246589056134,
-                    "volume_24h": 160776690.27880353,
-                    "percent_change_1h": 2.22576519,
-                    "percent_change_24h": 10.79300585,
-                    "percent_change_7d": 25.24402455,
-                    "market_cap": 2936219301.1789594,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
-                }
-            }
-        },
-        {
-            "id": 2011,
-            "name": "Tezos",
-            "symbol": "XTZ",
-            "slug": "tezos",
-            "num_market_pairs": 163,
-            "date_added": "2017-10-06T00:00:00.000Z",
-            "tags": [
-                "platform",
-                "enterprise-solutions",
-                "smart-contracts",
-                "binance-chain"
-            ],
-            "max_supply": null,
-            "circulating_supply": 756305179.079493,
-            "total_supply": 756305179.079493,
-            "platform": null,
             "cmc_rank": 19,
-            "last_updated": "2021-01-10T07:11:13.000Z",
+            "last_updated": "2021-01-16T09:53:08.000Z",
             "quote": {
                 "AUD": {
-                    "price": 3.6532591923890188,
-                    "volume_24h": 534214319.172839,
-                    "percent_change_1h": 1.35857206,
-                    "percent_change_24h": 14.72555246,
-                    "percent_change_7d": 38.22759271,
-                    "market_cap": 2762978847.723581,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 0.03978962506169833,
+                    "volume_24h": 1942613944.3314972,
+                    "percent_change_1h": 0.7580717,
+                    "percent_change_24h": 1.30535461,
+                    "percent_change_7d": -4.96045005,
+                    "market_cap": 2851310898.7817755,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         },
         {
-            "id": 2416,
-            "name": "THETA",
-            "symbol": "THETA",
-            "slug": "theta",
-            "num_market_pairs": 42,
-            "date_added": "2018-01-17T00:00:00.000Z",
+            "id": 7083,
+            "name": "Uniswap",
+            "symbol": "UNI",
+            "slug": "uniswap",
+            "num_market_pairs": 182,
+            "date_added": "2020-09-17T00:00:00.000Z",
             "tags": [
-                "media",
-                "collectibles-nfts",
-                "content-creation",
-                "video"
+                "defi",
+                "amm"
             ],
             "max_supply": 1000000000,
-            "circulating_supply": 1000000000,
+            "circulating_supply": 277264777.7401944,
             "total_supply": 1000000000,
-            "platform": null,
+            "platform": {
+                "id": 1027,
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum",
+                "token_address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
+            },
             "cmc_rank": 20,
-            "last_updated": "2021-01-10T07:12:04.000Z",
+            "last_updated": "2021-01-16T09:53:10.000Z",
             "quote": {
                 "AUD": {
-                    "price": 2.7060944176472796,
-                    "volume_24h": 163397812.38685003,
-                    "percent_change_1h": 4.09123845,
-                    "percent_change_24h": 6.30983158,
-                    "percent_change_7d": -13.78667355,
-                    "market_cap": 2706094417.6472793,
-                    "last_updated": "2021-01-10T07:11:57.000Z"
+                    "price": 10.099116236226326,
+                    "volume_24h": 3054932814.7091656,
+                    "percent_change_1h": 3.20262495,
+                    "percent_change_24h": 6.08250526,
+                    "percent_change_7d": 24.95863327,
+                    "market_cap": 2800129218.6096807,
+                    "last_updated": "2021-01-16T09:54:04.000Z"
                 }
             }
         }

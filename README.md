@@ -9,7 +9,8 @@
 # CryptoBot
 
 CryptoBot is an open source cryptocurrency bot for Discord, which automates the process of obtaining economic
-information about cryptocurrencies, as well as tracking their individual market performance. 
+information about cryptocurrencies and tracking their individual market performance. 
+
 It was initially created as a side project to make cryptocurrency investment and learning more convenient, whilst furthering my knowledge of
 API integration, database management, and system design. See the *Setting up your own Cryptocurrency Bot* section below to host your own
 discord bot using this code.
@@ -66,6 +67,13 @@ with the depth of information depending on the parameter given
 
 **!crypto BTC -all**
 
+</br>
+</br>
+<p align="center" >
+  <img height=500 src="media/command-examples/crypto-BTC-all.png" />
+</p>
+</br>
+
 ## !list
 
 Provides a list of the top 20 cryptocurrencies (ranked by market cap)
@@ -73,6 +81,13 @@ Provides a list of the top 20 cryptocurrencies (ranked by market cap)
 ### Example:
 
 **!list**
+
+</br>
+</br>
+<p align="center" >
+  <img height=600 src="media/command-examples/list.png" />
+</p>
+</br>
 
 ## !watch [param] [symbols...]
 
@@ -88,6 +103,17 @@ The bot will provide hourly updates on the currencies in this watch list.
 
 **!watch -show**
 
+</br>
+</br>
+<p align="center" >
+  <img height=400 src="media/command-examples/watch-add.png" />
+</p>
+</br>
+<p align="center" >
+  <img height=550 src="media/command-examples/hourly-update.png" />
+</p>
+</br>
+
 ## !ping [symbol] [> OR <] [price]
 
 Add/Remove cryptocurrencies to/from a notification list, 
@@ -99,7 +125,17 @@ exceeds/falls below your chosen price.
   
 ### Example:
 
-**!ping BTC < 10000**
+**!ping BTC > 25000**
+
+</br>
+<p align="center" >
+  <img width="500" src="media/command-examples/ping-BTC.png" />
+</p>
+</br>
+<p align="center" >
+  <img width="500" src="media/command-examples/ping-update.png" />
+</p>
+</br>
 
 ## !news [symbol/phrase] [-general]
 
@@ -109,9 +145,21 @@ either a specified cryptocurrency, or a general phrase.
 
 ### Example:
 
-**!news BTC**
+**!news DOT**
 
-**!news Australia -general**
+</br>
+<p align="center" >
+  <img height="650" src="media/command-examples/news-DOT.png" />
+</p>
+</br>
+
+**!news COVID -general**
+
+</br>
+<p align="center" >
+  <img height="650" src="media/command-examples/news-COVID.png" />
+</p>
+</br>
 
 ## !newsfeed [symbol/phrase] [-general]
 
@@ -129,6 +177,12 @@ Displays information about a specified cryptocurrency, as well as a link to read
 ### Example:
 
 **!about ETH**
+
+</br>
+<p align="center" >
+  <img height="500" src="media/command-examples/about-ETH.png" />
+</p>
+</br>
 
 </br>
 <p align="center">

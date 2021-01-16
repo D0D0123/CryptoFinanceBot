@@ -1,21 +1,21 @@
 {
     "_type": "news",
     "didUMean": "",
-    "totalCount": 854,
+    "totalCount": 908,
     "relatedSearch": [],
     "value": [
         {
-            "id": "6385511489303405848",
-            "title": "Heres how a cryptocurrency trader turned a few hundred dollars into a million bucks",
-            "url": "https://www.fxstreet.com/cryptocurrencies/news/heres-how-a-cryptocurrency-trader-turned-a-few-hundred-dollars-into-a-million-bucks-202101091441",
-            "description": "The high volatility in the cryptocurrency market can be used to generate massive gains. By heavily investing in DeFi projects in August 2020, a trade",
-            "body": "BitMEX\nin August 2020 but quickly gave up leverage trading after losing $200. It was right when the DeFi craze had picked up traction with yield farming as the main attraction. New projects were popping up from left to right, allowing users to deposit their cryptocurrencies as collateral and earn interest on it while getting rewarded with the projects token.\nIf this wasnt enough, some DeFi-related tokens were doing a 10-100X overnight on decentralized exchanges like Uniswap, 1inch exchange, among others, leaving investors stunned and with hefty profits.\nThe anonymous trader was among a group of very few investors who took advantage of the DeFi craze. From basic research to scouting potential investors fund flow on Etherscan, Razoreth got an edge over other investors.\nI came up with a strategy of only buying tokens that were under a day old and NEVER going to sleep holding something that had the potential of rugging. The majority of profits on new tokens are made in the first 3 hours, so I tried being one of the first 10 to buy something.\nMost of Razroeths investments involved buying presale tokens like CORE, Hacken, and SUSHI and selling them for huge profits. By the end of August 2020, the trader allegedly had 1.8 ETH and finished September with 500 ETH.\nBy December, Razroeth had increased his risk appetite by investing an average of 50 to 100 ETH. Since the trader held most of the profits in either Bitcoin or Ethereum, the current bull run did the rest of the job and pushed his portfolio to $1,000,000.\nCan DeFi still make you a millionaire?\nA question or a version of it lingering in the readers heads would be, Can I do the same? The answer to this is complicated since Bitcoin put an end to the DeFi summer.\nWhile the hype around the ecosystem hasnt died yet, many DeFi projects have strong fundamentals and hence, a chance to perhaps double or triple investments ev",
+            "id": "8985756740121406689",
+            "title": "Turkey is accused of extraditing Uighurs to China for COVID-19 vaccine",
+            "url": "https://www.businessinsider.com/turkey-accused-of-extraditing-uighur-muslims-for-china-coronavirus-vaccine-2021-1",
+            "description": "Turkey expected China's Sinovac vaccine in early December, but it was weeks delayed. Some politicians suggested China was using it as leverage.",
+            "body": "Chinese President Xi Jinping and Turkish President Recep Tayyip Erdogan.\nWANG ZHAO/AFP via Getty Images\nThe Turkish government has been accused of agreeing to deport Uighur Muslims to China to access COVID-19 vaccines.\nIn recent years, China has forcefully cracked down on Uighurs around the world, using their religion to cite a national security threat. Turkey is home to the largest number of diasporic Uighurs in the world.\nIn late December 2020, Beijing ratified a 2017 deal with Ankara to see people with criminal charges extradited to China.\nTurkey is yet to ratify it, and opposition politicians in the country raised concerns that Beijing was withholding the shipments of COVID-19 vaccines from the Chinese firm Sinovac until Ankara agreed.\nTurkey planned to start vaccinating people on December 11, but the first shipment from Sinovac did not arrive until December 30, Al-Monitor reported.\nThe Turkish foreign minister has denied the connection between the extradition deal and vaccination deliveries.\nVisit Business Insider's homepage for more stories\n.\nTurkey has been accused of agreeing to hand over Uighur Muslims to China in exchange for access to its COVID-19 vaccines.\nThe allegations stem from the timing of two events in December: the long-delayed arrival of Turkey's order of vaccines from the Chinese firm Sinovac and Beijing's abrupt move to ratify a 2017 extradition deal with Ankara.\nTurkey had planned to start vaccinating people with the Sinovac shot on December 11, according to Al-Monitor But the first shipment did not arrive until December 30.\nThe vaccine delay prompted opposition politicians in Turkey to raise concerns that China pressured the ruling Justice and Development Party (AKP) to ratify the extradition deal if it wanted to access the vaccines.\nChina announcedthat it had ratified the extradition treaty on December 27. The deal means that Turkey must extrad",
             "keywords": "",
             "language": "en",
             "isSafe": true,
-            "datePublished": "2021-01-09T14:41:10",
+            "datePublished": "2021-01-16T09:28:37",
             "provider": {
-                "name": "fxstreet",
+                "name": "businessinsider",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -30,26 +30,26 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "fxstreet",
+                    "name": "businessinsider",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "https://www.fxstreet.com/cryptocurrencies/news/heres-how-a-cryptocurrency-trader-turned-a-few-hundred-dollars-into-a-million-bucks-202101091441"
+                "webpageUrl": "https://www.businessinsider.com/turkey-accused-of-extraditing-uighur-muslims-for-china-coronavirus-vaccine-2021-1"
             }
         },
         {
-            "id": "9200316714360627903",
-            "title": "What experts say about cryptocurrency, bitcoin concerns",
-            "url": "https://www.cnbc.com/2021/01/09/what-experts-say-about-cryptocurrency-bitcoin-concerns.html",
-            "description": "CNBC Make It spoke to bitcoin and fintech experts about the common concerns surrounding the cryptocurrency.",
-            "body": "had been transferred under false pretenses.\nFor many, this prompted questions around the safety of bitcoin.\n\"There have been multiple examples of bitcoin theft and fraud that I think would give pause to the average investor, particularly if you were going to invest a substantial amount. I think those are legitimate fears,\" Ledbetter says. But he also finds them \"overblown.\"\nBecause while bitcoin allows for users to transact without revealing personal information or identity (potentially making fraud easier), it's not totally anonymous. Each bitcoin transaction is documented on a digital ledger called the blockchain, where a user's cryptocurrency \"wallet\" is represented as a unique series of random numbers and letters. Through this, a scammer could potentially be traced after the fact\n\"I always remind people that bitcoin literally has a public ledger,\" Pompliano says.\nPlus, bitcoin is extremely hard to hack thanks to blockchain.\n\"To hack it, you would have to take over the network, and to take over the network, you would need your own network of computers running 24/7, and to do that, it would cost billions of dollars,\" according to Paul Vigna markets reporter at The Wall Street Journal.\nLedbetter also points out that a traditional stock account with a brokerage could be compromised too. \"There's always some potential for fraud or security risk.\"\nThe safest bet is to use a trusted brokerage, experts say  \"these established places have a good security protocol and a quick application to protect,\" Ledbetter says.\nAll in all, \"things happen,\" he says, \"but when you look at the big stories of theft, they tend to be institutional and kind of on the fringes.\"\nAccording to the Federal Trade Commission (FTC) website cryptocurrency scams are \"a popular way for scammers to trick people into sending money,\" and most scams can \"appear as emails trying to blackmailsomeone, online chain referral schemes or bogus investm",
+            "id": "3071922154040613376",
+            "title": "Anti-abortion faith leaders OK vaccines",
+            "url": "http://www.nwaonline.com/news/2021/jan/16/anti-abortion-faith-leaders-ok-vaccines/",
+            "description": "In a growing consensus, religious leaders at the forefront of the anti-abortion movement in the United States are telling their followers that the leading vaccines available to combat covid-19 are acceptable to take, given their remote and indirect connection to lines of cells derived from aborted fetuses.",
+            "body": "Anti-abortion faith leaders OK vaccines\nby DAVID CRARY THE ASSOCIATED PRESS | Today at 3:15 a.m.\nA Catholic priest receives the first of the two Pfizer-BioNTech covid-19 vaccinations at a hospital in Chicago in this Dec. 23 photo. In a growing consensus, religious leaders at the forefront of the anti-abortion movement in the United States are telling their followers that the leading vaccines available to combat covid-19 are acceptable to take, given their remote and indirect connection to lines of cells derived from aborted fetuses. (AP/Charles Rex Arbogast)\nIn a growing consensus, religious leaders at the forefront of the anti-abortion movement in the United States are telling their followers that the leading vaccines available to combat covid-19 are acceptable to take, given their remote and indirect connection to lines of cells derived from aborted fetuses.\nOne outspoken foe of abortion based in Dallas, Southern Baptist megachurch pastor Robert Jeffress, has called the vaccines a \"present from God.\"\n\"To ask God for help but then refuse the vaccine makes no more sense than calling 911 when your house is on fire, but refusing to allow the firemen in,\" Jeffress said via email. \"There is no legitimate faith-based reason for refusing to take the vaccine.\"\nThe Rev. Al Mohler, president of the Southern Baptist Theological Seminary, also has celebrated their development.\n\"I will take it not only for what I hope will be the good of my own health, but for others as well,\" he said on his website.\nThe U.S. Conference of Catholic Bishops, which says fighting abortion is its \"pre-eminent\" priority, said last month that getting vaccinated against the coronavirus \"ought to be understood as an act of charity toward the oth",
             "keywords": "",
             "language": "en",
-            "isSafe": true,
-            "datePublished": "2021-01-09T14:30:00",
+            "isSafe": false,
+            "datePublished": "2021-01-16T09:15:07",
             "provider": {
-                "name": "cnbc",
+                "name": "nwaonline",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -64,26 +64,26 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "cnbc",
+                    "name": "nwaonline",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "https://www.cnbc.com/2021/01/09/what-experts-say-about-cryptocurrency-bitcoin-concerns.html"
+                "webpageUrl": "http://www.nwaonline.com/news/2021/jan/16/anti-abortion-faith-leaders-ok-vaccines/"
             }
         },
         {
-            "id": "4517862105151006143",
-            "title": "Bitcoin Vs Dollar Rate: Cryptocurrency Bitcoin Touched New Record High Of $41,530, Bull Run Continues",
-            "url": "https://www.ndtv.com/business/bitcoin-vs-dollar-rate-cryptocurrency-bitcoin-touched-new-record-high-of-41-530-bull-run-continues-2350050?pfrom=home-ndtv_business",
-            "description": "Bitcoin Vs Dollar Rate: The total market value of all cryptocurrencies surged above $1 trillion for the first time on Thursday, January 7, as Bitcoin soared past $40,000 for the first time",
-            "body": "Updated: January 09, 2021 3:33 pm IST\nThe market cap of all cryptocurrencies rose 10 per cent to $1.042 trillion on January 7\nBitcoin Price News: Cryptocurrency bitcoin jumped more than five per centon Friday, January 8,to fresh record highs of $41,530, reversing losses from its earlier performance duringthe session. The world's most popular virtualcurrency slid to as low as $36,618.36 on Bitstamp exchange before bouncing back. The rival cryptocurrency - ethereum rose 3 per centafter plungingmore than 10 per cent. Bitcoin has rallied nearly 1,000 per centsince a low in March. Bitcoin has had a broader bull run since October 2020,ever since US-based online payments firm PayPal allowed its customers to use the cryptocurrencyon its network. It topped $30,000 for the first time on January 2, after breaching the $20,000 mark on December 16. (Also Read:\nCryptocurrency Market Cap Touches $1 Trillion: All You Need To Know\n)\nA higher demand from corporate, institutional,and even retail investors has influencedbitcoin's surge in prices, amid its inflation-hedging qualities and potential for quick gains.\"We are seeing a continued demand spike driven largely by sustained and unprecedented institutional interest, showing no sign of abating as we move into 2021,\" said Frank Spiteri of digital asset manager CoinShares.\nOn January 5,JPMorgan strategists wrote that the digital currency has emerged as a rival to gold and could trade as high as $146,000 if it becomes established as a safe-haven asset. On Friday,Bank of America investment strategistsstated thatviolentinflationary price action in markets helped bitcoin's rally in the last two months.\nPromoted\nJioSaavn.com\nBitcoin is also the first and largest cryptocurrency by market capitalisation. Meanwhile, the market cap of all cryptocurrencies rose 10 per centto $1.042 trillion on Thursday, ",
+            "id": "8997376160011924989",
+            "title": "Watch: Indias vaccine maker administered the jab",
+            "url": "https://www.oneindia.com/india/watch-india-s-vaccine-maker-administered-the-jab-3203220.html?utm_source=/rss/news-fb.xml&utm_medium=23.55.162.158&utm_campaign=client-rss",
+            "description": "Serum Institute CEO, Adar Poonawalla was administered the first dose of the COVID-19 vaccine today, hours after Prime Minister Narendra Modi launched the nationwide drive.Poonawalla's company is manufacturing the vaccine developed by AstraZeneca and Oxford University.",
+            "body": "January 16, 2021\n\"I wish India and Narendra Modiji great success in launching the world's largest COVID-19 vaccination roll-out. It brings me great pride that Covishield is part of this historic effort and, to endorse its safety and efficacy, I join our health workers in taking the vaccine,\" he said in a tweet.\nCOVID vaccine: BJP MP Mahesh Sharma becomes first public representative to get vaccinated\nPrime Minister Narendra Modi, while rolling out the COVID-19 vaccine said that citizens should not fall for rumours. He said that citizens should not fall for propaganda or rumours over the vaccines.\nThe DGCI has given approval after they were satisfied with the data of the vaccines. Please stay away from rumours, the PM also said. Our vaccines have global credibility and life saving vaccines have been given to 60 per cent children that are globally made in India, the PM said.\nIndia's vaccines are developed in a way keeping in mind the conditions of the country and they will give a decisive victory to the nation, PM Modi also said.",
             "keywords": "",
             "language": "en",
             "isSafe": true,
-            "datePublished": "2021-01-09T10:00:14",
+            "datePublished": "2021-01-16T09:10:07",
             "provider": {
-                "name": "ndtv",
+                "name": "oneindia",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -98,26 +98,26 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "ndtv",
+                    "name": "oneindia",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "https://www.ndtv.com/business/bitcoin-vs-dollar-rate-cryptocurrency-bitcoin-touched-new-record-high-of-41-530-bull-run-continues-2350050?pfrom=home-ndtv_business"
+                "webpageUrl": "https://www.oneindia.com/india/watch-india-s-vaccine-maker-administered-the-jab-3203220.html?utm_source=/rss/news-fb.xml&utm_medium=23.55.162.158&utm_campaign=client-rss"
             }
         },
         {
-            "id": "442404115946674013",
-            "title": "Bitcoin Tops $40,000 for the First Time, Pushing the Value of the Worlds Cryptocurrency Over $1 Trillion",
-            "url": "https://forextv.com/bitcoin-news/bitcoin-tops-40000-for-the-first-time-pushing-the-value-of-the-worlds-cryptocurrency-over-1-trillion/",
-            "description": "Click here to read the full article. Theres never been a lack of skepticism surrounding cryptocurrency. And its fair to say the jury still wavers at times. But with 2021 just a week old, the worlds  Read Full Story",
-            "body": "Privacy Policy and Terms of Use\nRisk Disclaimer - By using this web site you agree to its terms and conditions. All materials, including but not limited to articles, directories, photos, lists, etc., on this website are the sole property of ForexTV or the respective copyright holders and are intended for informational/educational purposes using hypothetical and sometimes anecdotal illustrations. The unauthorized use of any and all materials is prohibited and restricted by copyright law. Any use of materials on this site must be approved in advance by ForexTV. Before deciding to invest in foreign exchange you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose. You should be aware of all the risks associated with foreign exchange trading, and seek advice from an independent financial advisor if you have any doubts. Forex (or FX or off-exchange foreign currency futures and options) trading involves substantial risk of loss and is not suitable for every investor. The value of currencies may fluctuate and investors may lose all or more than their original investments. Risks also include, but are not limited to, the potential for changing political and/or economic conditions that may substantially affect the price and/or liquidity of a currency. The impact of seasonal and geopolitical events is already factored into market prices. The leveraged nature of FX trading means that any market movement will have an equally proportional effect on your deposited funds and such may work against you as well as for you. Past results are no indication of future performance. Information contained this web site is",
+            "id": "317304607672291345",
+            "title": "Swiss set to approve AstraZeneca COVID vaccine this month: NZZ",
+            "url": "https://www.metro.us/swiss-set-to-approve/",
+            "description": "ZURICH (Reuters)  AstraZenecas COVID-19 vaccine could win Swiss regulatory approval as early as this month, the NZZ newspaper reported on Saturday, citing two unnamed sources. It said watchdog Swissmedic plans a meeting at the end of the month to sign off on the jab. It has already approved vaccines from Pfizer and partner BioNTech, []",
+            "body": "January 16, 2021\nFILE PHOTO: Vials and medical syringe are seen in front of AstraZeneca logo in this illustration\nZURICH (Reuters)      AstraZenecas COVID-19 vaccine could win Swiss regulatory approval as early as this month, the NZZ newspaper reported on Saturday, citing two unnamed sources.\nIt said watchdog Swissmedic plans a meeting at the end of the month to sign off on the jab. It has already approved vaccines from Pfizer and partner BioNTech, and from Moderna.\nIf everything proceeds in an exemplary manner and we get the necessary data soon, the next approval decision can come very quickly, the paper cited a Swissmedic spokesman as saying without giving a date.\nSwitzerland has ordered 15 million vaccine doses in total after setting aside 400 million Swiss francs ($449 million) for shots.",
             "keywords": "",
             "language": "en",
             "isSafe": true,
-            "datePublished": "2021-01-09T04:01:10",
+            "datePublished": "2021-01-16T09:09:23",
             "provider": {
-                "name": "forextv",
+                "name": "metro",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -132,26 +132,26 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "forextv",
+                    "name": "metro",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "https://forextv.com/bitcoin-news/bitcoin-tops-40000-for-the-first-time-pushing-the-value-of-the-worlds-cryptocurrency-over-1-trillion/"
+                "webpageUrl": "https://www.metro.us/swiss-set-to-approve/"
             }
         },
         {
-            "id": "8131868027094756538",
-            "title": "You Can Rely on Forex EA Trader and its Systems",
-            "url": "https://menafn.com/1101407172/Forex-EA-Trader-Review-You-Can-Rely-on-Forex-EA-Trader-and-its-Systems?source=323",
-            "description": "Jan 8, 20211:30 PM ETIn the online trading industry, some of the major trading instruments are Stocks, Indices, Cryptocurrencies, and Commodities. In the past couple of years, these trading instruments have gained all-time high user-base, investments, and popularity. The major factor that caused this was mass un-employments that h",
-            "body": "Tweet on Twitter\n(MENAFN - iCrowdNewsWire) Jan 8, 20211:30 PM ET\nIn the online trading industry, some of the major trading instruments are Stocks, Indices, Cryptocurrencies, and Commodities. In the past couple of years, these trading instruments have gained all-time high user-base, investments, and popularity. The major factor that caused this was mass un-employments that have started trending in due to low economies and recessions.\nHow Masses Landed Online Trades\nThen the pandemic hit the entire world towards the beginning of the running year 2020 and things turned ugly for the global economy. Millions of people ended up losing their jobs and business and with nowhere else to go, these online trading platforms appeared to be the safe-havens for the desperate people.\nHow big is Online Forex?\nIn the recent years, the user-following on these platforms has increased from a few millions to hundreds of millions. Even then, the combined trading volume of these instruments dwarfs when online 'Forex' trading makes its entrance. It is the platform where the daily transaction volume is more than $6.6 Trillion per day.\n>> Try Forex EA Trader Today  Sign Up Here\nCan Anyone Do Forex Trading?\nTo be honest, there was a time in the past when it was possible for almost every person to do forex trading. It was mainly because the brokers would be completely involved with each one of their investors. They would provide them with insights, analysis reports, price reports, upcoming events schedules, asset-protection, real-time assistance and many more. All the aspects combined made forex trading not so much of a complex system for the investors to survive in.\nHowever, with more and more investors coming in",
+            "id": "6740528680915922467",
+            "title": "UK Coronavirus LIVE: UK faces delay in Pfizer vaccine delivery as aviation industry warns of impact of travel corridor curbs",
+            "url": "http://thisislondon.co.uk/news/uk/coronavirus-uk-live-updates-latest-covid-vaccine-b899982.html",
+            "description": "The UK is set to face short-term delays in delivery of the Pfizer coronavirus vaccine as the pharmaceutical company upgrades its production capacity.",
+            "body": "1610787945\nSAGE expert: Likely both Brazilian coronavirus strains already in the UK\nProfessor John Edmunds, who works on the Governments coronavirus response as part of the scientific advisory group for emergencies (Sage), has said said it was likely that there are already cases of both Brazilian coronavirus variants in the UK.\nHe told BBC Radio 4s Today programme: In terms of the South African one, we had imported cases already by the time we put in additional restrictions for South African travellers.\nFor the Brazilian one I dont think there is evidence that weve imported cases of the Manaus strain, as far as Im aware at least, but it is likely that we probably have quite honestly.We are one of the most connected countries in the world so I would find it unusual if we hadnt imported some cases into the UK.\nTwo variants of interest have been identified in Brazil; the first has a small number of mutations and eight genomically confirmed cases of this variant have been identified in the UK.\nThe second, which has been detected in Manaus and in travellers arriving in Japan and it is feared is highly contagious, has not been detected in the UK.\n1610787621\nWe have to social distance better\nPublic health measures like social distancing are working to stop the transmission of new strains of coronavirus, but we have to do them better, a World Health Organisation spokeswoman has said.\nDr Margaret Harris told the BBC: The thing were seeing with quite a few of the different strains that have been identified in different countries is theyre not proving more dangerous in terms of making you sicker, but they are more efficient at transmitting.\nThe public health measures that we know work: the distancing, not gathering in large numbers, understanding who has the virus and who has not, keeping the two apart, all those measures do work.\nThey work over and over again in a number of",
             "keywords": "",
             "language": "en",
             "isSafe": true,
-            "datePublished": "2021-01-08T14:43:10",
+            "datePublished": "2021-01-16T09:09:16",
             "provider": {
-                "name": "menafn",
+                "name": "thisislondon",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -166,26 +166,26 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "menafn",
+                    "name": "thisislondon",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "https://menafn.com/1101407172/Forex-EA-Trader-Review-You-Can-Rely-on-Forex-EA-Trader-and-its-Systems?source=323"
+                "webpageUrl": "http://thisislondon.co.uk/news/uk/coronavirus-uk-live-updates-latest-covid-vaccine-b899982.html"
             }
         },
         {
-            "id": "8792333614509381373",
-            "title": "Bitcoin at $ 40,000: how far will cryptocurrency fly?",
-            "url": "https://www.inspiredtraveler.ca/bitcoin-at-40000-how-far-will-cryptocurrency-fly/",
-            "description": "Bitcoin continues to break records. Only twenty days after having crossed the threshold of 20,000 dollars, its price reached 40,000",
-            "body": "January 6, 2021\nBitcoin volatility\nThe only brake for the moment, these prospects depend on the volatility of Bitcoin and which will have to converge with that of gold in order to encourage more institutional investments, a process which will take time, according to the note of JP Morgan.  But more and more institutions are investing in this cryptocurrency and their ability to redeem when the price drops, would be a factor of stability.\nFor the moment, the note does not exclude that Bitcoin will reach in the coming months a price of between 50,000 and 100,000 dollars but JP Morgan adds that such price levels would prove unsustainable  this year.\nCraze for other cryptocurrencies\nThe rise of Bitcoin and the value at which it is now are encouraging investors to take an interest in other cryptocurrencies such as Ethereum, the cryptocurrency associated with the Ethereum blockchain.  According to the JournalduNet, tens of thousands of developers are building applications on Ethereum for the finance, entertainment, cloud and real estate industries.\nValued at just over $ 550 in early December, Ether crossed $ 1,000 on January 4 and now exceeds $ 1,200.\nGoogle queries for  #EthereumAre at the highest level ever recorded  ud83d  udcc8 What to see coming a new historical record for the price of",
+            "id": "7653808371556657841",
+            "title": "Coronavirus: UK to face short-term delay in delivery of Pfizer vaccine",
+            "url": "https://www.heraldscotland.com/news/19016662.coronavirus-uk-face-short-term-delay-delivery-pfizer-vaccine/?ref=rss",
+            "description": "The UK is set to face short-term delays in delivery of the Pfizer coronavirus vaccine as the pharmaceutical company upgrades its production capacity.",
+            "body": "comment\nThe UK is set to face short-term delays in delivery of the Pfizer coronavirusvaccine as the pharmaceutical company upgrades its production capacity.\nPfizer is upscaling production at its plant in Puurs, Belgium, in efforts to produce more doses than originally planned for 2021  temporarily reducing deliveries to all European countries.\nShipments of the vaccine, produced in partnership with Germanys BioNTech, to the UK are set to be affected this month.\nREAD MORE:\nCoronavirus Scotland: New Covid restrictions come into effect\n(PA Graphics)\nBut the overall number of doses due to be delivered between January and March will remain the same, according to the US firm.\nIn response, a spokeswoman for the Government said that it is still working to its plan of vaccinating all four priority groups by February 15.\nThe vaccine from Pfizer is not the only candidate available in the UK, with the University of Oxford and AstraZeneca jab also currently being rolled out.\n(Victoria Jones/PA)\nA Pfizer spokeswoman said: We understand a change to deliveries has the potential to create uncertainty.\nHowever, we can confirm the overall projected volumes of delivery to the UK remain the same for quarter one (January to March).\nREAD MORE:\nWe continue to liaise with the UK Government and the Vaccines Taskforce to work through short-term impact of these changes to our January deliveries and support the goals of the UK Covid-19 vaccination programme.\nThe UK has secured 40 million doses of the vaccine from Pfizer and BioNTech.\nA Government spokeswoman said: We are in the process of understanding the implications of Pfizers announcement today to our plans.\nHowever we continue to plan to hit our target of vaccinating all four priority groups by February 15.",
             "keywords": "",
             "language": "en",
             "isSafe": true,
-            "datePublished": "2021-01-08T11:03:45",
+            "datePublished": "2021-01-16T09:00:00",
             "provider": {
-                "name": "inspiredtraveler",
+                "name": "heraldscotland",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -200,26 +200,26 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "inspiredtraveler",
+                    "name": "heraldscotland",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "https://www.inspiredtraveler.ca/bitcoin-at-40000-how-far-will-cryptocurrency-fly/"
+                "webpageUrl": "https://www.heraldscotland.com/news/19016662.coronavirus-uk-face-short-term-delay-delivery-pfizer-vaccine/?ref=rss"
             }
         },
         {
-            "id": "1406903756586730495",
-            "title": "Coinbase cryptocurrency traders continue to face frozen funds for weeks",
-            "url": "https://www.dailymail.co.uk/money/investing/article-9118141/Coinbase-cryptocurrency-traders-continue-face-frozen-funds-weeks.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-            "description": "Cryptocurrency traders are still struggling to profit from bitcoin's recent record run as their funds continued to be frozen inside the UK's most popular cryptocurrency exchange for as long as five weeks.",
-            "body": "Share\nHOW THIS IS MONEY CAN HELP\nHow do I buy bitcoin? Where to get in on the action as securely as possible\nSince the end of October, when customers began reporting their accounts were frozen, the price has risen from just under $13,900, a rise of around 133 per cent.\nBut the actions by San Francisco-based Coinbase, which has 35million worldwide users and is popular among casual investors as it lets them buy bitcoin with smaller sums of money, have left many unable either to bank existing profits or take advantage of the price rise and make more.\nMr Jones told us in mid-December: 'As soon as I loaded the bitcoin Coinbase said my account needed to be verified. I uploaded my drivers' license as required and expected it to be processed quickly.\nBitcoin has surged in price to more than $30,000 a coin over the last year\n'17 days later and it still says my account is under review. I have raised 4 tickets, I had one response that said someone would look at it in 24-48 hours and still nothing. There is no phone support.\n'I'm obviously petrified that I'm going to lose 7,000 and there seems to be no way to contact them or do anything about it, the internet is littered with similar complaints.'\nAfter his account was finally unlocked, 'I took the opportunity and sold my crypto and closed the account with them', he said.\nWhat is a cryptocurrency exchange?\nCryptocurrency exchanges are platforms, mobile apps and websites which allow investors to purchase bitcoin with government, or fiat, money or with another cryptocurrency.\nMeanwhile those who wish to hold bitcoin for the purpose of sending or spending it, rather than simply to make a profit from an increase in the price, will likely need a cryptocurrency 'wallet'.\nThis contains public and private 'keys', which help provide details and keep users' cryptocurrencies safe.\nIt",
+            "id": "4874544702257822932",
+            "title": "Senate COW eyes third hearing on PH COVID vaccine rollout  Manila Bulletin",
+            "url": "https://mb.com.ph/2021/01/16/senate-cow-eyes-third-hearing-on-ph-covid-vaccine-rollout/?utm_source=rss&utm_medium=rss&utm_campaign=senate-cow-eyes-third-hearing-on-ph-covid-vaccine-rollout",
+            "description": "The Senate Committee of the Whole (COW) may call for a third public hearing on the planned roll out of coronavirus disease (COVID-19) vaccines by the Duterte administration to inoculate tens of millions of Filipinos as answers of key government officials to questions showed inconsistencies.",
+            "body": "Mario Casayuran\nThe Senate Committee of the Whole (COW) may call for a third public hearing on the planned roll out of coronavirus disease (COVID-19) vaccines by the Duterte administration to inoculate tens of millions of Filipinos as answers of key government officials to questions showed inconsistencies.\nThis planned call might be discussed by senators when they review next week the transcripts of the two-day in-person and virtual public hearings because only 50 percent of the questions fielded by senators were clearly explained, Sen. Panfilo M. Lacson said today during a DWIZ radio interview.\nThere were many loose endshanging questions, Lacson said.\nHe cited a government statement that there could be a discount for the shipment of 44 million doses of vaccines to the Philippines through the COVAX program by European countries and the World Health Organization (WHO).\nIt turned out that the vaccine shipment by COVAX is free, he said.\nLacson cited a query by Senate President Vicente C. Sotto III, COW chairman, on theprice per dose of AstraZeneca vaccine and the answer of businessman Joey Concepcion,Presidential Adviser for EntrepreneurshipJoeyConcepcion,is $5.\nWhen Sotto asked vaccine czar Carlito Galvez Jr. on the price of a Sinovac vaccine, Galvezs answer is we are bound by Confidentiality Disclosure Agreement (CDA).\nDespite a government to government (G to G) policy in negotiating for the supply of vaccines, the national government is dealing with a Helen Yang based in Hong Kong representing Sinovac, a privateChinese pharmaceutical firm, and not with the Chinese government, Lacson pointed out.\nLacson also questioned the track record of Sinovac whose president allegedly bribed Chinese officials to get a certification for it",
             "keywords": "",
             "language": "en",
             "isSafe": true,
-            "datePublished": "2021-01-08T07:44:44",
+            "datePublished": "2021-01-16T08:59:33",
             "provider": {
-                "name": "dailymail",
+                "name": "mb",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -234,26 +234,26 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "dailymail",
+                    "name": "mb",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "https://www.dailymail.co.uk/money/investing/article-9118141/Coinbase-cryptocurrency-traders-continue-face-frozen-funds-weeks.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+                "webpageUrl": "https://mb.com.ph/2021/01/16/senate-cow-eyes-third-hearing-on-ph-covid-vaccine-rollout/?utm_source=rss&utm_medium=rss&utm_campaign=senate-cow-eyes-third-hearing-on-ph-covid-vaccine-rollout"
             }
         },
         {
-            "id": "5345035205173102451",
-            "title": "Treasury Signals Intention To Make Cryptocurrency Like Bitcoin Reportable On FBAR",
-            "url": "https://www.forbes.com/sites/kellyphillipserb/2021/01/07/treasury-signals-intention-to-make-cryptocurrency-like-bitcoin-reportable-on-fbar/",
-            "description": "For years, Treasury has advised taxpayers that virtual currency is not required to be reported on the Financial Crimes Enforcement Network (FinCEN) Form 114, Report of Foreign Bank and Financial Accounts, or what used to be called the FBAR.",
-            "body": "Breaking Down Changes To The Employee Retention Tax Credit In The New Covid Relief Bill, Part 1\n(You can find out more about cryptocurrency - and how its taxed - on the Taxgirl podcast here)\nBut Notice 2014-21 didnt specifically mention the FBAR. And the income tax treatment of assets is not the same as the reporting requirements for FBAR purposes.\nOn June 4, 2014, Rod Lundquist, a senior program analyst for the Small Business/Self-Employed Division, was asked about this issue and confirmed that, for FBAR purposes, Bitcoin was not reportable \"...not at this time.\" He followed up by saying that \"FinCEN has said that virtually currency is not going to be reportable on the FBAR, at least for this filing season.\"\nThe IRS further confirmedthat treatment, stating, The Financial Crimes Enforcement Network, which issues regulatory guidance pertaining to Reports of Foreign Bank and Financial Accounts (FBARs), is not requiring that digital (or virtual) currency accounts be reported on an FBAR at this time but may consider requiring such accounts to be reported in the future. No additional guidance is available at this time.\nNow, FinCEN is taking a different tack. On December 30, 2020, FinCEN published a short notice. That notice, FinCEN Notice 2020-2, reads:\nCurrently, the Report of Foreign Bank and Financial Accounts (FBAR) regulations do not define a foreign account holding virtual currency as a type of reportable account. (See 31 CFR 1010.350(c)). For that reason, at this time, a foreign account holding virtual currency is not reportable on the FBAR (unless it is a reportable account under 31 C.F.R. 1010.350 because it holds reportable assets besides virtual currency). However, FinCEN intends to propose to amend the regulations implementing the Bank Secrecy Act (BSA) regarding repo",
+            "id": "2389751643792133514",
+            "title": "Willie Nelson receives first dose of coronavirus vaccine at drive-through",
+            "url": "https://www.nme.com/news/music/willie-nelson-receives-first-dose-of-coronavirus-vaccine-2857963?utm_source=rss&utm_medium=rss&utm_campaign=willie-nelson-receives-first-dose-of-coronavirus-vaccine",
+            "description": "Willie Nelson received his first dose of the coronavirus vaccine this week at a drive-through centre in Texas.",
+            "body": "Willie Nelson\nreceived his first dose of the coronavirusvaccine this week.\nThe 87-year-old country icon was given the Moderna jab at a clinic in Cedar Park, Texas on Wednesday (January 13), his wife Annie confirmed to Rolling Stone\nREAD MORE:\nWere lucky, she told the outlet. We made sure that [he] wasnt cutting anybody  in fact, the healthcare workers were kind of angry that we had waited so long because he is 87 years old and has COPD.\nAdvertisement\nA selection of photos posted to Family Hospital Systems official Facebook page show a masked Nelson being administered the vaccine in his car at a drive-through centre.\nGetting your COVID vaccine is Willie cool!Thank you Willie Nelson for helping Family Hospital Systems slow the spread\nPosted by Family Hospital Systemson\nWednesday, January 13, 2021\nGetting your COVID vaccine is Willie cool! an accompanying message reads. Thank you Willie Nelson for helping Family Hospital Systems slow the spread of COVID-19! You can see that post above.\nThe musicians wife said her husband was bragging yesterday after he got it that he didnt even have a sore arm, adding: Now, today, of course his arm is sore.\n, on February 26. Upon announcing the project last month, he shared his spin on Sinatras A Cottage For Sale.\nAdvertisement\nWillie Nelson released his 70th studio LP, First Rose Of Spring, last July. In a three-star review, NME saidthe record doesnt sound like a man coming to the end of his prime, but one slap-bang in the middle of it.\nRelated Topics",
             "keywords": "",
             "language": "en",
             "isSafe": true,
-            "datePublished": "2021-01-08T01:58:32",
+            "datePublished": "2021-01-16T08:47:23",
             "provider": {
-                "name": "forbes",
+                "name": "nme",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -268,26 +268,26 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "forbes",
+                    "name": "nme",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "https://www.forbes.com/sites/kellyphillipserb/2021/01/07/treasury-signals-intention-to-make-cryptocurrency-like-bitcoin-reportable-on-fbar/"
+                "webpageUrl": "https://www.nme.com/news/music/willie-nelson-receives-first-dose-of-coronavirus-vaccine-2857963?utm_source=rss&utm_medium=rss&utm_campaign=willie-nelson-receives-first-dose-of-coronavirus-vaccine"
             }
         },
         {
-            "id": "8317266482104176212",
-            "title": "Cryptocurrency News: Treasury's OK Of Stablecoins Opens Door For US Banks",
-            "url": "http://ibtimes.com/cryptocurrency-news-treasurys-ok-stablecoins-opens-door-us-banks-3116807",
-            "description": "The move could lead to faster online transactions as banks create their own infrastructure with cryptocurrency tied to the dollar.",
-            "body": "Cryptocurrency News: Treasury's OK Of Stablecoins Opens Door For US Banks\nBy\n01/07/21 AT 5:49 PM\nKEY POINTS\nThe Department of the Treasury has given U.S. banks permission to host stablecoin infrastructure and accept transactions\nStablecoins are cryptocurrency tied to an outside variable like the dollar to reduce instability\nThe change could mean fast online transactions as banks use tokens tied to the dollar\nThe Department of the Treasury has clarified its rules, permitting U.S. banks to participate in stablecoin networks and transactions. The move makes it possible for banks to use cryptocurrency tied to the dollar to make online and cross-border transactions extremely fast without the need for federal infrastructure.\nStablecoins are cryptocurrency that resist the technologys characteristic price volatility by tying their value to an external variable, like the dollar or commodities. They use the same blockchain technology as other cryptocurrencies, each user hosting an index to create a peer-to-peer network to verify transactions and monitor holdings.\nThanks to recent action from the Treasury, the ranks of those peers may soon include Americas largest banks. A  Monday releasefrom the Office of the Comptroller of the Currency, the people in charge of implementing U.S. monetary policy, clarified that banks are permitted to participate in stablecoin networks and complete stablecoin transactions.\nThe primary role of banks is to act as financial intermediaries, facilitating the flow of money and credit among different parts of the economy, the announcement read. The evolving financial needs of the economy have led to a demand for banks to use [independent node verification networks] to carry out their financial functions.\nThat role of an intermediary is what has so many people excited. The Federal Reserve has been slow to create the infrastructure needed for a true digital dollar letti",
+            "id": "263528900108954147",
+            "title": "Covid-19 vaccinedrive Phase I begins at 243 sites in Karnataka",
+            "url": "http://deccanherald.com/state/top-karnataka-stories/covid-19-vaccine-drive-phase-i-begins-at-243-sites-in-karnataka-939696.html",
+            "description": "The first phase of Covid-19 vaccination drive began at 243 sites across the state, including 10 in Bengaluru on Saturday. After Prime Minister Narendra Modi launched the vaccination drive nationally through video conferencing, Nagaratna K (28), a ward attendant at Victoria Hospital received the vaccine in the presence of Chief Minister B S Yediyurappa, Union Minister Pralhad",
+            "body": "Jan 16 2021, 14:14 ist\nupdated: Jan 16 2021, 14:17 ist\nThe first phase of Covid-19 vaccination drive began at 243 sites across the state, including 10 in Bengaluru on Saturday.\nAfter Prime Minister Narendra Modi launched the vaccination drive nationally through video conferencing, Nagaratna K (28), a ward attendant at Victoria Hospital received the vaccine in the presence of Chief Minister B S Yediyurappa, Union Minister Pralhad Joshi and Health Minister K Sudhakar among others at the Bangalore Medical College.\nYediyurappa and other dignitaries greeted Nagaratna, who hails from a village near Bidadi, with rose flowers after she received the vaccine.\nSeveral doctors and health experts including noted nephrologist and chairman of Manipal Hospitals Sudarshan Ballal also got vaccinated.\nCoronavirus vaccine news updates on DH\nAccording to the Health Department, Covishield will be administered in 237 centres and Covaxin in six centres in Bellary, Shivamogga, Hassan, Chikmagalur, Chamarajnagar and Davanegere.\nA total of 7,17,439 health warriors will be vaccinated in the initial phase, officials have said, the aim is to vaccinate 24,300 people on the first day itself, and we have 8,14,500 doses of vaccine and the initial phase is expected to complete within a week.\nSpeaking to reporters, Yediyurappa said, \"the vaccination drive will be held at 243 sites across the state and at every site 100 people will be vaccinated, and it will be increased in the days to come.\"\nPointing out that Dr Ballal was also administered the vaccine, he said, this shows that no one needs to worry or fear about the vaccine, and we should be proud that they were produced in ",
             "keywords": "",
             "language": "en",
             "isSafe": true,
-            "datePublished": "2021-01-07T22:49:05",
+            "datePublished": "2021-01-16T08:44:52",
             "provider": {
-                "name": "ibtimes",
+                "name": "deccanherald",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -302,26 +302,26 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "ibtimes",
+                    "name": "deccanherald",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "http://ibtimes.com/cryptocurrency-news-treasurys-ok-stablecoins-opens-door-us-banks-3116807"
+                "webpageUrl": "http://deccanherald.com/state/top-karnataka-stories/covid-19-vaccine-drive-phase-i-begins-at-243-sites-in-karnataka-939696.html"
             }
         },
         {
-            "id": "3683397675322999082",
-            "title": "Cryptocurrency Now Collectively Worth Over $1 Trillion",
-            "url": "https://www.webpronews.com/cryptocurrency-now-collectively-worth-over-1-trillion/",
-            "description": "Cryptocurrency has hit a major milestone, with the collective value passing the $1 trillion mark, led largely by Bitcoins meteoric rise.",
-            "body": "Matt Milano\n1 day ago\nCryptocurrency has hit a major milestone, with the collective value passing the $1 trillion mark, led largely by Bitcoins meteoric rise.\nConsidered the oldest cryptocurrency, and certainly the most well-known, Bitcoin has been on a tear in recent weeks, topping $40,000 on Thursday, before dropping to just under that mark at the time of writing. The cryptocurrency has doubled in less than a month and quadrupled in the past year.\nBitcoins current price means the currency has a valuation of more than $700 billion, according\nArs Technica\n. Bitcoin, however, is by no means the only cryptocurrency. Ether is worth an estimated $140 billion, Tether $22 billion, Litecoin $11 billion and Bitcoin Cash $8 billion.\nCollectively, these cryptocurrencies now represent a $1 trillion valuation. In addition, there are still some high-profile cryptocurrencies yet to be released, such as Facebooks Libra, now known as Diem\nIt remains to be seen just how high cryptocurrencies valuation will go as the industry continues to mature.",
+            "id": "7365331440363297832",
+            "title": "Pfizer delays January vaccine delivery to Bahrain: Health Ministry",
+            "url": "https://economictimes.indiatimes.com/news/international/uae/pfizer-delays-january-vaccine-delivery-to-bahrain-health-ministry/articleshow/80300481.cms",
+            "description": "A January shipment of the Pfizer-BioNTech vaccine to the Gulf state of Bahrain will not arrive on time, the ministry of health said on Saturday, but second doses of the jab already scheduled will not be affected.",
+            "body": "ministry of health\nsaid on Saturday, but second doses of the jab already scheduled will not be affected.\nThe small island state of Bahrain has the third-highest rate of vaccinations per capita in the world so far, according to the Our World in Data website, which is run by an\nOxford University\nresearch programme.\n\"The delay will not affect citizens and residents receiving the second dose of the vaccine over the upcoming period, according to current scheduled dates and the availability of the needed quantity for them,\" the\nhealth ministry\nsaid in a statement carried by state news agency BNA.\nBahrain offers its citizens free of charge either the Pfizer-BioNTech vaccine or one manufactured by Chinese state-backed pharmaceutical giant\n.\nOther Gulf states including Saudi Arabia, Qatar, Oman and the emirate of Dubai have also purchased the\njabs. U.S. pharmaceutical firm Pfizer this week said there would be a temporary impact on shipments in late January to early February caused by changes to manufacturing processes to boost production.\nRead More News on",
             "keywords": "",
             "language": "en",
             "isSafe": true,
-            "datePublished": "2021-01-07T21:52:30",
+            "datePublished": "2021-01-16T08:43:52",
             "provider": {
-                "name": "webpronews",
+                "name": "indiatimes",
                 "favIcon": "",
                 "favIconBase64Encoding": ""
             },
@@ -336,12 +336,12 @@
                 "name": null,
                 "title": null,
                 "provider": {
-                    "name": "webpronews",
+                    "name": "indiatimes",
                     "favIcon": "",
                     "favIconBase64Encoding": ""
                 },
                 "imageWebSearchUrl": null,
-                "webpageUrl": "https://www.webpronews.com/cryptocurrency-now-collectively-worth-over-1-trillion/"
+                "webpageUrl": "https://economictimes.indiatimes.com/news/international/uae/pfizer-delays-january-vaccine-delivery-to-bahrain-health-ministry/articleshow/80300481.cms"
             }
         }
     ]

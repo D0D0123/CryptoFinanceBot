@@ -100,7 +100,8 @@ async def crypto_update():
         # for every server, retrieve it's autopost channel and watch list
         channel = bot.get_channel(server_dict['autopost_channel'])
         watch_list = server_dict['watch_list']
-        await channel.send("*Here's the hourly update for the following coins:*")
+        if len(watch_list) > 0:
+            await channel.send("*Here's the hourly update for the following coins:*")
         # create and send an embed for each coin in the watch list
         for symbol in watch_list:
             crypto_data = get_individual_crypto_data(total_data, symbol)
