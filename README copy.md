@@ -69,7 +69,7 @@ with the depth of information depending on the parameter given
 </br>
 </br>
 <p align="center" >
-  <img src="media/command-examples/crypto-BTC-all.png" />
+  <img height=500 src="media/command-examples/crypto-BTC-all.png" />
 </p>
 </br>
 
@@ -84,7 +84,7 @@ Provides a list of the top 20 cryptocurrencies (ranked by market cap)
 </br>
 </br>
 <p align="center" >
-  <img src="media/command-examples/list.png" />
+  <img height=600 src="media/command-examples/list.png" />
 </p>
 </br>
 
@@ -105,11 +105,11 @@ The bot will provide hourly updates on the currencies in this watch list.
 </br>
 </br>
 <p align="center" >
-  <img src="media/command-examples/watch-add.png" />
+  <img height=400 src="media/command-examples/watch-add.png" />
 </p>
 </br>
 <p align="center" >
-  <img src="media/command-examples/hourly-update.png" />
+  <img height=550 src="media/command-examples/hourly-update.png" />
 </p>
 </br>
 
@@ -128,11 +128,11 @@ exceeds/falls below your chosen price.
 
 </br>
 <p align="center" >
-  <img src="media/command-examples/ping-BTC.png" />
+  <img width="500" src="media/command-examples/ping-BTC.png" />
 </p>
 </br>
 <p align="center" >
-  <img src="media/command-examples/ping-update.png" />
+  <img width="500" src="media/command-examples/ping-update.png" />
 </p>
 </br>
 
@@ -148,7 +148,7 @@ either a specified cryptocurrency, or a general phrase.
 
 </br>
 <p align="center" >
-  <img src="media/command-examples/news-DOT.png" />
+  <img height="650" src="media/command-examples/news-DOT.png" />
 </p>
 </br>
 
@@ -156,7 +156,7 @@ either a specified cryptocurrency, or a general phrase.
 
 </br>
 <p align="center" >
-  <img src="media/command-examples/news-COVID.png" />
+  <img height="650" src="media/command-examples/news-COVID.png" />
 </p>
 </br>
 
@@ -179,7 +179,7 @@ Displays information about a specified cryptocurrency, as well as a link to read
 
 </br>
 <p align="center" >
-  <img src="media/command-examples/about-ETH.png" />
+  <img height="500" src="media/command-examples/about-ETH.png" />
 </p>
 </br>
 
@@ -194,7 +194,7 @@ Sends the raw market data and metadata for the last !crypto call as text files
 </br>
 <p align="center">
   <!-- <img src="media/proper-logo-3-filled.png" /> -->
-  <img src="media/CryptoLogov2Triad.svg" />
+  <img height="200" src="media/CryptoLogov2Triad.svg" />
 </p>
 </br>
 

@@ -1,6 +1,6 @@
 '''
 This is the main file for the Cryptocurrency Bot application. 
-Run python crypto.py to start up the bot.
+Run python crypto.py (from within src) to start up the bot.
 '''
 
 from requests import Request, Session

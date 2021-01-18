@@ -7,7 +7,6 @@ from discord import Embed
 from datetime import datetime
 from news import get_about_info, get_news
 
-
 '''
 Formats floating point numbers to have commas, 
 to either 2 decimal places or none
