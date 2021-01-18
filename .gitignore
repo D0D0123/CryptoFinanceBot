@@ -1,0 +1,3 @@
+_pycache_
+src/_pycache_
+git update-index --assume-unchanged <src/.env>
