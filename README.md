@@ -192,11 +192,20 @@ Sends the raw market data and metadata for the last !crypto call as text files
 **!raw**
 
 </br>
+<p align="center" >
+  <img src="media/command-examples/raw.png" />
+</p>
+
+#
+
+</br>
 <p align="center">
   <!-- <img src="media/proper-logo-3-filled.png" /> -->
   <img src="media/CryptoLogov2Triad.svg" />
 </p>
 </br>
+
+#
 
 ## APIs 
 
@@ -223,7 +232,7 @@ pip install -U discord.py
 pip install -U python-dotenv
 python -m pip install requests
 ```
-7. Navigate to /src, and run
+7. From within /src, run
 ```
 python crypto.py
 ```

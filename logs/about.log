@@ -1,30 +1,29 @@
 {
     "@context": {
-        "@vocab": "http://schema.org/",
-        "detailedDescription": "goog:detailedDescription",
-        "resultScore": "goog:resultScore",
-        "goog": "http://schema.googleapis.com/",
         "kg": "http://g.co/kg",
-        "EntitySearchResult": "goog:EntitySearchResult"
+        "detailedDescription": "goog:detailedDescription",
+        "goog": "http://schema.googleapis.com/",
+        "@vocab": "http://schema.org/",
+        "EntitySearchResult": "goog:EntitySearchResult",
+        "resultScore": "goog:resultScore"
     },
     "@type": "ItemList",
     "itemListElement": [
         {
             "result": {
                 "@type": [
-                    "SoftwareApplication",
                     "Thing"
                 ],
-                "@id": "kg:/m/0108bn2x",
                 "detailedDescription": {
-                    "url": "https://en.wikipedia.org/wiki/Ethereum",
+                    "url": "https://en.wikipedia.org/wiki/Tether_(cryptocurrency)",
                     "license": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License",
-                    "articleBody": "Ethereum is a decentralized, open-source blockchain featuring smart contract functionality. Ether is the native cryptocurrency of the platform. It is the second-largest cryptocurrency by market capitalization, after Bitcoin. Ethereum is the most actively used blockchain.\nEthereum was proposed in 2013 by programmer Vitalik Buterin. Development was crowdfunded in 2014, and the network went live on 30 July 2015, with 72 million coins premined. The Ethereum Virtual Machine can execute Turing-complete scripts and run decentralized applications. Ethereum is used for decentralized finance, and has been utilized for many initial coin offerings.\nIn 2016, a hacker exploited a flaw in a third-party project called The DAO and stole $50 million of Ether. "
+                    "articleBody": "Tether is a controversial cryptocurrency with tokens issued by Tether Limited. It formerly claimed that each token was backed by one United States dollar, but on 14 March 2019 changed the backing to include loans to affiliate companies. "
                 },
-                "name": "Ethereum"
+                "name": "Tether",
+                "@id": "kg:/g/11f31p2h9x"
             },
-            "@type": "EntitySearchResult",
-            "resultScore": 9420.0205078125
+            "resultScore": 4055.41845703125,
+            "@type": "EntitySearchResult"
         }
     ]
 }

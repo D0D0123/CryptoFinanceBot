@@ -7,6 +7,13 @@ or the ContextualWeb News API for information and news about cryptocurrencies.
 import requests
 # import re
 import json
+import os
+from dotenv import load_dotenv
+
+# API Key is stored in environment variable for security reasons
+load_dotenv()
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+NEWS_API_KEY = os.getenv('NEWS_API_KEY')
 
 '''
 Requests and receives knowledge graph data for a particular cryptocurrency 
@@ -17,7 +24,7 @@ def get_about_info(crypto_name):
     url = f"https://kgsearch.googleapis.com/v1/entities:search"
 
     parameters = {
-        'key': 'AIzaSyCmAgD0wBWPpj9HElsXrKpChOFzKHl6xbg',
+        'key': GOOGLE_API_KEY,
         'languages': 'en',
         'limit': '1',
         'query': crypto_name
@@ -52,7 +59,7 @@ def get_news(query_string):
     }
 
     headers = {
-        'x-rapidapi-key': "88e966ea0cmsha786e4c465f62f1p14c61bjsn7b83615c8d96",
+        'x-rapidapi-key': NEWS_API_KEY,
         'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
     }
 

@@ -27,7 +27,6 @@ bot_data = []
 bot = commands.Bot(command_prefix='!')
 # Connecting to discord
 client = discord.Client()
-# GUILD = os.getenv('DISCORD_GUILD')
 
 # bot token is stored in environment variable for security reasons
 load_dotenv()
