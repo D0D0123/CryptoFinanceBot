@@ -1,28 +1,30 @@
 {
     "@context": {
+        "@vocab": "http://schema.org/",
         "kg": "http://g.co/kg",
         "detailedDescription": "goog:detailedDescription",
         "goog": "http://schema.googleapis.com/",
-        "@vocab": "http://schema.org/",
-        "EntitySearchResult": "goog:EntitySearchResult",
-        "resultScore": "goog:resultScore"
+        "resultScore": "goog:resultScore",
+        "EntitySearchResult": "goog:EntitySearchResult"
     },
     "@type": "ItemList",
     "itemListElement": [
         {
             "result": {
                 "@type": [
+                    "Organization",
+                    "Corporation",
                     "Thing"
                 ],
+                "name": "Uniswap",
                 "detailedDescription": {
-                    "url": "https://en.wikipedia.org/wiki/Tether_(cryptocurrency)",
-                    "license": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License",
-                    "articleBody": "Tether is a controversial cryptocurrency with tokens issued by Tether Limited. It formerly claimed that each token was backed by one United States dollar, but on 14 March 2019 changed the backing to include loans to affiliate companies. "
+                    "articleBody": "Uniswap is a decentralized cryptocurrency exchange which facilitates automated transactions between cryptocurrency tokens on the Ethereum blockchain through the use of smart contracts. ",
+                    "url": "https://en.wikipedia.org/wiki/Uniswap",
+                    "license": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"
                 },
-                "name": "Tether",
-                "@id": "kg:/g/11f31p2h9x"
+                "@id": "kg:/g/11h1dsqb_m"
             },
-            "resultScore": 4055.41845703125,
+            "resultScore": 7,
             "@type": "EntitySearchResult"
         }
     ]
