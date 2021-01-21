@@ -2,8 +2,13 @@
 
 import pymongo
 from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
 
-cluster = MongoClient("mongodb+srv://dbUser0:1234@cluster0.ijvyk.mongodb.net/CryptoBot?retryWrites=true&w=majority")
+load_dotenv()
+MONGODB_URI = os.getenv('MONGODB_URI')
+
+cluster = MongoClient(MONGODB_URI)
 db = cluster["CryptoBot"]
 collection = db["GuildData"]
 
@@ -52,4 +57,13 @@ doc1 = {"_id": 1,
         ]
     }
 
-collection.insert_many([doc0, doc1])
+# collection.insert_many([doc0, doc1])
+
+# server_count = collection.count_documents({})
+# print(server_count)
+
+results = collection.find({})
+for result in results:
+    print(result)
+    # for ping in result["price_pings"]:
+    #     print(ping)
