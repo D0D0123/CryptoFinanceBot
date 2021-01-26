@@ -1,15 +1,15 @@
 - Visualiser --> Display Historical Data as a Graph (image sent to the server)
 - Have error checking for incorrect cryptocurrency codes
-- Store API Key in .env
-- Check CoinMarketCap Docs and see if there is a better way of getting individual data
-    - Also have a Metadata endpoint
-    - Have a seperate file for API calls
 
 - Include market cap in !list
 - Add the ability to change what news is tracked every 8 hours (make it so it can accept symbols too)
 - Make the error messages more helpful
-- Set footers for all the embeds with which API they are from
 - REMEMBER TO DESERIALISE THE JSON EVERY HOUR TO SEE UPDATED WATCH LIST AND PING LIST DATA
 - MAKE SURE YOU REMOVE SERVERS FROM THE DATABASE WHEN THE BOT GETS KICKED
 - Update the help command, and the intro tutorial message
 - Make the newsfeed use less API calls (since it calls once for EVERY server)
+- Add the ability to change currency
+- Add the ability to convert between cryptocurrencies (i.e. 1 BTC = 35.67 ETH)
+ - !convert 1000 BTC to ETH
+- Make !raw an option within !crypto, or else it won't work with multiple people calling !crypto, and then asking for the raw data
+- Limit news descriptions to 25 characters, followed by a trailing '...' to make it more aesthetically pleasing (if they aren't already under that length), to prevent them being too chunky

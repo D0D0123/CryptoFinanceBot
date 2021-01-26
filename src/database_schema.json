@@ -1,0 +1,148 @@
+{
+    "type": "object",
+    "title": "Server",
+    "description": "Each Server JSON object stores relevant information about each server that the bot is part of ",
+    "default": {},
+    "examples": [
+        {
+            "guild": 793053167842754580,
+            "autopost_channel": 793442420959346698,
+            "newsfeed": "Cryptocurrency",
+            "watch_list": [
+                "ETH"
+            ],
+            "price_pings": [
+                {
+                    "user": 270100069682905090,
+                    "currency": "BTC",
+                    "price": 40000.0,
+                    "higher": false
+                }
+            ]
+        }
+    ],
+    "required": [
+        "_id",
+        "autopost_channel",
+        "newsfeed",
+        "watch_list",
+        "price_pings"
+    ],
+    "properties": {
+        "_id": {
+            "type": "integer",
+            "title": "Guild ID",
+            "description": "The ID of a guild/server that the bot is part of",
+            "default": 0,
+            "examples": [
+                793053167842754580
+            ]
+        },
+        "autopost_channel": {
+            "type": "integer",
+            "title": "Autopost Channel",
+            "description": "The ID of the channel that the bot will send automatic messages/notifications to",
+            "default": 0,
+            "examples": [
+                793442420959346698
+            ]
+        },
+        "newsfeed": {
+            "type": "string",
+            "title": "News Feed",
+            "description": "The query string to provide automatic news updates about",
+            "default": "Cryptocurrency",
+            "examples": [
+                "Cryptocurrency"
+            ]
+        },
+        "watch_list": {
+            "type": "array",
+            "title": "Watch List",
+            "description": "A list of cryptocurrency symbols, indicating which cryptocurrencies to watch and provide hourly updates on",
+            "default": [],
+            "examples": [
+                [
+                    "BTC",
+                    "ETH"
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "type": "string",
+                "title": "Cryptocurrency Symbol",
+                "description": "A three letter, capitalised acronym corresponding to a cryptocurrency"
+            }
+        },
+        "price_pings": {
+            "type": "array",
+            "title": "Price Pings",
+            "description": "A list of 'pings', which record which users are to be notified when chosen currencies fall below/exceed a chosen price",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "user": 270100069682905090,
+                        "currency": "BTC",
+                        "price": 40000.0,
+                        "higher": false
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "default": {},
+                "examples": [
+                    {
+                        "user": 270100069682905090,
+                        "currency": "BTC",
+                        "price": 40000.0,
+                        "higher": false
+                    }
+                ],
+                "required": [
+                    "user",
+                    "currency",
+                    "price",
+                    "higher"
+                ],
+                "properties": {
+                    "user": {
+                        "type": "integer",
+                        "title": "User",
+                        "description": "The user ID of the user to be notified",
+                        "examples": [
+                            270100069682905090
+                        ]
+                    },
+                    "currency": {
+                        "type": "string",
+                        "title": "Currency",
+                        "description": "A three-letter, capitalised symbol corresponding to the cryptocurrency to check prices for",
+                        "examples": [
+                            "BTC"
+                        ]
+                    },
+                    "price": {
+                        "type": "number",
+                        "title": "Price",
+                        "description": "The price to be compared against",
+                        "examples": [
+                            40000.0
+                        ]
+                    },
+                    "higher": {
+                        "type": "boolean",
+                        "title": "Higher",
+                        "description": "A boolean which determines whether the user should be notified if the current price is higher than the chosen price, or lower",
+                        "examples": [
+                            false
+                        ]
+                    }
+                },
+                "additionalProperties": true
+            }
+        }
+    },
+    "additionalProperties": true
+}
