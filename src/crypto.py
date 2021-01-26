@@ -198,7 +198,7 @@ async def crypto_watch(ctx, *args):
         # skip over symbols that aren't in the crypto_map
         if symbol not in crypto_map and args[0] != "-show":
             continue
-        # add the symbol to the watch list of a specific guild (or remove it)
+        
         server_dict = collection.find_one({'_id': ctx.message.guild.id})
 
         if args[0] == "-show":
@@ -210,11 +210,17 @@ async def crypto_watch(ctx, *args):
 
         elif args[0] == "-add":
             if symbol not in server_dict['watch_list']:
-                collection.update_one({'_id': ctx.message.guild.id}, {"$addToSet": {'watch_list': symbol}})
+                collection.update_one(
+                    {'_id': ctx.message.guild.id}, 
+                    {"$addToSet": {'watch_list': symbol}}
+                )
             await ctx.send(f"{symbol} is now being watched hourly")
 
         elif args[0] == "-remove":
-            collection.update_one({'_id': ctx.message.guild.id}, {"$pull": {'watch_list': symbol}})
+            collection.update_one(
+                {'_id': ctx.message.guild.id}, 
+                {"$pull": {'watch_list': symbol}}
+            )
             await ctx.send(f"{symbol} has been removed from the watchlist")
 
 
@@ -274,7 +280,7 @@ async def crypto_ping(ctx, *args):
         'price': float(price), # the value of the price
         'higher': compare_bool, # notify if the currency price is higher/lower than the chosen price
     }
-    
+
     collection.update_one(
         {'_id': ctx.message.guild.id},
         {"$addToSet": {'price_pings': ping}}
