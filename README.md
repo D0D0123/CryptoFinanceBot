@@ -219,20 +219,24 @@ Sends the raw market data and metadata for the last !crypto call as text files
 2. Create an [invite URL](https://discordpy.readthedocs.io/en/latest/discord.html#inviting-your-bot) for the bot, and copy/paste this into a browser to add the bot to a server.
 3. Clone this repository.
 4. Sign up for each of the API's above (using any pricing plan, however consider the data request quotas), and obtain API keys.
-5. Navigate to /src, and fill in the .env template with the Bot Token and API Keys (the curly braces should also be removed).
+5. Go to the [MongoDB Cloud Atlas](https://www.mongodb.com/cloud/atlas) and follow the steps to generate a cluster, database and collection. Obtain the URI for this collection. Based on what the Database and Collection are named, change the following lines in crypto.py, replacing the names *CryptoBot* and *GuildData* with the names of the database and it's collection respectively:
+```
+db = cluster["CryptoBot"]
+collection = db["GuildData"]
+```
+6. Navigate to /src, and fill in the .env template with the Bot Token, API Keys and MongoDB URI (the curly braces should also be removed).
 ```
 DISCORD_TOKEN={Insert Bot Token}
 CMC_API_KEY={Insert CoinMarketCap API Key}
 GOOGLE_API_KEY={Insert Google Knowledge Graph API Key}
 NEWS_API_KEY={Insert ContextualWeb News API Key}
+MONGODB_URI={Insert MongoDB Database URI}
 ```
-6. Install the following packages:
+7. From within /src, run:
 ```
-pip install -U discord.py
-pip install -U python-dotenv
-python -m pip install requests
+pip install -r ../requirements.txt
 ```
-7. From within /src, run
+8. From within /src, run the following to start the bot:
 ```
 python crypto.py
 ```
