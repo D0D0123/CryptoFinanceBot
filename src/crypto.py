@@ -19,7 +19,7 @@ import pymongo
 from pymongo import MongoClient
 
 from format_response import (generate_basic_info, generate_extra_info, generate_supply_info, generate_description, generate_crypto_links, 
-generate_embed, format_float, format_date, generate_about_embed, generate_news_embed)
+generate_embed, format_float, format_date, generate_about_embed, generate_news_embed, generate_help_embed)
 from crypto_api import (get_total_crypto_data, get_individual_crypto_data, get_total_crypto_metadata, 
 get_individual_crypto_metadata, crypto_map)
 
@@ -28,6 +28,7 @@ get_individual_crypto_metadata, crypto_map)
 
 # Every command must be prefixed with a !
 bot = commands.Bot(command_prefix='!')
+bot.remove_command("help")
 # Connecting to discord
 client = discord.Client()
 
@@ -140,6 +141,17 @@ async def crypto_news_update():
 # |--------------------------------------------------------------------------------------|
 # |-------------------------------------- COMMANDS --------------------------------------|
 # |--------------------------------------------------------------------------------------|
+'''
+Provides information about each command
+'''
+@bot.command(name="help")
+async def help(ctx, *args):
+    if len(args) == 0:
+        command_name = None
+    else:
+        command_name = args[0]
+    await ctx.send(embed=generate_help_embed(command_name))
+
 
 '''
 !crypto [symbol] [param]

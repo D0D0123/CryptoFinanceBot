@@ -149,3 +149,110 @@ def generate_news_embed(query_string):
     embed_var.set_footer(text="From ContextualWeb News")
 
     return embed_var
+
+def generate_help_embed(command_name=None):
+    embed = Embed(title="Help", color=16736330)
+    if command_name == None:
+        command_list = """
+!help
+!about
+!crypto
+!list
+!news
+!newsfeed
+!ping
+!post
+!raw
+!watch
+"""
+        embed.add_field(name="Command List", value=f"{command_list} \n Use !help [command name] to get info about a specific command.")
+    
+    if command_name == "about":
+        about_string = """
+    » e.g. !about BTC
+
+Displays information about a specified cryptocurrency,
+as well as a link to read more, and other relevant links
+"""
+        embed.add_field(name="!about [symbol]", value=about_string)
+    
+    if command_name == "crypto":
+        crypto_string = """
+    » e.g. !crypto BTC -supply
+
+Sends cryptocurrency information to the server, 
+with the depth of information depending on the parameter given
+(None, -extra, -supply, -links, -all)
+    » With no parameter, only price, rank, platform will be shown
+    » Use '-extra' to show daily volume traded, and percentage changes
+    » Use '-supply' to show market cap and supply info
+    » Use '-links' to show relevant links
+    » Use '-all' to show all the above information
+"""
+        embed.add_field(name="!crypto [symbol] [param]", value=crypto_string)
+    
+    if command_name == "list":
+        list_string = """
+Provides a list of the top 20 cryptocurrencies
+(ranked by market cap), in the format 'rank. symbol (name)'
+"""
+        embed.add_field(name="!list", value=list_string)
+    
+    if command_name == "news":
+        news_string = """
+    » e.g. !news BTC
+    » e.g. !news Coronavirus -general   
+
+Provides the top 9 trending news articles surrounding 
+either a specified cryptocurrency, or a general phrase
+    » Use '-general' at the end of any word/phrase that isn't a cryptocurrency symbol
+"""
+        embed.add_field(name="!news [symbol] OR !news [phrase] -general", value=news_string)
+    
+    if command_name == "newsfeed":
+        newsfeed_string = """
+» e.g. !newsfeed Australia -general
+
+Sets the tridaily news feed to something other than the default 
+'Cryptocurrency'
+"""
+        embed.add_field(name="!newsfeed [symbol/phrase] [-general]", value=newsfeed_string)
+    
+    if command_name == "ping":
+        ping_string = """
+    » e.g. !ping BTC < 10000
+
+Add/Remove cryptocurrencies to/from a ping list, 
+as well as specifying a price and a higher/lower comparison parameter.
+The bot will notify you if the price of a chosen cryptocurrency
+exceeds/falls below your chosen price.
+    » Use '>' if you want to be notified if the currency exceeds a price
+    » Use '<' if you want to be notified if the currency falls below a price
+"""
+        embed.add_field(name="!ping [currency] [> OR <] [price]", value=ping_string)
+
+    if command_name == "post":
+        post_string = """
+Change which channel the bot will send it's automatic posts to
+"""
+        embed.add_field(name="!post [channel name]", value=post_string)
+    
+    if command_name == "raw":
+        raw_string = """
+Sends the raw market data and metadata for the last !crypto call
+"""
+        embed.add_field(name="!raw", value=raw_string)
+    
+    if command_name == "watch":
+        watch_string = """
+    » e.g. !watch -add BTC ETH
+
+Add/Remove cryptocurrencies to/from a watch list.
+The bot will provide hourly updates on the currencies in this watch list.
+    » Use '-add' [symbols...] to add symbols to the watch list
+    » Use '-remove' [symbols...] to remove symbols from the watch list
+    » Use '-show' to show the watch list
+"""
+        embed.add_field(name="!watch [param] [symbol] [symbol] ...", value=watch_string)
+    
+    return embed
