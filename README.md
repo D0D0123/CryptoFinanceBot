@@ -36,7 +36,8 @@ official websites, financial information websites, social media pages, and techn
 ### Command List
 
 | Command       | Arguments         
-| ------------- |:-------------:   
+| ------------- |:-------------:
+| !help         | [command name]   
 | !crypto       | [symbol] [param]  
 | !list         |      N/A            
 | !watch        | [param] [symbols...] 
@@ -49,6 +50,22 @@ official websites, financial information websites, social media pages, and techn
 </br>
 
 ### Descriptions
+</br>
+
+## !help [command name]
+
+Displays a list of all commands if given no argument, 
+else displays help information for a particular command.
+
+### Example:
+
+**!help**
+
+</br>
+</br>
+<p align="center" >
+  <img src="media/command-examples/help.png" />
+</p>
 </br>
 
 ## !crypto [symbol] [param]
