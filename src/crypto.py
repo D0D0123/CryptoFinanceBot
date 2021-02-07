@@ -41,7 +41,6 @@ cluster = MongoClient(MONGODB_URI)
 db = cluster["CryptoBot"]
 collection = db["GuildData"]
 
-
 '''
 Displays when the bot is connected and 
 ready on console output, and adds any new servers joined 
@@ -422,6 +421,7 @@ async def crypto_debug(ctx):
 # Error Handling
 @bot.event
 async def on_error(event, *args, **kwargs):
+    print("should have used rust")
     # output error to err.log file
     with open('../logs/err.log', 'a') as f:
         if event == 'on_message':
